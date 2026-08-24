@@ -1,0 +1,104 @@
+@model ShopMate.Models.SaleOrder
+
+@{
+    ViewBag.Title = "Edit";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmSaleOrder", "tbSaleOrder", true, "Action Successfully Executed")
+
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+    function multi() {
+        var Quantity = $("#Quantity").val();
+        var UnitPrice = $("#UnitPrice").val();
+        var TotalAmount = Quantity * UnitPrice;
+        $("#TotalAmount").val(TotalAmount);
+    }
+</script>
+
+@using (Html.BeginForm("Edit", "SaleOrder", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmSaleOrder" }))
+{
+    @Html.AntiForgeryToken()
+
+        <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Edit Sale Order</h3>
+                    </div>
+                    <!-- form start -->
+
+                    <div role="form">
+                        <div class="box-body">
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CustomerId, new { @class = "" })
+                                @Html.DropDownList("CustomerId", " -Select- ")
+                                @Html.StarkDropDownAjaxLink("/User/Create", "AddMore", "")
+                            </div>
+                            @*<div class="form-group">
+                                @Html.LabelFor(model => model.ProductId, new { @class = "" })
+                                @Html.DropDownList("ProductId", " -Select- ")
+                                @Html.StarkDropDownAjaxLink("/Product/Create", "AddMore", "")
+                            </div>*@
+                            @*<div class="form-group">
+                                @Html.LabelFor(model => model.UnitPrice, new { @class = "" })
+                                @Html.TextBoxFor(model => model.UnitPrice, new { @onchange = "multi();" })
+                            </div>*@
+                            @*<div class="form-group">
+                                @Html.LabelFor(model => model.Quantity, new { @class = "" })
+                                @Html.TextBoxFor(model => model.Quantity, new { @onchange = "multi();" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TotalAmount)
+                                @Html.TextBoxFor(model => model.TotalAmount, new { @readonly = "readonly" })
+                            </div>*@
+                            <div class="form-group">
+                                @Html.Hidden("DateAdded", DateTime.Now)
+                            </div>
+                            <div class="form-group">
+                                @Html.Hidden("AddedBy", Env.GetUserInfo("userid"))
+                            </div>
+
+
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            @Html.StarkInputButtion("Save", "submit", "btn btn-primary", "")
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+
+

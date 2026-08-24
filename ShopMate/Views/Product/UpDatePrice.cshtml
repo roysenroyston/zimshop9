@@ -1,0 +1,84 @@
+﻿
+@model ShopMate.Models.Product
+
+@{
+    ViewBag.Title = "UpDatePrice";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmProduct", "tbProduct", true, "Action Successfully Executed")
+
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+
+<script type="text/javascript">
+        $(function () {
+            $('select').searchableOptionList({
+                maxHeight: '250px'
+            });
+        });
+</script>
+
+@using (Html.BeginForm("UpDatePrice", "Product", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmProduct" }))
+{
+    @Html.AntiForgeryToken()
+
+        <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Update Product Prices</h3>
+                    </div>
+                    <!-- form start -->
+
+                    <div role="form">
+                        <div class="box-body">
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ProductCategoryId, new { @class = "" })
+                                @Html.DropDownList("ProductCategoryId", " -Select- "  )
+                                @Html.StarkDropDownAjaxLink("/ProductCategory/Create", "AddMore", "" )
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.SalePrice, new { @class = "" })
+                                @Html.EditorFor(model => model.SalePrice, new { @Id = "priceid" })
+                            </div>
+                            
+                           
+
+
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            <button id="sbt">Save Price</button>
+                            @Html.StarkInputButtion("Save", "submit", "btn btn-primary", "")
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+}
+
+
+

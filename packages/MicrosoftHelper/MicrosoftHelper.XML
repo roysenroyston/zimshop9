@@ -1,0 +1,402 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MicrosoftHelper</name>
+    </assembly>
+    <members>
+        <member name="M:MicrosoftHelper.MSHelper.sonumonu">
+            <summary>
+            sonumonu
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.Decrypt(System.String)">
+            <summary>
+            Decrypt Method used for Decrypt to Encrypted String. you may use this for password encryption and decryption or other string.
+            </summary>
+            <param name="cryptedString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.Encrypt(System.String)">
+            <summary>
+            Encrypt Method used for Encrypt to any String. you may use this for password encryption and decryption or other string.
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.GetSiteRoot">
+            <summary>
+            Get Site Root Method is used for get Root of Current site.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.GetMaxMindOmniData(System.String)">
+            <summary>
+            which IP you will pass To this Method , it will be return country code of (from ip is belog)
+            like if you give any USA ip then it will be return US 
+            </summary>
+            <param name="IP"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.Pager(System.Web.Mvc.AjaxHelper,System.Int32,System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+            Its Used for Paging In Mvc Model Binded Grid, In controller you will be pass values like below example
+            public ActionResult Index(int id, string name, int Page = 0, int cat = 0)
+            {
+              int PageSize = 10;
+              var list = db.TableName.OrderByDescending(i => i.Id).Where(i => i.Id==id).ToList();
+              ViewData["TotalRecords"] = list.Count();
+              ViewData["Contacts"] = list.Skip(Page * PageSize).Take(PageSize).ToList();
+              ViewData["CurrentPage"] = Page;
+              return PartialView("Index");
+            }
+            
+            And On View you will be Pass like below
+            @Ajax.Pager((int)Ajax.ViewData["CurrentPage"], (int)Ajax.ViewData["TotalRecords"], "",10)
+            
+            </summary>
+            <param name="helper"></param>
+            <param name="CurrentPage">Pass Current Page from ViewData["CurrentPage"]</param>
+            <param name="TotalRecords">Pass Total Records form ViewData["TotalRecords"]</param>
+            <param name="TargetDiv">Any Div id proved here</param>
+            <param name="PageSize">Give Page Size</param>
+            <param name="ActionName">Any Action name like index or other which you have defined</param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ExchangeRateFromAPI(System.Decimal,System.String,System.String)">
+            <summary>
+            This method is used for Amount Rate Conversion
+            </summary>
+            <param name="amount"></param>
+            <param name="firstCcode"></param>
+            <param name="lastCcode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.TimeAgo(System.DateTime)">
+            <summary>
+            Pass DateTime 
+            </summary>
+            <param name="date">Pass Datetime</param>
+            <returns>not yet,just now, 1 minute ago, 1 hour ago like this</returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.GetDay(System.String)">
+            <summary>
+            Get Day like 1st,2nd,3rd
+            </summary>
+            <param name="Day">Pass 1 to 9</param>
+            <returns>Return String 1st,2nd,3rd as per you entered</returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.GetMonth(System.Int32)">
+            <summary>
+            Get Month like january,february in string
+            </summary>
+            <param name="Month">Pass Int month value </param>
+            <returns>Return String month name</returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.GetLanguage">
+            <summary>
+            Get language if you having multilingual website ,which language is currently runing it will returns that
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String)">
+            <summary>
+            This Method is used for Insert Update and Delete Any Query or Stored Procedure by using Sql Query
+            </summary>
+            <param name="ConnectionString">Pass Connection String There</param>
+            <param name="Command_Type">Specify Command Type there like [CommandType.StoredProcedure] or [CommandType.Text]</param>
+            <param name="CommandTextQuery"> Which you want to Execute Query or Stored Procedure Pass there Sql Query or Stored Procedure Name</param>
+            <returns>This Method Is Return int</returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            This Method is used for Execute Insert Update or Delete Query or Stored Procedure by using [SqlParameters] 
+            </summary>
+            <param name="ConnectionString">Pass Connection String There</param>
+            <param name="Command_Type">Specify Command Type there like [CommandType.StoredProcedure] or [CommandType.Text] </param>
+            <param name="CommandTextQuery"> Which you want to Execute Query or Stored Procedure Pass there [Sql Query] or [Stored Procedure Name]</param>
+            <param name="SqlParam">If you want to pass some parameter using query or stored Procedure then pass Parameter by using this </param>
+            <returns>This Method Is Return int</returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            This method is used for Retrive Data [DataTable] using [Sql Parameter]
+            </summary>
+            <param name="ConnectionString">Pass Connection String There</param>
+            <param name="Command_Type">Specify Command Type there like [CommandType.StoredProcedure] or [CommandType.Text]</param>
+            <param name="CommandTextQuery">Which you want to Execute Query or Stored Procedure Pass there [Sql Query] or [Stored Procedure Name]</param>
+            <param name="SqlParam">Is you want to pass some parameter using query or stored Procedure then pass Parameter by using this  </param>
+            <returns>This Method Is Return DataTable</returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String)">
+            <summary>
+            This method is used for Retrive Data using [DataTable]
+            </summary>
+            <param name="ConnectionString">Pass Connection String There</param>
+            <param name="Command_Type">Specify Command Type there like [CommandType.StoredProcedure] or [CommandType.Text]</param>
+            <param name="CommandTextQuery">Which you want to Execute Query or Stored Procedure Pass there [Sql Query] or [Stored Procedure Name]</param>
+            <returns>This Method Is Return DataTable</returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            This Method is used for Retrive Data [DataSet] from Database by Using [Sql Parameter]
+            </summary>
+            <param name="ConnectionString">Pass Connection String There</param>
+            <param name="Command_Type">Specify Command Type there like [CommandType.StoredProcedure] or [CommandType.Text]</param>
+            <param name="CommandTextQuery">Which you want to Execute Query or Stored Procedure Pass there [Sql Query] or [Stored Procedure Name]</param>
+            <param name="SqlParam">Is you want to pass some parameter using query or stored Procedure then pass Parameter by using this </param>
+            <returns>This Method Is Return DataSet</returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String)">
+            <summary>
+            This Method is used for Retrive Data [DataSet] from Database
+            </summary>
+            <param name="ConnectionString">Pass Connection String There</param>
+            <param name="Command_Type">Specify Command Type there like [CommandType.StoredProcedure] or [CommandType.Text]</param>
+            <param name="CommandTextQuery"> Which you want to Execute Query or Stored Procedure Pass there [Sql Query] or [Stored Procedure Name]</param>
+            <returns>This Method Is Return DataSet</returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ExecuteDataReader(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String)">
+            <summary>
+            This Method is Retrive Data from Database by using [SqlDataReader]
+            </summary>
+            <param name="ConnectionString">Pass Connection String There</param>
+            <param name="Command_Type">Specify Command Type there like [CommandType.StoredProcedure] or [CommandType.Text]</param>
+            <param name="CommandTextQuery"> Which you want to Execute Query or Stored Procedure Pass there [Sql Query] or [Stored Procedure Name]</param>
+            <returns>This Method is Return SqlDataReader</returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.Login(System.Data.SqlClient.SqlConnection,System.String,System.String,System.String)">
+            <summary>
+            Use this method for login Authantication 
+            </summary>
+            <param name="ConnectionString">Pass Connection String There</param>
+            <param name="UserName">Pass Username There</param>
+            <param name="Password">Pass Password There</param>
+            <param name="SqlString">Pass Sql String there Like this=   select * from TABLE NAME where username=@UserName and password=@Password    </param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ValidChar(System.String)">
+            <summary>
+            Its used for validate char like .com , .net , .in 
+            it will replace "" 
+            </summary>
+            <param name="StrValidChar">Pass string </param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ConvertToDateTime(System.String)">
+            <summary>
+            You can convert any string value to DateTime
+            </summary>
+            <param name="StringName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ConvertToInt16(System.String)">
+            <summary>
+            You can convert any string value to Int16
+            </summary>
+            <param name="StringName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ConvertToInt32(System.String)">
+            <summary>
+            You can convert any string value to Int32 
+            </summary>
+            <param name="StringName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ConvertToInt64(System.String)">
+            <summary>
+            You can convert any string value to Int64 
+            </summary>
+            <param name="StringName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ConvertToDecimal(System.String)">
+            <summary>
+            You can convert any string value to Decimal
+            </summary>
+            <param name="StringName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ConvertParseTofloat(System.String)">
+            <summary>
+            You can convert any string value to float
+            </summary>
+            <param name="StringName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.ConvertToDouble(System.String)">
+            <summary>
+            You can convert any string value to double
+            </summary>
+            <param name="StringName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkAjaxFormSubmiter(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="stark"></param>
+            <param name="FormId">Enter Here Form ID LIKE <form id="frmCreate"></form>  So you have to pass = frmCreate</param>
+            <param name="DataTableId">Which DataTable You have update after submit provide that ID</param>
+            <param name="IsCloseAfterSubmit">Do you want to opened popup close after submit , So pass=true or false any</param> 
+            <param name="SuccessMessage">Give any Success message</param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkAjaxFormSubmiter(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="stark"></param>
+            <param name="FormId">Enter Here Form ID LIKE <form id="frmCreate"></form>  So you have to pass = frmCreate</param>
+            <param name="DataTableId">Which DataTable You have update after submit provide that ID</param>
+            <param name="IsCloseAfterSubmit">Do you want to opened popup close after submit , So pass=true or false any</param> 
+            <param name="SuccessMessage">Give any Success message</param>
+            <param name="AfterSuccessCode">Add other JQuery code if you want</param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkAddTimeInDate(System.DateTime,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="comingDate">Pass Date</param>
+            <param name="time">Pass Time Like 10:14</param>
+            <returns>return date and time combine</returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkAjaxLink(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String)">
+            <summary>
+            Ajax link buttion without reload page open page
+            </summary>
+            <param name="s">HtmlHelper</param>
+            <param name="LinkTitle">Enter link title</param>
+            <param name="LinkUrl">Provide link Url</param>
+            <param name="UniqueName">Enter any name without space</param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkInputButtion(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="s">HtmlHelper</param>
+            <param name="ButtionDisplayText">Enter Buttion Display Text </param>
+            <param name="InputType">pass input type like submit or button</param>
+            <param name="CssClass">css class</param>
+            <param name="Style">css style</param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkAjaxFormSubmiterSimple(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="stark">HtmlHelper</param>
+            <param name="FormId">Pass FormId</param>
+            <param name="SuccessMessage">SuccessMessage</param>
+            <param name="ErrorMessage">ErrorMessage</param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkFileUploaderCSharp(System.Web.HttpPostedFileBase,System.String)">
+            <summary>
+            Used for file upload C# code provide image content and save path
+            </summary>
+            <param name="ProfilePic">HttpPostedFileBase FileContent</param>
+            <param name="SavePath">SavePath director path where you have to save file</param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkCalender(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.String)">
+            <summary>
+            Used for calender control
+            </summary>
+            <param name="s">HtmlHelper</param>
+            <param name="InputType">text,date or other</param>
+            <param name="Name">Name Tag assign here</param>
+            <param name="CssClass">css Class provide here</param>
+            <param name="Id">provide id like <input id="yourid" /> </param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkDropDownAjaxLink(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String)">
+            <summary>
+            Used for Add more link below on drop down
+            </summary>
+            <param name="s">HtmlHelper</param>
+            <param name="Url">Provide you Url like= /Url </param>
+            <param name="UniqueName">any name without space</param>
+            <param name="CssClass">css class</param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkAjaxJquery(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Used for create jquery .ajax buttion without page refresh you may access data
+            </summary>
+            <param name="stark">HtmlHelper</param>
+            <param name="JsonData">Enter Data comma splitted like 'Id': '1','Name': 'SonuStar', </param>
+            <param name="url">Url where you have post</param>
+            <param name="type">GET or POST</param>
+            <param name="contentType">Default you can provide= false
+            Other= application/x-www-form-urlencoded; charset=UTF-8
+            If you need any other you may search .ajax type
+            </param>
+            <param name="AfterSuccessJsCode">Your can add here alert('Added successfully')
+            Or other jquery code $('#any').html(data) 
+            Or any other</param>
+            <param name="AfterErrorJsCode">Your can add here alert('Error')
+            Or other jquery code $('#any').html(data) 
+            Or any other</param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkJquery(System.Web.Mvc.HtmlHelper,System.String,System.Boolean)">
+            <summary>
+            Used for add default Jquery Method
+            </summary>
+            <param name="stark"></param>
+            <param name="InnerCode">And any Jquery Inner Code</param>
+            <param name="IsDocumentReady">Used for You want $(document).ready(function ()); or 
+            Only $(function() {}</param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkJqueryAfterPageContentLoad(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            after load all content of page like images js or css this will be execute
+            </summary>
+            <param name="stark"></param>
+            <param name="InnerCode">Add Any Jquery Code Here</param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkIfJqueryAlreadyHaveOnPage(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Used for If jQuery already having your page
+            </summary>
+            <param name="stark"></param>
+            <param name="JqueryUrl">/Script/Jquery.js or any http://jquery url</param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkDataTableGrid(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.String,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="s">HtmlHelper</param>
+            <param name="TableName">Provide TableName</param>
+            <param name="ControllerPath">controller name like = /Home </param>
+            <param name="GridAction">Action name where grid is binded like= GetGrid
+            Or you may pass any id like GetGrid/1 </param>
+            <param name="mRenderContent">pass fields braces like=  {},{}  
+            also you may pass mRender code here</param>
+            <param name="Paging">true or false</param>
+            <param name="DefaultPagingLength">1 to any ,If 0 then then show Record per Page dropdown </param>
+            <param name="ShowSearchBox">true or false</param>
+            <param name="ShowPagingInfo">true or false</param>
+            <param name="BelowOtherJsCode">any jquery code add under document ready function  </param>
+            <returns></returns>
+        </member>
+        <member name="M:MicrosoftHelper.MSHelper.StarkAjaxLinkmRender(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.String)">
+            <summary>
+            Ajax link buttion without reload page open page
+            </summary>
+            <param name="s">HtmlHelper</param>
+            <param name="LinkTitleOrIcon">Enter link title</param>
+            <param name="LinkUrl">Provide link Url</param>
+            <param name="UniqueName">Enter any name without space</param>
+            <param name="CssClass">Enter CssClass</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

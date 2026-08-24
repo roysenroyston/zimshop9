@@ -1,0 +1,2 @@
+2025-03-12 15:18:23.594 +02:00 [DBG] []
+System.Exception: Exception of type 'System.Exception' was thrown.

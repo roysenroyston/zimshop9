@@ -1,0 +1,197 @@
+@model ShopMate.Models.InventoryType
+@{
+    ViewBag.Title = "Advance Manager";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Content/DataTable/new/jquery.dataTables.min.js"></script>
+<link href="~/Content/DataTable/new/jquery.dataTables.min.css" rel="stylesheet" />
+
+@section ScriptsOrCss
+{   
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/tabs/Jquery-ui.js"></script>
+    <link href="~/Content/tabs/JqueryUi.css" rel="stylesheet" />
+    <script>
+        $(function () {
+            
+            $("#tabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+            $("#tabs li").removeClass("ui-corner-top").addClass("ui-corner-left");
+
+            $("#dialog").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+            $("#opener").click(function () {
+                $("#dialog").dialog("open");
+            });
+
+        });
+    </script>
+
+    <style>
+        table {
+            width: 100% !important;
+        }
+       .ui-tabs-vertical {
+          width: 100%;
+        }
+
+        .ui-tabs-vertical .ui-tabs-nav {
+            padding: .2em .1em .2em .2em;
+            float: left;
+            width: 19%;
+        }
+
+            .ui-tabs-vertical .ui-tabs-nav li {
+                clear: left;
+                width: 100%;
+                border-bottom-width: 1px !important;
+                border-right-width: 0 !important;
+                margin: 0 -1px .2em 0;
+            }
+
+                .ui-tabs-vertical .ui-tabs-nav li a {
+                    display: block;
+                }
+
+                .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+                    padding-bottom: 0;
+                    padding-right: .1em;
+                    border-right-width: 1px;
+                }
+
+        .ui-tabs-vertical .ui-tabs-panel {
+            padding: 1em;
+            float: right;
+            width:80%;
+        }
+    </style>
+}
+ 
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+    </h1>
+</section>
+<script type="text/javascript">
+        $(function () { 
+            $('select').searchableOptionList({
+                maxHeight: '250px'
+            });
+        });
+</script>
+
+@Html.StarkAjaxFormSubmiter("frmInventoryType", "tbInventoryType", true, "Action Successfully Executed")
+<section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-solid box-primary">
+
+ 
+                             <div id="tabs">
+                                <ul>
+                                    <li><a href="#EditThis">Edit</a></li>
+                                    <li><a href="#ProductStock">Product Stock</a></li>
+
+                                </ul>
+                                <div id="EditThis" style="height:700px;overflow:auto;">
+                                   @using (Html.BeginForm("MultiViewIndex", "InventoryType", FormMethod.Post, new { enctype = "multipart/form-data",id = "frmInventoryType" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                if (ViewBag.IsWorking >0)
+                                {
+                                    <section class="content">
+                                        <!-- Small boxes (Stat box) -->
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="box box-solid box-primary">
+                                                    <div class="box-header">
+                                                        <h3 class="box-title">Edit InventoryType Info</h3>
+                                                    </div><!-- /.box-header -->
+                                                    <!-- form start -->
+                                                    <div role="form">
+                                                        <div class="box-body">
+                                                    <div class="alert alert-success alert-dismissable" id="dvMsg" style="display:@(TempData["Display"]==null ? "none" : "")">
+                                                        <i class="fa fa-apple"></i>
+                                                        <b> Update Successfully. </b>
+                                                    </div>
+                                                            
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Name, new { @class = "" })
+                                @Html.EditorFor(model => model.Name)  
+                            </div>
+                                                             
+
+
+                                                        </div><!-- /.box-body -->
+                                                        <div class="box-footer">
+                                                            @Html.StarkInputButtion("Save","submit","btn btn-primary","")
+                                                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                }
+                            }
+                                </div>
+                                 
+                                <div id="ProductStock" style="overflow:auto !important;"> 
+<div class="box box-solid box-primary"><div class="box-body">
+@Html.StarkAjaxLink("Create New","/ProductStock/Create","StarkProductStock")
+</div> </div>
+<div class="box box-solid box-primary"> <div class="box-body">
+<table id="tbProductStock" class="table table-striped table-bordered">
+<thead><tr> 
+<th></th> 
+                                                <th> S.No </th>                                                <th> Product </th>                                                <th> Quantity </th>                                                <th> Unit Price </th>                                                <th> Unit Price Total Amount </th>                                                <th> Sale Price </th>                                                <th> Sale Total Amount </th>                                                <th> Discount </th>                                                <th> C G S T </th>                                                <th> C G S T_ Rate </th>                                                <th> S G S T </th>                                                <th> S G S T_ Rate </th>                                                <th> I G S T </th>                                                <th> I G S T_ Rate </th>                                                <th> Other Tax </th>                                                <th> Other Tax Value </th>                                                <th> Description </th>                                                <th> Added By </th>                                                <th> Date Added </th>                                                <th> Modified By </th>                                                <th> Date Modied </th>                                                <th> Inventory Type </th>                                            </tr>                                        </thead>                                        <tbody> </tbody>                                    </table></div></div>                                </div>
+
+                            </div>
+                              
+                    
+
+            </div>
+        </div>
+    </div>
+</section>
+  
+ <script type="text/javascript">
+
+        $(document).ready(function () {
+            var oTableProductStock = "";
+            var ControlerNameProductStock = "@Url.Content("~/ProductStock")";
+            // debugger;
+            oTableProductStock = $("#tbProductStock").dataTable({
+                "bRetrieve": true,
+                "bProcessing": true,
+                "sAjaxSource": "@Url.Content("~/InventoryType/ProductStockGetGrid/" + ViewBag.IsWorking)",
+                "aoColumns": [
+                             
+                {
+                                 "mRender": function (oObj, type, row) {
+                                     var buttons = "<a class=\"btn btn-social-icon btn-bitbucket\" href=" + ControlerNameProductStock + "/MultiViewIndex/" + row[0] + "><i class=\"fa fa-edit\"></i></a>"
+                        buttons += "<a class=\"btn btn-social-icon btn-dropbox\" href=" + ControlerNameProductStock + "/Details/" + row[0] + " data-ajax-update=\"#SkDetails\" data-ajax-success=\"openModalDialog('SkDetails', 'Details')\" data-ajax-mode=\"replace\" data-ajax-method=\"GET\" data-ajax-failure=\"clearModalDialog('SkDetails');alert('Ajax call failed')\" data-ajax-begin=\"prepareModalDialog('SkDetails')\" data-ajax=\"true\"><i class=\"fa fa-info\"></i></a>";
+                        buttons += "<a class=\"btn btn-social-icon btn-google-plus\" href=" + ControlerNameProductStock + "/Delete/" + row[0] + " data-ajax-update=\"#SkDelete\" data-ajax-success=\"openModalDialog('SkDelete', 'Delete')\" data-ajax-mode=\"replace\" data-ajax-method=\"GET\" data-ajax-failure=\"clearModalDialog('SkDelete');alert('Ajax call failed')\" data-ajax-begin=\"prepareModalDialog('SkDelete')\" data-ajax=\"true\"><i class=\"fa fa-bitbucket\"></i></a>";
+                         
+                        return buttons;
+                                 } 
+                
+        } ,{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}
+        ]
+
+        });
+         
+        });
+    </script>

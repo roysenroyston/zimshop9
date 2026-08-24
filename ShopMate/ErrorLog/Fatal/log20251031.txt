@@ -1,0 +1,1782 @@
+2025-10-31 10:50:01.603 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "31072150",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-07-31T16:06:33.073",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "C",
+        "taxPercent": 15,
+        "taxID": 3
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "C",
+        "taxPercent": 15,
+        "taxID": 3,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 10:53:39.781 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "31072150",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-07-31T16:06:33.073",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 10:53:55.453 +02:00 [FTL] {"date":"2025-10-31T10:53:30","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"31072150","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000058580F00ECE04531C5","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":1,"receiptGlobalNo":58,"receiptID":210249396,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"580f00ece04531c5305602667ac57908"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 10:53:55.656 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 10:54:09.274 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "31072151",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-07-31T16:38:00.67",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Buns Brazillian",
+        "receiptLinePrice": 5.22,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 5.22,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.78,
+        "salesAmountWithTax": 6.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 6.00
+      }
+    ],
+    "receiptTotal": 6.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 10:54:55.737 +02:00 [FTL] {"date":"2025-10-31T10:53:57","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"31072151","qrString":"https://fdms.zimra.co.zw/00000299993110202500000000593FD4A0BA488BBEF5","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":2,"receiptGlobalNo":59,"receiptID":210250059,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Buns Brazillian","receiptLineNo":1,"receiptLinePrice":5.22,"receiptLineQuantity":1.0,"receiptLineTotal":5.22,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":6.0}],"receiptTaxes":[{"salesAmountWithTax":6.0,"taxAmount":0.78,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":6.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"3fd4a0ba488bbef5bf449afdea14876c"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 10:54:55.737 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:07:00.952 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "28103082",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-28T11:47:22.433",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 3.00,
+        "receiptLineTotal": 7.83,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 1.17,
+        "salesAmountWithTax": 9.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 9.00
+      }
+    ],
+    "receiptTotal": 9.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:07:12.894 +02:00 [FTL] {"date":"2025-10-31T11:06:49","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"28103082","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000060345756D6F8E78D3B","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":3,"receiptGlobalNo":60,"receiptID":210262033,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":3.0,"receiptLineTotal":7.83,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":9.0}],"receiptTaxes":[{"salesAmountWithTax":9.0,"taxAmount":1.17,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":9.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"345756d6f8e78d3b9f179d160ce0a72a"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:07:12.995 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:07:14.658 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "28103083",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-28T11:47:22.48",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:07:48.589 +02:00 [FTL] {"date":"2025-10-31T11:07:28","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"28103083","qrString":"https://fdms.zimra.co.zw/00000299993110202500000000612F33989C0A97CBE6","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4,"receiptGlobalNo":61,"receiptID":210262601,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"2f33989c0a97cbe620e9cf91b5d1fd75"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:07:48.590 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:07:48.993 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "28103084",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-28T11:54:56.857",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Shave",
+        "receiptLinePrice": 0.87,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 0.87,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.13,
+        "salesAmountWithTax": 1.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 1.00
+      }
+    ],
+    "receiptTotal": 1.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:15.289 +02:00 [FTL] {"date":"2025-10-31T11:07:58","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"28103084","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000062E04CBAE054757574","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":5,"receiptGlobalNo":62,"receiptID":210263161,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Shave","receiptLineNo":1,"receiptLinePrice":0.87,"receiptLineQuantity":1.0,"receiptLineTotal":0.87,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":1.0}],"receiptTaxes":[{"salesAmountWithTax":1.0,"taxAmount":0.13,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":1.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"e04cbae05475757430236c1da3249e0f"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:15.289 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:15.849 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103085",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:13.5",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:24.908 +02:00 [FTL] {"date":"2025-10-31T11:08:03","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103085","qrString":"https://fdms.zimra.co.zw/00000299993110202500000000636D1D67DDD8623829","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":6,"receiptGlobalNo":63,"receiptID":210263177,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"6d1d67ddd8623829ee3530656bf12ce0"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:24.908 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:25.554 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103086",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:13.76",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Wash",
+        "receiptLinePrice": 4.35,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 4.35,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.65,
+        "salesAmountWithTax": 5.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 5.00
+      }
+    ],
+    "receiptTotal": 5.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:31.949 +02:00 [FTL] {"date":"2025-10-31T11:08:13","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103086","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000064A9BDB10EF173C04C","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":7,"receiptGlobalNo":64,"receiptID":210263209,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Wash","receiptLineNo":1,"receiptLinePrice":4.35,"receiptLineQuantity":1.0,"receiptLineTotal":4.35,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":5.0}],"receiptTaxes":[{"salesAmountWithTax":5.0,"taxAmount":0.65,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":5.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"a9bdb10ef173c04cc69a60d12e8c1371"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:31.949 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:32.389 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103087",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:13.847",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 3.00,
+        "receiptLineTotal": 7.83,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 1.17,
+        "salesAmountWithTax": 9.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 9.00
+      }
+    ],
+    "receiptTotal": 9.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:46.451 +02:00 [FTL] {"date":"2025-10-31T11:08:22","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103087","qrString":"https://fdms.zimra.co.zw/00000299993110202500000000659D48E42ACCCC6760","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":8,"receiptGlobalNo":65,"receiptID":210263574,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":3.0,"receiptLineTotal":7.83,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":9.0}],"receiptTaxes":[{"salesAmountWithTax":9.0,"taxAmount":1.17,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":9.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"9d48e42acccc6760ee2521aad55bcf10"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:46.451 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:46.823 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103088",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:14.217",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 4.00,
+        "receiptLineTotal": 10.44,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 1.57,
+        "salesAmountWithTax": 12.01
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 12.01
+      }
+    ],
+    "receiptTotal": 12.01,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:51.908 +02:00 [FTL] {"date":"2025-10-31T11:08:35","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103088","qrString":"https://fdms.zimra.co.zw/000002999931102025000000006608EFFBFC949A5E71","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":9,"receiptGlobalNo":66,"receiptID":210263665,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":4.0,"receiptLineTotal":10.44,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":12.01}],"receiptTaxes":[{"salesAmountWithTax":12.01,"taxAmount":1.57,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":12.01,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"08effbfc949a5e71ff23308a91d70ce2"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:51.909 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:08:52.312 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103089",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:14.563",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 8.00,
+        "receiptLineTotal": 20.88,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 3.13,
+        "salesAmountWithTax": 24.01
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 24.01
+      }
+    ],
+    "receiptTotal": 24.01,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:09.666 +02:00 [FTL] {"date":"2025-10-31T11:08:53","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103089","qrString":"https://fdms.zimra.co.zw/00000299993110202500000000679182C732EA90F473","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":10,"receiptGlobalNo":67,"receiptID":210264046,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":8.0,"receiptLineTotal":20.88,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":24.01}],"receiptTaxes":[{"salesAmountWithTax":24.01,"taxAmount":3.13,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":24.01,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"9182c732ea90f473e3631a233679f468"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:09.666 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:10.035 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103090",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:15.037",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Freehand Big Line",
+        "receiptLinePrice": 4.35,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 4.35,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.65,
+        "salesAmountWithTax": 5.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 5.00
+      }
+    ],
+    "receiptTotal": 5.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:15.379 +02:00 [FTL] {"date":"2025-10-31T11:08:59","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103090","qrString":"https://fdms.zimra.co.zw/00000299993110202500000000681B89EB679C3F8DFF","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":11,"receiptGlobalNo":68,"receiptID":210264176,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Freehand Big Line","receiptLineNo":1,"receiptLinePrice":4.35,"receiptLineQuantity":1.0,"receiptLineTotal":4.35,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":5.0}],"receiptTaxes":[{"salesAmountWithTax":5.0,"taxAmount":0.65,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":5.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"1b89eb679c3f8dffe7e0515ef15f965f"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:15.379 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:15.767 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103091",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:15.533",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:19.297 +02:00 [FTL] {"date":"2025-10-31T11:09:02","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103091","qrString":"https://fdms.zimra.co.zw/00000299993110202500000000695FF9343892F00066","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":12,"receiptGlobalNo":69,"receiptID":210264072,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"5ff9343892f00066d88106db3db2c3cd"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:19.297 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:19.784 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103092",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:15.613",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:24.550 +02:00 [FTL] {"date":"2025-10-31T11:09:08","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103092","qrString":"https://fdms.zimra.co.zw/000002999931102025000000007084E65260E1720C6B","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":13,"receiptGlobalNo":70,"receiptID":210264155,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"84e65260e1720c6bf90c7a1c902f6c92"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:24.550 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:25.025 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103093",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:15.68",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:29.314 +02:00 [FTL] {"date":"2025-10-31T11:09:12","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103093","qrString":"https://fdms.zimra.co.zw/000002999931102025000000007150690D6E63928A3B","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":14,"receiptGlobalNo":71,"receiptID":210264334,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"50690d6e63928a3b2b2cb3fd0f27737e"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:29.315 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:29.689 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103094",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:15.847",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:34.861 +02:00 [FTL] {"date":"2025-10-31T11:09:18","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103094","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000072A9DC55C16C59870C","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":15,"receiptGlobalNo":72,"receiptID":210264254,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"a9dc55c16c59870ceaca5f43d8ed80aa"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:34.863 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:35.195 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103095",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:15.92",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:39.278 +02:00 [FTL] {"date":"2025-10-31T11:09:22","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103095","qrString":"https://fdms.zimra.co.zw/000002999931102025000000007394CE75EDD014BB3D","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":16,"receiptGlobalNo":73,"receiptID":210264471,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"94ce75edd014bb3d5bc716184c4947f3"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:39.278 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:09:39.667 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103096",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:16.027",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:05.393 +02:00 [FTL] {"date":"2025-10-31T11:09:49","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103096","qrString":"https://fdms.zimra.co.zw/00000299993110202500000000745E7D55F444CD64A2","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":17,"receiptGlobalNo":74,"receiptID":210264946,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"5e7d55f444cd64a2a3d381b82a2bf565"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:05.393 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:05.851 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103097",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:16.103",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Shave",
+        "receiptLinePrice": 0.87,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 0.87,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.13,
+        "salesAmountWithTax": 1.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 1.00
+      }
+    ],
+    "receiptTotal": 1.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:10.791 +02:00 [FTL] {"date":"2025-10-31T11:09:54","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103097","qrString":"https://fdms.zimra.co.zw/000002999931102025000000007510D2A000D6C5ADEA","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":18,"receiptGlobalNo":75,"receiptID":210264897,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Shave","receiptLineNo":1,"receiptLinePrice":0.87,"receiptLineQuantity":1.0,"receiptLineTotal":0.87,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":1.0}],"receiptTaxes":[{"salesAmountWithTax":1.0,"taxAmount":0.13,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":1.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"10d2a000d6c5adea8bcbbadc8056d131"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:10.791 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:11.207 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103098",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:16.4",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Long Weave",
+        "receiptLinePrice": 10.43,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 10.43,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 1.56,
+        "salesAmountWithTax": 11.99
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 11.99
+      }
+    ],
+    "receiptTotal": 11.99,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:15.823 +02:00 [FTL] {"date":"2025-10-31T11:09:59","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103098","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000076722E38DD413815CE","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":19,"receiptGlobalNo":76,"receiptID":210264844,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Long Weave","receiptLineNo":1,"receiptLinePrice":10.43,"receiptLineQuantity":1.0,"receiptLineTotal":10.43,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":11.99}],"receiptTaxes":[{"salesAmountWithTax":11.99,"taxAmount":1.56,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":11.99,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"722e38dd413815cea54224d6dc263b62"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:15.823 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:16.575 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103099",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:16.557",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Wash",
+        "receiptLinePrice": 4.35,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 4.35,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.65,
+        "salesAmountWithTax": 5.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 5.00
+      }
+    ],
+    "receiptTotal": 5.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:21.781 +02:00 [FTL] {"date":"2025-10-31T11:10:05","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103099","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000077AF1EF738B06EB2A9","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":20,"receiptGlobalNo":77,"receiptID":210265087,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Wash","receiptLineNo":1,"receiptLinePrice":4.35,"receiptLineQuantity":1.0,"receiptLineTotal":4.35,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":5.0}],"receiptTaxes":[{"salesAmountWithTax":5.0,"taxAmount":0.65,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":5.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"af1ef738b06eb2a9fd3b54ccd96baf04"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:21.781 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:22.280 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103100",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:16.757",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Kids Fade",
+        "receiptLinePrice": 1.74,
+        "receiptLineQuantity": 2.00,
+        "receiptLineTotal": 3.48,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.52,
+        "salesAmountWithTax": 4.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 4.00
+      }
+    ],
+    "receiptTotal": 4.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:27.664 +02:00 [FTL] {"date":"2025-10-31T11:10:11","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103100","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000078FF2D8FC49719D781","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":21,"receiptGlobalNo":78,"receiptID":210265112,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Kids Fade","receiptLineNo":1,"receiptLinePrice":1.74,"receiptLineQuantity":2.0,"receiptLineTotal":3.48,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":4.0}],"receiptTaxes":[{"salesAmountWithTax":4.0,"taxAmount":0.52,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":4.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"ff2d8fc49719d781dde277b23df77cdb"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:27.664 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:28.022 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103101",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:16.907",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:32.445 +02:00 [FTL] {"date":"2025-10-31T11:10:16","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103101","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000079FF13C191E782BDCC","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":22,"receiptGlobalNo":79,"receiptID":210265235,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"ff13c191e782bdcc35df6266a37db4a8"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:32.446 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:33.012 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103102",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:17.04",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Bold + Shave",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:37.353 +02:00 [FTL] {"date":"2025-10-31T11:10:20","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103102","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000080841A4414A7879E2F","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":23,"receiptGlobalNo":80,"receiptID":210265414,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Bold + Shave","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"841a4414a7879e2f955cc6e786f7dfb9"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:37.353 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:37.683 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103103",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:17.13",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:42.130 +02:00 [FTL] {"date":"2025-10-31T11:10:25","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103103","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000081E2CB78E30EDBB972","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":24,"receiptGlobalNo":81,"receiptID":210265544,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"e2cb78e30edbb972b5e7733c47e98b72"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:42.130 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:42.562 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103104",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:17.32",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:46.981 +02:00 [FTL] {"date":"2025-10-31T11:10:30","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103104","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000082534177AAB9703A6B","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":25,"receiptGlobalNo":82,"receiptID":210265672,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"534177aab9703a6bc0d393c12f6a23c0"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:46.981 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:47.563 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103105",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:17.507",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Kids Brush",
+        "receiptLinePrice": 0.87,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 0.87,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.13,
+        "salesAmountWithTax": 1.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 1.00
+      }
+    ],
+    "receiptTotal": 1.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:51.988 +02:00 [FTL] {"date":"2025-10-31T11:10:35","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103105","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000083A3E7BD0B49F2FA71","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":26,"receiptGlobalNo":83,"receiptID":210265632,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Kids Brush","receiptLineNo":1,"receiptLinePrice":0.87,"receiptLineQuantity":1.0,"receiptLineTotal":0.87,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":1.0}],"receiptTaxes":[{"salesAmountWithTax":1.0,"taxAmount":0.13,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":1.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"a3e7bd0b49f2fa71e7594665e5a0955c"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:51.989 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:10:52.419 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103106",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:17.607",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:15.525 +02:00 [FTL] {"date":"2025-10-31T11:10:59","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103106","qrString":"https://fdms.zimra.co.zw/00000299993110202500000000849B552067B1781342","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":27,"receiptGlobalNo":84,"receiptID":210266236,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"9b552067b1781342e0d879ce71ef8432"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:15.527 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:15.922 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103107",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:17.733",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Kids Fade",
+        "receiptLinePrice": 1.74,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 1.74,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.26,
+        "salesAmountWithTax": 2.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 2.00
+      }
+    ],
+    "receiptTotal": 2.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:19.392 +02:00 [FTL] {"date":"2025-10-31T11:11:03","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103107","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000085192CD6E64FA5ECB3","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":28,"receiptGlobalNo":85,"receiptID":210266142,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Kids Fade","receiptLineNo":1,"receiptLinePrice":1.74,"receiptLineQuantity":1.0,"receiptLineTotal":1.74,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":2.0}],"receiptTaxes":[{"salesAmountWithTax":2.0,"taxAmount":0.26,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":2.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"192cd6e64fa5ecb357d6254475476b69"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:19.393 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:19.864 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103108",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:17.84",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:23.664 +02:00 [FTL] {"date":"2025-10-31T11:11:07","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103108","qrString":"https://fdms.zimra.co.zw/00000299993110202500000000866AC96643C6C2CACF","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":29,"receiptGlobalNo":86,"receiptID":210266202,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"6ac96643c6c2cacfd056a04086d74710"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:23.665 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:24.236 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103109",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:17.957",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:29.396 +02:00 [FTL] {"date":"2025-10-31T11:11:13","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103109","qrString":"https://fdms.zimra.co.zw/00000299993110202500000000879A36A42839540126","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":30,"receiptGlobalNo":87,"receiptID":210266267,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"9a36a42839540126fa9b154856bc38ce"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:29.396 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:29.809 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103110",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:18.067",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Kids Fade",
+        "receiptLinePrice": 1.74,
+        "receiptLineQuantity": 2.00,
+        "receiptLineTotal": 3.48,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.52,
+        "salesAmountWithTax": 4.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 4.00
+      }
+    ],
+    "receiptTotal": 4.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:33.630 +02:00 [FTL] {"date":"2025-10-31T11:11:17","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103110","qrString":"https://fdms.zimra.co.zw/00000299993110202500000000887E91EB5502FB247C","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":31,"receiptGlobalNo":88,"receiptID":210266283,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Kids Fade","receiptLineNo":1,"receiptLinePrice":1.74,"receiptLineQuantity":2.0,"receiptLineTotal":3.48,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":4.0}],"receiptTaxes":[{"salesAmountWithTax":4.0,"taxAmount":0.52,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":4.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"7e91eb5502fb247cc27a68b96b861917"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:33.630 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:33.997 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103111",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:11:18.197",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Bold + Shave",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:38.905 +02:00 [FTL] {"date":"2025-10-31T11:11:22","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103111","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000089B531A3A205DCB08C","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":32,"receiptGlobalNo":89,"receiptID":210266360,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Bold + Shave","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"b531a3a205dcb08c1b7780e98ac2fa74"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:38.905 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:11:39.254 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103112",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T15:20:34.02",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Face Cut",
+        "receiptLinePrice": 0.87,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 0.87,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.13,
+        "salesAmountWithTax": 1.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 1.00
+      }
+    ],
+    "receiptTotal": 1.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:12:02.848 +02:00 [FTL] {"date":"2025-10-31T11:11:46","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103112","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000090F4DE66D2782E106B","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":33,"receiptGlobalNo":90,"receiptID":210267030,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Face Cut","receiptLineNo":1,"receiptLinePrice":0.87,"receiptLineQuantity":1.0,"receiptLineTotal":0.87,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":1.0}],"receiptTaxes":[{"salesAmountWithTax":1.0,"taxAmount":0.13,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":1.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"f4de66d2782e106bf621af8729962bb8"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:12:02.848 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:12:03.356 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "30103113",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2025-10-30T16:14:57.987",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "99001000",
+        "receiptLineName": "Fade",
+        "receiptLinePrice": 2.61,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:12:07.470 +02:00 [FTL] {"date":"2025-10-31T11:11:51","deviceBranchAddress":{"city":"Railton Hwange","houseNo":"22","province":"Matabeleland\u202fNorth","street":"Lothian Street"},"deviceBranchContacts":{"email":"SpiweChipanda072@gmail.com","phoneNo":"0773196569"},"deviceBranchName":"Enigma Hair Salon","deviceID":"29999","deviceSerialNo":"H10E731253F1424","fiscalDayNumber":"7","invoiceNumber":"30103113","qrString":"https://fdms.zimra.co.zw/0000029999311020250000000091C3B7AF2D765C4EB4","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":34,"receiptGlobalNo":91,"receiptID":210266936,"receiptLines":[{"receiptLineHSCode":"99001000","receiptLineName":"Fade","receiptLineNo":1,"receiptLinePrice":2.61,"receiptLineQuantity":1.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.0}],"receiptTaxes":[{"salesAmountWithTax":3.0,"taxAmount":0.39,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":3.0,"taxCode":"A","taxPayerName":"Unison (Pvt) Ltd","taxPayerTIN":"2000140829","taxPercentage":"15","vatNumber":"220124452","verificationCode":"c3b7af2d765c4eb4e0912acb1998a36e"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:12:07.471 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-10-31 11:12:11.475 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.

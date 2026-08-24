@@ -1,0 +1,6 @@
+2020-05-05 13:48:27.493 +02:00 [VRB] Verbose
+System.NotImplementedException: The method or operation is not implemented.
+   at ShopMate.Controllers.HomeController.Index(String Date) in C:\Users\Tim\Documents\Projects\MajorChangesZimpos\documents\MajorPosChanges\ZimPOS\SM\ShopMate\Controllers\HomeController.cs:line 20
+2020-05-05 13:58:30.202 +02:00 [VRB] Verbose
+System.NotImplementedException: The method or operation is not implemented.
+   at ShopMate.Controllers.HomeController.Index(String Date) in C:\Users\Tim\Documents\Projects\MajorChangesZimpos\documents\MajorPosChanges\ZimPOS\SM\ShopMate\Controllers\HomeController.cs:line 20

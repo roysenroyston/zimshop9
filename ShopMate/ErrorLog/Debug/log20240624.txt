@@ -1,0 +1,68 @@
+2024-06-24 08:04:15.077 +02:00 [DBG] [
+  {
+    "change": 0.70000000000000018,
+    "currency": "USD",
+    "customer": "",
+    "date": "24/06/2024",
+    "discount": "0.00",
+    "id": 0,
+    "invoiceId": 400243,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Dusty Road Ice Tea",
+        "price": 2.0,
+        "priceRTGS": 0.0,
+        "prodId": 4254,
+        "quantity": 1.0,
+        "tax": 15.0
+      }
+    ],
+    "rate": 1.0,
+    "subtotal": "2.0",
+    "tax": 0.3,
+    "time": "07:41:56",
+    "userId": "23172"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2024-06-24 08:05:36.414 +02:00 [DBG] [
+  {
+    "change": 0.70000000000000018,
+    "currency": "USD",
+    "customer": "",
+    "date": "24/06/2024",
+    "discount": "0.00",
+    "id": 0,
+    "invoiceId": 400243,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Dusty Road Ice Tea",
+        "price": 2.0,
+        "priceRTGS": 0.0,
+        "prodId": 4254,
+        "quantity": 1.0,
+        "tax": 15.0
+      }
+    ],
+    "rate": 1.0,
+    "subtotal": "2.0",
+    "tax": 0.3,
+    "time": "07:41:56",
+    "userId": "23172"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2024-06-24 09:32:16.092 +02:00 [DBG] [{"change":1.0,"currency":"USD","customer":"","date":"24/06/2024","discount":"0.00","id":0,"invoiceId":2400161,"online":0,"paymentMethod":"USD","products":[{"barcode":"0","id":0,"image":"","name":"Executive Room","price":30.0,"priceRTGS":0.0,"prodId":4263,"quantity":2.0,"tax":15.0}],"rate":1.0,"subtotal":"60.0","tax":9.0,"time":"09:32:13","userId":"23173"}]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2024-06-24 09:32:40.489 +02:00 [DBG] [{"change":1.25,"currency":"USD","customer":"","date":"24/06/2024","discount":"0.00","id":0,"invoiceId":2400162,"online":0,"paymentMethod":"USD","products":[{"barcode":"0","id":0,"image":"","name":"Orinary Room","price":25.0,"priceRTGS":0.0,"prodId":4262,"quantity":1.0,"tax":15.0}],"rate":1.0,"subtotal":"25.0","tax":3.75,"time":"09:32:38","userId":"23173"}]
+System.Exception: Exception of type 'System.Exception' was thrown.

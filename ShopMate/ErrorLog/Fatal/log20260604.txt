@@ -1,0 +1,1078 @@
+2026-06-04 11:03:10.739 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:03:54.556 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074143",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:03:15.397",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Chips&Porkchop/Tbone",
+        "receiptLinePrice": 4.35,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 4.35,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 0.65,
+        "salesAmountWithTax": 5.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 5.00
+      }
+    ],
+    "receiptTotal": 5.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:04:10.983 +02:00 [FTL] {"date":"2026-06-04T11:03:59","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074143","qrString":"https://fdms.zimra.co.zw/00000262310406202600000048613CED6AE39478A831","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4669,"receiptGlobalNo":4861,"receiptID":354955826,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Chips&Porkchop/Tbone","receiptLineNo":1,"receiptLinePrice":4.35,"receiptLineQuantity":1.0,"receiptLineTotal":4.35,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":5.02}],"receiptTaxes":[{"salesAmountWithTax":5.02,"taxAmount":0.67,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":5.02,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"3ced6ae39478a831cb3f36d50cbad099"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:04:11.030 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:04:14.138 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:04:32.268 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:04:52.654 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:08:57.465 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074149",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:08:45.71",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Sadza/Rice",
+        "receiptLinePrice": 2.17,
+        "receiptLineQuantity": 15.00,
+        "receiptLineTotal": 32.55,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 4.88,
+        "salesAmountWithTax": 37.43
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 37.43
+      }
+    ],
+    "receiptTotal": 37.43,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:08:59.238 +02:00 [FTL] {"date":"2026-06-04T11:08:58","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074149","qrString":"https://fdms.zimra.co.zw/0000026231040620260000004862AADE1DCA0369BB94","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4670,"receiptGlobalNo":4862,"receiptID":354960489,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Sadza/Rice","receiptLineNo":1,"receiptLinePrice":2.17,"receiptLineQuantity":15.0,"receiptLineTotal":32.55,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":37.6}],"receiptTaxes":[{"salesAmountWithTax":37.6,"taxAmount":5.05,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":37.6,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"aade1dca0369bb94544cf8cfb6f397f6"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:08:59.276 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:08:59.808 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:07.752 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074151",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:09:00.727",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Chips&Porkchop/Tbone",
+        "receiptLinePrice": 4.35,
+        "receiptLineQuantity": 4.00,
+        "receiptLineTotal": 17.40,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 2.61,
+        "salesAmountWithTax": 20.01
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 20.01
+      }
+    ],
+    "receiptTotal": 20.01,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:08.404 +02:00 [FTL] {"date":"2026-06-04T11:09:08","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074151","qrString":"https://fdms.zimra.co.zw/00000262310406202600000048633E7ED305DA58333D","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4671,"receiptGlobalNo":4863,"receiptID":354960799,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Chips&Porkchop/Tbone","receiptLineNo":1,"receiptLinePrice":4.35,"receiptLineQuantity":4.0,"receiptLineTotal":17.4,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":20.1}],"receiptTaxes":[{"salesAmountWithTax":20.1,"taxAmount":2.7,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":20.1,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"3e7ed305da58333d6156604337aab777"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:08.405 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:08.842 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:33.188 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074157",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:09:13.51",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Hot Dog",
+        "receiptLinePrice": 0.87,
+        "receiptLineQuantity": 1.00,
+        "receiptLineTotal": 0.87,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 0.13,
+        "salesAmountWithTax": 1.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 1.00
+      }
+    ],
+    "receiptTotal": 1.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:33.739 +02:00 [FTL] {"date":"2026-06-04T11:09:33","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074157","qrString":"https://fdms.zimra.co.zw/00000262310406202600000048642696103634E487E7","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4672,"receiptGlobalNo":4864,"receiptID":354961138,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Hot Dog","receiptLineNo":1,"receiptLinePrice":0.87,"receiptLineQuantity":1.0,"receiptLineTotal":0.87,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":1.0}],"receiptTaxes":[{"salesAmountWithTax":1.0,"taxAmount":0.13,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":1.0,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"2696103634e487e7cd67ffbbddd3452c"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:33.740 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:34.191 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:36.820 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:43.115 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074160",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:09:38.633",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Chips&Porkchop/Tbone",
+        "receiptLinePrice": 4.35,
+        "receiptLineQuantity": 3.00,
+        "receiptLineTotal": 13.05,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 1.96,
+        "salesAmountWithTax": 15.01
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 15.01
+      }
+    ],
+    "receiptTotal": 15.01,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:43.835 +02:00 [FTL] {"date":"2026-06-04T11:09:43","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074160","qrString":"https://fdms.zimra.co.zw/000002623104062026000000486588FB6EEF969842BC","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4673,"receiptGlobalNo":4865,"receiptID":354961160,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Chips&Porkchop/Tbone","receiptLineNo":1,"receiptLinePrice":4.35,"receiptLineQuantity":3.0,"receiptLineTotal":13.05,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":15.07}],"receiptTaxes":[{"salesAmountWithTax":15.07,"taxAmount":2.02,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":15.07,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"88fb6eef969842bc7e933cc71f2e66a7"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:43.835 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:44.221 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:52.893 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074164",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:09:47.423",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Hot Dog",
+        "receiptLinePrice": 0.87,
+        "receiptLineQuantity": 5.00,
+        "receiptLineTotal": 4.35,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 0.65,
+        "salesAmountWithTax": 5.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 5.00
+      }
+    ],
+    "receiptTotal": 5.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:53.559 +02:00 [FTL] {"date":"2026-06-04T11:09:53","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074164","qrString":"https://fdms.zimra.co.zw/00000262310406202600000048664AEE9497A7C3EC3A","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4674,"receiptGlobalNo":4866,"receiptID":354961383,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Hot Dog","receiptLineNo":1,"receiptLinePrice":0.87,"receiptLineQuantity":5.0,"receiptLineTotal":4.35,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":5.02}],"receiptTaxes":[{"salesAmountWithTax":5.02,"taxAmount":0.67,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":5.02,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"4aee9497a7c3ec3a452b786e6ca07e26"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:53.559 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:09:54.013 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:05.805 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074171",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:10:00.743",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Chips&Porkchop/Tbone",
+        "receiptLinePrice": 4.35,
+        "receiptLineQuantity": 3.00,
+        "receiptLineTotal": 13.05,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 1.96,
+        "salesAmountWithTax": 15.01
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 15.01
+      }
+    ],
+    "receiptTotal": 15.01,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:06.393 +02:00 [FTL] {"date":"2026-06-04T11:10:06","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074171","qrString":"https://fdms.zimra.co.zw/0000026231040620260000004867294C0AF41C1650F7","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4675,"receiptGlobalNo":4867,"receiptID":354961745,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Chips&Porkchop/Tbone","receiptLineNo":1,"receiptLinePrice":4.35,"receiptLineQuantity":3.0,"receiptLineTotal":13.05,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":15.07}],"receiptTaxes":[{"salesAmountWithTax":15.07,"taxAmount":2.02,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":15.07,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"294c0af41c1650f7950726f3e5705ff3"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:06.393 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:06.868 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:15.614 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074172",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:10:07.057",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Burger",
+        "receiptLinePrice": 0.87,
+        "receiptLineQuantity": 2.00,
+        "receiptLineTotal": 1.74,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 0.26,
+        "salesAmountWithTax": 2.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 2.00
+      }
+    ],
+    "receiptTotal": 2.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:16.291 +02:00 [FTL] {"date":"2026-06-04T11:10:16","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074172","qrString":"https://fdms.zimra.co.zw/000002623104062026000000486877B39496E4254F12","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4676,"receiptGlobalNo":4868,"receiptID":354961818,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Burger","receiptLineNo":1,"receiptLinePrice":0.87,"receiptLineQuantity":2.0,"receiptLineTotal":1.74,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":2.01}],"receiptTaxes":[{"salesAmountWithTax":2.01,"taxAmount":0.27,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":2.01,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"77b39496e4254f128e265aef7e7d5f30"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:16.292 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:16.619 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:34.040 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074175",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:10:20.167",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Sadza/Rice",
+        "receiptLinePrice": 2.17,
+        "receiptLineQuantity": 10.00,
+        "receiptLineTotal": 21.70,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 3.26,
+        "salesAmountWithTax": 24.96
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 24.96
+      }
+    ],
+    "receiptTotal": 24.96,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:34.738 +02:00 [FTL] {"date":"2026-06-04T11:10:34","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074175","qrString":"https://fdms.zimra.co.zw/000002623104062026000000486943680A13B733D4AB","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4677,"receiptGlobalNo":4869,"receiptID":354962213,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Sadza/Rice","receiptLineNo":1,"receiptLinePrice":2.17,"receiptLineQuantity":10.0,"receiptLineTotal":21.7,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":25.06}],"receiptTaxes":[{"salesAmountWithTax":25.06,"taxAmount":3.36,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":25.06,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"43680a13b733d4ab67e46f80272a3bff"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:34.738 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:35.184 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:42.996 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074176",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:10:35.403",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Chips&Qtr Chicken Braai/Fish",
+        "receiptLinePrice": 3.48,
+        "receiptLineQuantity": 2.00,
+        "receiptLineTotal": 6.96,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 1.04,
+        "salesAmountWithTax": 8.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 8.00
+      }
+    ],
+    "receiptTotal": 8.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:43.642 +02:00 [FTL] {"date":"2026-06-04T11:10:43","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074176","qrString":"https://fdms.zimra.co.zw/0000026231040620260000004870DFBB15584C49380D","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4678,"receiptGlobalNo":4870,"receiptID":354962438,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Chips&Qtr Chicken Braai/Fish","receiptLineNo":1,"receiptLinePrice":3.48,"receiptLineQuantity":2.0,"receiptLineTotal":6.96,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":8.04}],"receiptTaxes":[{"salesAmountWithTax":8.04,"taxAmount":1.08,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":8.04,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"dfbb15584c49380d077825fa689dd80b"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:43.642 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:44.073 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:10:53.123 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074177",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:10:44.287",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Sadza/Rice",
+        "receiptLinePrice": 2.17,
+        "receiptLineQuantity": 20.00,
+        "receiptLineTotal": 43.40,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 6.51,
+        "salesAmountWithTax": 49.91
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 49.91
+      }
+    ],
+    "receiptTotal": 49.91,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:11:00.996 +02:00 [FTL] {"details":"Duplicate prevention: Invoice number and device ID combination must be unique","device_id":"26231","error":"Duplicate Invoice Detected","existing_invoice":{"created_at":"2026-06-01T18:13:29.431818","fiscal_day_number":"5","is_fiscalized":true,"receipt_total":50.13,"receipt_type":"FiscalInvoice","zimra_receipt_number":"353134867"},"invoice_number":"2074177","message":"Invoice number '2074177' already exists for device '26231'"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:11:01.150 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:11:10.465 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:11:15.276 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:11:25.339 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:11:29.692 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:11:33.159 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:11:35.820 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:18:53.589 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074178",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:18:46.247",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Hot Dog",
+        "receiptLinePrice": 0.87,
+        "receiptLineQuantity": 3.00,
+        "receiptLineTotal": 2.61,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 0.39,
+        "salesAmountWithTax": 3.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 3.00
+      }
+    ],
+    "receiptTotal": 3.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:18:55.924 +02:00 [FTL] {"date":"2026-06-04T11:18:55","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074178","qrString":"https://fdms.zimra.co.zw/0000026231040620260000004871D4803FCCF6D10DA6","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4679,"receiptGlobalNo":4871,"receiptID":354969903,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Hot Dog","receiptLineNo":1,"receiptLinePrice":0.87,"receiptLineQuantity":3.0,"receiptLineTotal":2.61,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":3.01}],"receiptTaxes":[{"salesAmountWithTax":3.01,"taxAmount":0.4,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":3.01,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"d4803fccf6d10da68ebe8bbaa2a8e0f0"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:18:55.959 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:18:56.255 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:16.231 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074184",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:18:59.253",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Hot Dog",
+        "receiptLinePrice": 0.87,
+        "receiptLineQuantity": 13.00,
+        "receiptLineTotal": 11.31,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 1.70,
+        "salesAmountWithTax": 13.01
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 13.01
+      }
+    ],
+    "receiptTotal": 13.01,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:16.851 +02:00 [FTL] {"date":"2026-06-04T11:19:16","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074184","qrString":"https://fdms.zimra.co.zw/0000026231040620260000004872A2AF84404C24748C","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4680,"receiptGlobalNo":4872,"receiptID":354970380,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Hot Dog","receiptLineNo":1,"receiptLinePrice":0.87,"receiptLineQuantity":13.0,"receiptLineTotal":11.31,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":13.06}],"receiptTaxes":[{"salesAmountWithTax":13.06,"taxAmount":1.75,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":13.06,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"a2af84404c24748c96d323acdd6dadfa"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:16.852 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:17.118 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:33.356 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074185",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:19:17.32",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Burger",
+        "receiptLinePrice": 0.87,
+        "receiptLineQuantity": 8.00,
+        "receiptLineTotal": 6.96,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 1.04,
+        "salesAmountWithTax": 8.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 8.00
+      }
+    ],
+    "receiptTotal": 8.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:33.956 +02:00 [FTL] {"date":"2026-06-04T11:19:33","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074185","qrString":"https://fdms.zimra.co.zw/0000026231040620260000004873C92D28A938B5868B","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4681,"receiptGlobalNo":4873,"receiptID":354970572,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Burger","receiptLineNo":1,"receiptLinePrice":0.87,"receiptLineQuantity":8.0,"receiptLineTotal":6.96,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":8.04}],"receiptTaxes":[{"salesAmountWithTax":8.04,"taxAmount":1.08,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":8.04,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"c92d28a938b5868b31f32286af0fdc6c"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:33.957 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:34.278 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:45.223 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074186",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:19:34.433",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Plain Chips",
+        "receiptLinePrice": 0.87,
+        "receiptLineQuantity": 7.00,
+        "receiptLineTotal": 6.09,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 0.91,
+        "salesAmountWithTax": 7.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 7.00
+      }
+    ],
+    "receiptTotal": 7.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:46.151 +02:00 [FTL] {"date":"2026-06-04T11:19:45","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074186","qrString":"https://fdms.zimra.co.zw/0000026231040620260000004874D264BF9D1F1CC110","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4682,"receiptGlobalNo":4874,"receiptID":354970761,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Plain Chips","receiptLineNo":1,"receiptLinePrice":0.87,"receiptLineQuantity":7.0,"receiptLineTotal":6.09,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":7.03}],"receiptTaxes":[{"salesAmountWithTax":7.03,"taxAmount":0.94,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":7.03,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"d264bf9d1f1cc1104c25156d32fc0e6c"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:46.151 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:46.545 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:52.401 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074187",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:19:46.717",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Sadza/Rice&Porkchop/Tbone",
+        "receiptLinePrice": 4.35,
+        "receiptLineQuantity": 4.00,
+        "receiptLineTotal": 17.40,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 2.61,
+        "salesAmountWithTax": 20.01
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 20.01
+      }
+    ],
+    "receiptTotal": 20.01,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:53.350 +02:00 [FTL] {"date":"2026-06-04T11:19:53","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074187","qrString":"https://fdms.zimra.co.zw/000002623104062026000000487534747CBCB231627F","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4683,"receiptGlobalNo":4875,"receiptID":354970881,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Sadza/Rice&Porkchop/Tbone","receiptLineNo":1,"receiptLinePrice":4.35,"receiptLineQuantity":4.0,"receiptLineTotal":17.4,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":20.1}],"receiptTaxes":[{"salesAmountWithTax":20.1,"taxAmount":2.7,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":20.1,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"34747cbcb231627f83db9e1c781d849c"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:53.352 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:53.654 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:58.883 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074188",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:19:53.82",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Sadza/Rice",
+        "receiptLinePrice": 2.17,
+        "receiptLineQuantity": 15.00,
+        "receiptLineTotal": 32.55,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 4.88,
+        "salesAmountWithTax": 37.43
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 37.43
+      }
+    ],
+    "receiptTotal": 37.43,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:59.672 +02:00 [FTL] {"date":"2026-06-04T11:19:59","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074188","qrString":"https://fdms.zimra.co.zw/0000026231040620260000004876181D65C621E4E67D","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4684,"receiptGlobalNo":4876,"receiptID":354970989,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Sadza/Rice","receiptLineNo":1,"receiptLinePrice":2.17,"receiptLineQuantity":15.0,"receiptLineTotal":32.55,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":37.6}],"receiptTaxes":[{"salesAmountWithTax":37.6,"taxAmount":5.05,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":37.6,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"181d65c621e4e67d50ae0da2ae008a14"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:19:59.673 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:20:00.074 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:20:06.636 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074189",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:20:00.237",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Sadza/Rice",
+        "receiptLinePrice": 2.17,
+        "receiptLineQuantity": 11.00,
+        "receiptLineTotal": 23.87,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 3.58,
+        "salesAmountWithTax": 27.45
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 27.45
+      }
+    ],
+    "receiptTotal": 27.45,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:20:07.272 +02:00 [FTL] {"date":"2026-06-04T11:20:07","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074189","qrString":"https://fdms.zimra.co.zw/00000262310406202600000048772B75D8D8900FC638","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4685,"receiptGlobalNo":4877,"receiptID":354971288,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Sadza/Rice","receiptLineNo":1,"receiptLinePrice":2.17,"receiptLineQuantity":11.0,"receiptLineTotal":23.87,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":27.57}],"receiptTaxes":[{"salesAmountWithTax":27.57,"taxAmount":3.7,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":27.57,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"2b75d8d8900fc638234466207ee2be76"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:20:07.272 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:20:07.718 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:20:19.169 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074195",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:20:12.787",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Hot Dog",
+        "receiptLinePrice": 0.87,
+        "receiptLineQuantity": 13.00,
+        "receiptLineTotal": 11.31,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 1.70,
+        "salesAmountWithTax": 13.01
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 13.01
+      }
+    ],
+    "receiptTotal": 13.01,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:20:20.063 +02:00 [FTL] {"date":"2026-06-04T11:20:19","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074195","qrString":"https://fdms.zimra.co.zw/00000262310406202600000048782F7353E1F477E581","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4686,"receiptGlobalNo":4878,"receiptID":354971319,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Hot Dog","receiptLineNo":1,"receiptLinePrice":0.87,"receiptLineQuantity":13.0,"receiptLineTotal":11.31,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":13.06}],"receiptTaxes":[{"salesAmountWithTax":13.06,"taxAmount":1.75,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":13.06,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"2f7353e1f477e5810397ca52f8fbfb55"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:20:20.064 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:20:20.380 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:20:27.020 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "2074196",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-06-04T11:20:20.56",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Burger",
+        "receiptLinePrice": 0.87,
+        "receiptLineQuantity": 6.00,
+        "receiptLineTotal": 5.22,
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 515,
+        "taxAmount": 0.78,
+        "salesAmountWithTax": 6.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 6.00
+      }
+    ],
+    "receiptTotal": 6.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:20:27.574 +02:00 [FTL] {"date":"2026-06-04T11:20:27","deviceBranchAddress":{"city":"Harare","houseNo":"150","province":"Harare","street":"Kwame Kurumah"},"deviceBranchContacts":{"email":"taskmastertax@gmail.com","phoneNo":"0782717028"},"deviceBranchName":"Lion KingSanganayi Inn","deviceID":"26231","deviceSerialNo":"H10S755251E0407","fiscalDayNumber":"5","invoiceNumber":"2074196","qrString":"https://fdms.zimra.co.zw/0000026231040620260000004879ADF38E96623C6D2D","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":4687,"receiptGlobalNo":4879,"receiptID":354971453,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Burger","receiptLineNo":1,"receiptLinePrice":0.87,"receiptLineQuantity":6.0,"receiptLineTotal":5.22,"receiptLineType":"Sale","taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":6.03}],"receiptTaxes":[{"salesAmountWithTax":6.03,"taxAmount":0.81,"taxCode":"E","taxID":515,"taxPercent":15.5}],"receiptTotal":6.03,"taxCode":"A","taxPayerName":"TASKMASTER","taxPayerTIN":"2000043131","taxPercentage":"15.5","vatNumber":"220095247","verificationCode":"adf38e96623c6d2d9167afc1374eb0a0"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:20:27.574 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-06-04 11:20:27.797 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.

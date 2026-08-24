@@ -1,0 +1,163 @@
+﻿@model ShopMate.Models.JobCard
+
+@{
+    ViewBag.Title = "Edit";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmJobCard", "tbJobCard", true, "Action Successfully Executed")
+
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+            </h1>
+        </section>
+    }
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+</script>
+
+@using (Html.BeginForm("Edit", "JobCard", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmJobCard" }))
+{
+    @Html.AntiForgeryToken()
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Edit Job Card</h3>
+                    </div>
+                    <!-- form start -->
+
+                    <div role="form">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.customername, new { @class = "" })
+                                        @Html.EditorFor(model => model.customername)
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Job Number</label><br />
+                                        <p style="padding-left:20px">@Model.JobNo</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.address, new { @class = "" })
+                                        @Html.EditorFor(model => model.address)
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.OrderNumber, new { @class = "" })
+                                        @Html.EditorFor(model => model.OrderNumber, new { @Id = "OrderNumber" })
+                                        @*<input class="text-box single-line form-control" data-val="true" data-val-number="The field Order Number must be a number." data-val-required="The Order Number field is required." id="OrderNumber" name="OrderNumber" type="number" value="">*@
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Description, new { @class = "" })
+                                        @Html.TextAreaFor(model => model.Description, new { rows = 5, @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                @*<th>@Html.LabelFor(model => model.material, new { @class = "" })</th>
+                                                    <th>@Html.LabelFor(model => model.Quantity, new { @class = "" })</th>
+                                                    <th>@Html.LabelFor(model => model.price, new { @class = "" })</th>*@
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                @*<td>@Html.EditorFor(model => model.material)</td>
+                                                    <td>@Html.EditorFor(model => model.Quantity)</td>
+                                                    <td>@Html.EditorFor(model => model.price)</td>*@
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                @*<th>@Html.LabelFor(model => model.artisan, new { @class = "" })</th>
+                                                    <th>@Html.LabelFor(model => model.machineused, new { @class = "" })</th>
+                                                    <th>@Html.LabelFor(model => model.hours, new { @class = "" })</th>
+                                                    <th>@Html.LabelFor(model => model.price, new { @class = "" })</th>*@
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                @*<td>@Html.EditorFor(model => model.artisan)</td>
+                                                    <td>@Html.EditorFor(model => model.machineused)</td>
+                                                    <td>@Html.EditorFor(model => model.hours)</td>
+                                                    <td>@Html.EditorFor(model => model.price)</td>*@
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <hr />
+                                <div class="col-md-6 col-md-offset-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.sandries, new { @class = "" })
+                                        @Html.EditorFor(model => model.sandries)
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.totalbfvat, new { @class = "" })
+                                        @Html.EditorFor(model => model.totalbfvat)
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.VAT, new { @class = "" })
+                                        @Html.EditorFor(model => model.VAT)
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.TotalAmountWithTax, new { @class = "" })
+                                        @Html.EditorFor(model => model.TotalAmountWithTax)
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.completed, new { @class = "" })
+                                        @Html.EditorFor(model => model.completed)
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Hidden("purchasedate", DateTime.Now)
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            @Html.StarkInputButtion("Save", "submit", "btn btn-primary", "")
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+
+

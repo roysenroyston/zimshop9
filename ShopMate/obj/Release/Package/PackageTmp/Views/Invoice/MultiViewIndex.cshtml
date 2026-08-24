@@ -1,0 +1,186 @@
+@model ShopMate.Models.Invoice
+@{
+    ViewBag.Title = "Advance Manager";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Content/DataTable/new/jquery.dataTables.min.js"></script>
+<link href="~/Content/DataTable/new/jquery.dataTables.min.css" rel="stylesheet" />
+
+@section ScriptsOrCss
+{
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/tabs/Jquery-ui.js"></script>
+    <link href="~/Content/tabs/JqueryUi.css" rel="stylesheet" />
+    <script>
+        $(function () {
+
+            $("#tabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+            $("#tabs li").removeClass("ui-corner-top").addClass("ui-corner-left");
+
+            $("#dialog").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+            $("#opener").click(function () {
+                $("#dialog").dialog("open");
+            });
+
+        });
+    </script>
+
+    <style>
+        table {
+            width: 100% !important;
+        }
+
+        .ui-tabs-vertical {
+            width: 100%;
+        }
+
+            .ui-tabs-vertical .ui-tabs-nav {
+                padding: .2em .1em .2em .2em;
+                float: left;
+                width: 19%;
+            }
+
+                .ui-tabs-vertical .ui-tabs-nav li {
+                    clear: left;
+                    width: 100%;
+                    border-bottom-width: 1px !important;
+                    border-right-width: 0 !important;
+                    margin: 0 -1px .2em 0;
+                }
+
+                    .ui-tabs-vertical .ui-tabs-nav li a {
+                        display: block;
+                    }
+
+                    .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+                        padding-bottom: 0;
+                        padding-right: .1em;
+                        border-right-width: 1px;
+                    }
+
+            .ui-tabs-vertical .ui-tabs-panel {
+                padding: 1em;
+                float: right;
+                width: 80%;
+            }
+    </style>
+}
+
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+    </h1>
+</section>
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+</script>
+
+@Html.StarkAjaxFormSubmiter("frmInvoice", "tbInvoice", true, "Action Successfully Executed")
+<section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-solid box-primary">
+
+
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#EditThis">Edit</a></li>
+
+                    </ul>
+                    <div id="EditThis" style="height:700px;overflow:auto;">
+                        @using (Html.BeginForm("MultiViewIndex", "Invoice", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmInvoice" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            if (ViewBag.IsWorking > 0)
+                            {
+                                <section class="content">
+                                    <!-- Small boxes (Stat box) -->
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="box box-solid box-primary">
+                                                <div class="box-header">
+                                                    <h3 class="box-title">Edit Invoice Info</h3>
+                                                </div><!-- /.box-header -->
+                                                <!-- form start -->
+                                                <div role="form">
+                                                    <div class="box-body">
+                                                        <div class="alert alert-success alert-dismissable" id="dvMsg" style="display:@(TempData["Display"]==null ? "none" : "")">
+                                                            <i class="fa fa-apple"></i>
+                                                            <b> Update Successfully. </b>
+                                                        </div>
+
+
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.IsBilled, new { @class = "" })
+                                                            @Html.EditorFor(model => model.IsBilled)
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.UserId, new { @class = "" })
+                                                            @Html.EditorFor(model => model.UserId)
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.IsPurchaseOrSale, new { @class = "" })
+                                                            @Html.EditorFor(model => model.IsPurchaseOrSale)
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.Hidden("AddedBy", Env.GetUserInfo("userid"))
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.Hidden("DateAdded", DateTime.Now)
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.Hidden("DateModied", DateTime.Now)
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.Hidden("ModifiedBy", Env.GetUserInfo("userid"))
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.WarehouseId, new { @class = "" })
+                                                            @Env.WareHouseUC(Model.WarehouseId)
+ 
+                                                        </div>
+
+
+
+                                                    </div><!-- /.box-body -->
+                                                    <div class="box-footer">
+                                                        @Html.StarkInputButtion("Save", "submit", "btn btn-primary", "")
+                                                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            }
+                        }
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+

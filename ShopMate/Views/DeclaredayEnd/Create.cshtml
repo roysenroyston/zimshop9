@@ -1,0 +1,388 @@
+﻿@model ShopMate.Models.DeclaredayEnd
+
+@{
+    ViewBag.Title = "Create";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmDeclaredayEnd", "tbProduct", true, "Action Successfully Executed")
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+
+
+}
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+    $(document).ready(function () {
+     $('#RefreshPage').click(function () {
+
+          setTimeout(
+             function () {
+               window.location.reload(true);
+             }, 800);
+      });
+    });
+
+</script>
+@using (Html.BeginForm("Create", "DeclaredayEnd", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmDeclaredayEnd" }))
+{
+    @Html.AntiForgeryToken()
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Fill Day End Declare Form</h3>
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+                    <div role="form">
+                        <div class="box-body">
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Declared, new { @class = "" })
+                                @Html.EditorFor(model => model.Declared)
+                            </div>
+                                                       
+                            <div class="form-group">
+                          
+                                @Html.LabelFor(model => model.AddedBy, new { @class = "" })
+                                @Html.DropDownList("AddedBy", null, " -Select- ", new { @id = "AddedBy" })
+                             
+                            </div>
+
+                            <div id="div1">
+                                <h3> Day End Declaration Form</h3>
+                                <div>
+                                    <table class="table-condensed" border="1" align="left" style="width:95%; height:80%;border:1px solid; border-collapse: collapse; font-size:12px;">
+                                        <thead style="background-color:#e5e2e2;">
+                                            <tr>
+                                                <th>Denomination</th>
+                                                <th style="width:30%;">Quantity</th>
+                                                <th style="width:30%;">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr >
+                                                <td> @Html.LabelFor(model => model.twobond, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.fivecents, new { htmlAttributes = new {@Id="fivec", @class = "form-control" } })</td>*@
+                                                <td><input id="twobond" class="form-control text-box single-line" data-val="true" data-val-number="The field 2 ZWL must be a number." name="twobond" onkeyup="GrossAmount()" type="number" value="0"></td>
+                                                <td id="2bond"></td>
+                                            </tr>
+                                            <tr >
+                                                <td> @Html.LabelFor(model => model.fivebond, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.tencents, new { htmlAttributes = new {@Id="tenc", @class = "form-control" } })</td>*@
+                                                <td> <input id="fivebond" class="form-control text-box single-line" data-val="true" data-val-number="The field 5 ZWL must be a number." name="fivebond" onkeyup="GrossAmount()" type="number" value="0"></td>
+                                                <td id="5bond"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.tenbond, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.twentyfivecents, new { htmlAttributes = new {@Id="cents25", @class = "form-control" } })</td>*@
+                                                <td><input id="tenbond" class="form-control text-box single-line" data-val="true" data-val-number="The field 10 ZWL must be a number." onkeyup="GrossAmount()" name="tenbond" type="number" value="0"></td>
+                                                <td id="10bond"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.twentybond, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.fiftycents, new { htmlAttributes = new {@Id="cents50", @class = "form-control" } })</td>*@
+                                                <td><input id="twentybond" class="form-control text-box single-line" data-val="true" data-val-number="The field 20 ZWL must be a number." onkeyup="GrossAmount()" name="twentybond" type="number" value="0"></td>
+                                                <td id="20bond"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.fiftybond, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.fiftycents, new { htmlAttributes = new {@Id="cents50", @class = "form-control" } })</td>*@
+                                                <td><input id="fiftybond" class="form-control text-box single-line" data-val="true" data-val-number="The field 50 ZWL must be a number." onkeyup="GrossAmount()" name="fiftybond" type="number" value="0"></td>
+                                                <td id="50bond"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.hundredbond, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.fiftycents, new { htmlAttributes = new {@Id="cents50", @class = "form-control" } })</td>*@
+                                                <td><input id="hundredbond" class="form-control text-box single-line" data-val="true" data-val-number="The field 100 ZWL must be a number." onkeyup="GrossAmount()" name="hundredbond" type="number" value="0"></td>
+                                                <td id="100bond"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.onedollars, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.onedollars, new { htmlAttributes = new {@Id="dla", @class = "form-control" } })</td>*@
+                                                <td><input id="onedollar" class="form-control text-box single-line" data-val="true" data-val-number="The field 1 Dollar must be a number." onkeyup="GrossAmount()" name="onedollars" type="number" value="0"></td>
+                                                <td id="1dollar"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.twodollars, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.twodollars, new { htmlAttributes = new {@Id="2dla", @class = "form-control" } })</td>*@
+                                                <td><input id="twodollars" class="form-control text-box single-line" data-val="true" data-val-number="The field 2 Dollars must be a number." onkeyup="GrossAmount()" name="twodollars" type="number" value="0"></td>
+
+                                                <td id="2dollars"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.fiveDollars, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.fiveDollars, new { htmlAttributes = new {@Id="5dla", @class = "form-control" } })</td>*@
+                                                <td><input id="fivedollars" class="form-control text-box single-line" data-val="true" data-val-number="The field 5 Dolars must be a number." onkeyup="GrossAmount()" name="fiveDollars" type="number" value="0"></td>
+                                                <td id="5dollars"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.tenDollars, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.tenDollars, new { htmlAttributes = new {@Id="10dla", @class = "form-control" } })</td>*@
+                                                <td><input id="tendollars" class="form-control text-box single-line" data-val="true" data-val-number="The field 10 Dollars must be a number." onkeyup="GrossAmount()" name="tenDollars" type="number" value="0"></td>
+                                                <td id="10dollars"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.twentydollars, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.tdollars, new { htmlAttributes = new {@Id="20dla", @class = "form-control" } })</td>*@
+                                                <td><input id="twentydollars" class="form-control text-box single-line" data-val="true" data-val-number="The field 20 Dollars must be a number." onkeyup="GrossAmount()" name="twentydollars" type="number" value="0"></td>
+                                                <td id="20dollars"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.fiftyDollars, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.fiftyDollars, new { htmlAttributes = new {@Id="50dla", @class = "form-control" } })</td>*@
+                                                <td><input id="fiftydollars" class="form-control text-box single-line" data-val="true" data-val-number="The field 50 Dollars must be a number." onkeyup="GrossAmount()" name="fiftyDollars" type="number" value="0"></td>
+                                                <td id="50dollars"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.hundreddollars, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.hundreddollars, new { htmlAttributes = new {@Id="100dla", @class = "form-control" } })</td>*@
+                                                <td><input id="hundreddollars" class="form-control text-box single-line" data-val="true" data-val-number="The field 100 Dollars must be a number." onkeyup="GrossAmount()" name="hundreddollars" type="number" value="0"></td>
+                                                <td id="100dollars"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.totalcash, new { @class = "" })</td>
+                                                <td><input class="form-control text-box single-line" data-val="true" data-val-number="The field Cash Bond must be a number." id="totalcsh" name="totalcash" type="number" value="0" readonly></td>
+                                                <td id="totalcash"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.totalCashUsd, new { @class = "" })</td>
+                                                <td><input class="form-control text-box single-line" data-val="true" data-val-number="The field usd must be a number." id="testus" name="totalCashUsd" type="number" value="0" readonly></td>
+                                                <td id="totalCashUsd"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.ecocash, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.totalecocash, new { htmlAttributes = new { @class = "form-control" } })</td>*@
+                                                <td><input class="form-control text-box single-line" data-val="true" data-val-number="The field EcoCash must be a number." id="ecocash" name="ecocash" type="text" onkeyup="GrossAmount()" value="0" min="0.0000001" step="any"></td>
+                                                <td id="ecos"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.Fbc, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.telecash, new { htmlAttributes = new { @class = "form-control" } })</td>*@
+                                                <td><input class="form-control text-box single-line" data-val="true" data-val-number="The field FBC  must be a number." id="fbc" onkeyup="GrossAmount()" name="fbc" type="text" value="0"></td>
+                                                <td id="fbccash"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.Acl, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.telecash, new { htmlAttributes = new { @class = "form-control" } })</td>*@
+                                                <td><input class="form-control text-box single-line" data-val="true" data-val-number="The field ACL  must be a number." id="acl" onkeyup="GrossAmount()" name="acl" type="text" value="0"></td>
+                                                <td id="aclcash"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.Zipit, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.telecash, new { htmlAttributes = new { @class = "form-control" } })</td>*@
+                                                <td><input class="form-control text-box single-line" data-val="true" data-val-number="The field FBC  must be a number." id="zipit" onkeyup="GrossAmount()" name="zipit" type="text" value="0"></td>
+                                                <td id="zipitcash"></td>
+                                            </tr>
+                                            <tr hidden>
+                                                <td> @Html.LabelFor(model => model.onemoney, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.onemoney, new { htmlAttributes = new { @class = "form-control" } })</td>*@
+                                                <td><input class="form-control text-box single-line" data-val="true" data-val-number="The field One Money  must be a number." id="onemoney" onkeyup="GrossAmount()" name="onemoney" type="text" value="0"></td>
+                                                <td id="onem"></td>
+                                            </tr>
+                                            <tr hidden>
+                                                <td> @Html.LabelFor(model => model.rtgs, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.rtgs, new { htmlAttributes = new { @class = "form-control" } })</td>*@
+                                                <td><input class="form-control text-box single-line" data-val="true" data-val-number="The field RTGS Swipe must be a number." id="rtgs" onkeyup="GrossAmount()" name="rtgs" type="text" value="0"></td>
+                                                <td id="swipes"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> @Html.LabelFor(model => model.totalAmount, new { @class = "" })</td>
+                                                @*<td>@Html.EditorFor(model => model.totalAmount, new { htmlAttributes = new { @class = "form-control" } })</td>*@
+                                                <td></td>
+                                                <td><input class="form-control text-box single-line" data-val="true" data-val-number="The field Total must be a number." id="totalAmount" name="totalAmount" type="number" value="0" readonly></td>
+
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <br />
+                                <br />
+                                <br />
+                                <table cellpadding="50">
+                                    <tr>
+                                        <td><p style="display:inline-block"><br /><br />Cashier Name:</p> <p style="font-style:italic; font-weight:bold;display:inline-block;"> @Html.Raw(ViewBag.Tilloperator)</p> </td>
+                                        <td><br /><br />Signature..................................<br /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><br /><br />Salesperson:..............................................................................</td>
+                                        <td><br /><br />Signature...................................</td>
+                                    </tr>
+
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <div class="box-footer">
+                            <button onclick="printContent('div1')" btn btn-primary>Print DayEnd</button>
+                            <input type="submit" id="RefreshPage" value="Save DayEnd" class="btn btn-primary">
+                            @* @Html.StarkInputButtion("Save", "submit", "btn btn-primary", "")*@
+                            @*@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })*@
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+<script type="text/javascript">
+
+
+
+    function printContent(el) {
+        var divEl = document.getElementById(el);
+        var allInputs = divEl.querySelectorAll("input,select,textarea");
+        for (var counter = 0; counter < allInputs.length; counter++) {
+            var input = allInputs.item(counter);
+            input.setAttribute("value", input.value);
+        }
+        var restorepage = document.body.innerHTML;
+        var printcontent = document.getElementById(el).innerHTML;
+        document.body.innerHTML = printcontent;
+        window.print();
+        document.body.innerHTML = restorepage;
+    }
+
+    $(document).ready(function () {
+        GrossAmount();
+    });
+    function GrossAmount() {
+
+        var twoobond = $("#2bond").val();
+
+        var fiveebond = $("#5bond").val();
+        var tennbond = $("#10bond").val();
+        var twentyybond = $("#20bond").val();
+        var fiftybond = $("#50bond").text();
+        var hundredbond = $("#100bond").text();
+        var oneedollar = $("#1dollar").text();
+        var twoodollars = $("#2dollars").text();
+        var fiveedollars = $("#5dollars").text();
+        var tenndollars = $("#10dollars").text();
+        var twentyydollars = $("#20dollars").text();
+        var fiftyydollars = $("#50dollars").text();
+        var hundredddollars = $("#100dollars").text();
+        var tbond = $("#totalcash").text();
+        var tousd = $("#totalusd").text();
+        // actual figures
+        var twobond = $("#twobond").val();
+        var fivebond = $("#fivebond").val();
+        var tenbond = $("#tenbond").val();
+        var twentybond = $("#twentybond").val();
+        var fiftybond = $("#fiftybond").val();
+        var hundredbond = $("#hundredbond").val();
+        var onedollar = $("#onedollar").val();
+        var twodollars = $("#twodollars").val();
+        var fivedollars = $("#fivedollars").val();
+        var tendollars = $("#tendollars").val();
+        var twentydollars = $("#twentydollars").val();
+        var fiftydollars = $("#fiftydollars").val();
+        var hundreddollars = $("#hundreddollars").val();
+        var swp = $("#rtgs").val() || 0;
+        var zip = $("#zipit").val() || 0;
+        var fb = $("#fbc").val() || 0;
+        var ac = $("#acl").val() || 0;
+        var ecosh = $("#ecocash").val() || 0;
+        var onem = $("#onemoney").val() || 0;
+        var tels = $("#telecash").val() || 0;
+        //var usd = $("#usd").val();
+        //just this
+
+        //actual totals money
+        var m2bond = 2 * parseFloat(twobond) || 0;
+
+        var m5bond = 5 * parseFloat(fivebond) || 0;
+        var m10bond = 10 * parseFloat(tenbond) || 0;
+        var m20bond = 20 * parseFloat(twentybond) || 0;
+        var m50bond = 50 * parseFloat(fiftybond);
+        var m100bond = 100 * parseFloat(hundredbond);
+        var m1dollar = 1 * parseFloat(onedollar) || 0;
+        var m2dollar = 2 * parseFloat(twodollars) || 0;
+        var m5dollar = 5 * parseFloat(fivedollars) || 0;
+        var m10dollar = 10 * parseFloat(tendollars) || 0;
+        var m20dollar = 20 * parseFloat(twentydollars) || 0;
+        var m50dollar = 50 * parseFloat(fiftydollars) || 0;
+        var m100dollar = 100 * parseFloat(hundreddollars) || 0;
+        var totalbond = m2bond + m5bond + m10bond + m20bond + m50bond + m100bond;
+        var totalusd = m1dollar + m2dollar + m5dollar + m10dollar + m20dollar + m50dollar + m100dollar;
+        //var totalusd = parseFloat(usdola);
+        var overaltotal = totalbond + parseFloat(swp) + parseFloat(onem) + parseFloat(ecosh) + parseFloat(tels) + parseFloat(zip) + parseFloat(fb) + parseFloat(ac);
+
+        //  var oldAmount = $("#SubTotal").val();
+        //   var Sutotal = parseFloat(oldAmount) + parseFloat(amount);
+        //  var tax = parseFloat(Sutotal) * 0.15;
+        // var total = parseFloat(Sutotal) + parseFloat(tax);
+
+        //displays
+
+        $("#2bond").text(m2bond.toFixed(2));
+
+        $("#5bond").text(m5bond.toFixed(2));
+        $("#10bond").text(m10bond.toFixed(2));
+        $("#20bond").text(m20bond.toFixed(2));
+        $("#50bond").text(m50bond.toFixed(2));
+        $("#100bond").text(m100bond.toFixed(2));
+        $("#1dollar").text(m1dollar.toFixed(2));
+        $("#2dollars").text(m2dollar.toFixed(2));
+        $("#5dollars").text(m5dollar.toFixed(2));
+        $("#10dollars").text(m10dollar.toFixed(2));
+        $("#20dollars").text(m20dollar.toFixed(2));
+        $("#50dollars").text(m50dollar.toFixed(2));
+        $("#100dollars").text(m100dollar.toFixed(2));
+        $("#totalAmount").val(overaltotal.toFixed(2));
+        $("#zipitcash").text(parseFloat(zip).toFixed(2));
+        $("#aclcash").text(parseFloat(ac).toFixed(2));
+        $("#fbccash").text(parseFloat(fb).toFixed(2));
+        $("#ecos").text(parseFloat(ecosh).toFixed(2));
+        $("#telec").text(parseFloat(tels).toFixed(2));
+        $("#onem").text(parseFloat(onem).toFixed(2));
+        $("#swipes").text(parseFloat(swp).toFixed(2));
+
+        //$("#totalusd").text(parseFloat(totalusd).toFixed(2))
+        //$("#tusd").val(totalusd.toFixed(2));
+        $("#totalcash").text(totalbond.toFixed(2));
+        $("#totalcsh").val(totalbond.toFixed(2));
+        $("#totalCashUsd").text(totalusd.toFixed(2));
+        $("#testus").val(totalusd.toFixed(2));
+        //displays
+        //  $("#SubTotal").val(Sutotal.toFixed(2));
+        ///$("#VAT").val(tax.toFixed(2));
+        // $("#Total").val(total.toFixed(2));
+
+
+    }
+
+
+
+</script>

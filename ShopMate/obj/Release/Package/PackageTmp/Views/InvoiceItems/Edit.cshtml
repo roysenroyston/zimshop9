@@ -1,0 +1,125 @@
+@model ShopMate.Models.InvoiceItems
+
+@{
+    ViewBag.Title = "Edit";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmInvoiceItems", "tbInvoiceItems", true, "Action Successfully Executed")
+
+ 
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+
+<script type="text/javascript">
+        $(function () { 
+            $('select').searchableOptionList({
+                maxHeight: '250px'
+            });
+        });
+</script>
+
+@using (Html.BeginForm("Edit", "InvoiceItems", FormMethod.Post, new { enctype = "multipart/form-data",id = "frmInvoiceItems"  }))
+{
+    @Html.AntiForgeryToken()
+
+        <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Edit InvoiceItems</h3>
+                    </div> 
+                    <!-- form start -->
+  
+                    <div role="form">
+                        <div class="box-body">
+                              
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ProductId, new { @class = "" })
+                                @Html.DropDownList("ProductId"," -Select- ") 
+                                @Html.StarkDropDownAjaxLink("/Product/Create", "AddMore","")
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Quantity, new { @class = "" })
+                                @Html.EditorFor(model => model.Quantity)  
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.SalePrice, new { @class = "" })
+                                @Html.EditorFor(model => model.SalePrice)  
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TaxAmount, new { @class = "" })
+                                @Html.EditorFor(model => model.TaxAmount)  
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TotalAmount, new { @class = "" })
+                                @Html.EditorFor(model => model.TotalAmount)  
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TotalAmountWithTax, new { @class = "" })
+                                @Html.EditorFor(model => model.TotalAmountWithTax)  
+                            </div>
+                            <div class="form-group">
+                                @Html.Hidden("AddedBy", Env.GetUserInfo("userid")) 
+                            </div>
+                            <div class="form-group">
+                                @Html.Hidden("DateAdded", DateTime.Now) 
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TaxId, new { @class = "" })
+                                @Html.EditorFor(model => model.TaxId)  
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PurchaseId, new { @class = "" })
+                                @Html.EditorFor(model => model.PurchaseId)  
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.SaleId, new { @class = "" })
+                                @Html.EditorFor(model => model.SaleId)  
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ProductStockId, new { @class = "" })
+                                @Html.EditorFor(model => model.ProductStockId)  
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TransactionId, new { @class = "" })
+                                @Html.EditorFor(model => model.TransactionId)  
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.WarehouseId, new { @class = "" })
+                                @Env.WareHouseUC(Model.WarehouseId)  
+                            </div>
+
+
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            @Html.StarkInputButtion("Save","submit","btn btn-primary","") 
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+
+

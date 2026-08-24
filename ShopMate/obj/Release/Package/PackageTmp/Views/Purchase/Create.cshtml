@@ -1,0 +1,349 @@
+@model ShopMate.Models.Purchase
+
+@{
+    ViewBag.Title = "Create";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmPurchase", "tbPurchase", true, "Action Successfully Executed")
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+
+    function multi() {
+        var Quantity = $("#Quantity").val();
+        var UnitPrice = $("#UnitPrice").val();
+        var TotalAmount = Quantity * UnitPrice;
+        $("#TotalAmount").val(TotalAmount);
+    }
+
+    //
+
+</script>
+@using (Html.BeginForm("Create", "Purchase", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmPurchase" }))
+{
+    @Html.AntiForgeryToken()
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Fill Purchase Form</h3>
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+                    <div role="form">
+                        <div class="box-body">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Supplier</label>
+                                    @Html.DropDownList("VendorUserId", null, "-Select Supplier-", new { @Id = "vendorId" })
+                                    @Html.StarkDropDownAjaxLink("/User/CreateVendor", "AddMore", "")
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <table class="table table-bordered table-hover" id="tab_logic">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:25%">Product</th>
+                                            <th style="width:25%">Quantity</th>
+                                            <th style="width:25%">Purchase Price</th>
+                                            <th style="width:25%">Tax ID</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                            <td>
+                                                @* @Html.DropDownList("ProductId", null, new { @Id = "products" })*@
+                                                @Html.DropDownList("ProductId", null, "- Select Product -", new { @Id = "products" })
+                                                @*<input type="text" id="products" name="description" placeholder="description Name" class="form-control" />*@
+                                            </td>
+                                            <td>
+                                                <input type="number" id="quantity" name="quantity" placeholder="Quantity" class="form-control" />
+                                            </td>
+                                            <td>
+                                                <input type="number" id="unitPrice" name="unitPrice" placeholder="Product unitPrice" class="form-control" />
+                                            </td>
+                                            <td>
+                                                <input type="number" id="vat" name="vat" placeholder="Vat ID" class="form-control" readonly />
+                                            </td>
+                                            <td style="display:none">
+                                                <input type="text" id="Name" name="name" placeholder="Name" class="form-control" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="col-md-12">
+                                    <a id="addToList" class="btn btn-primary">Add To List</a>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <table id="detailsTable" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+
+
+                                            <th style="width:15%">Product Id</th>
+                                            <th style="width:30%">Product Name</th>
+                                            <th style="width:15%">Quantity</th>
+                                            <th style="width:15%">Purchase Price</th>
+                                            <th style="width:15%">Vat Amount</th>
+                                            <th style="width:20%">Total Cost</th>
+                                            <th style="width:10%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Invoice Number</label>
+                                <br />
+                                <textarea id="Description" name="Description"></textarea>
+                            </div>
+
+                            <div class="form-group" style="width:180px">
+                                <label>Total Invoice Cost</label>
+                                <br />
+                                <input type="number" id="Total" name="Total" placeholder="0.00" value="0.00" class="form-control" readonly />
+
+                            </div>
+                            <div class="form-group" style="width:180px">
+                                <label>Total VAT</label>
+                                <br />
+                                <input type="number" id="vattotal" name="vattotal" placeholder="0.00" value="0.00" class="form-control" readonly />
+
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Hidden("DateAdded", DateTime.Now)
+                            </div>
+                            <div class="form-group">
+                                @Html.Hidden("AddedBy", Env.GetUserInfo("userid"))
+                            </div>
+
+                        </div>
+                        <div class="box-footer">
+                            @*@Html.StarkInputButtion("Create New", "submit", "btn btn-primary", "")*@
+                            <button id="saveOrder" type="submit" class="btn btn-primary">New Purchase</button>
+
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+<script>
+
+    $(document).ready(function () {
+
+        $("#products").on("change", function () {
+            //var selectedProductId = $(this).children("option:selected").val();
+            var value = $('#dropDownId:selected').val();
+            console.log(value);
+            $.ajax(
+                {
+                    url: '/Product/GetDetails?id=' + $(this).children("option:selected").val(),
+                    type: 'GET',
+                    data: "",
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+
+                        $("#Name").val(data.Name);
+                        $("#unitPrice").val(data.price.toFixed(2));
+                        $("#vat").val(data.vat);
+                        $("#quantity").attr({ "min": 1, "max": 0, placeholder: `Quantity (${data.RemainingQuantity})` });
+
+                    },
+                    error: function () {
+                        alert("error");
+                    }
+                });
+        });
+    });
+
+    function subTotal() {
+        // Get the value of the text boxes
+        unitPrice = document.getElementById("unitPrice").value;
+        qauntity = document.getElementById("qauntity").value;
+
+        // "Convert" string to integer
+        unitPrice = parseInt(unitPrice);
+        qauntity = parseInt(qantity);
+        // Alternatively, use parseFloat if you want decimals
+
+
+        console.log(typeof unitPrice); // number
+        console.log(typeof qauntity); // number
+
+
+        var subTotal = unitPrice * qauntity;
+        alert(subTotal); // 8
+        return false;
+    }
+
+
+    function GrossAmount(amount) {
+        var oldAmount = $("#Total").val();
+        var total = parseFloat(oldAmount) + parseFloat(amount);
+
+        $("#Total").val(total.toFixed(2));
+
+    }
+    function VatTotal(amount) {
+        var oldAmount = $("#vattotal").val();
+        var total = parseFloat(oldAmount) + parseFloat(amount);
+   
+        $("#vattotal").val(total.toFixed(2));
+        alert($("#vattotal").val());
+    }
+
+    //Add Multiple Materails.
+    $("#addToList").click(function (e) {
+        e.preventDefault();
+
+        if ($.trim($("#products").val()) == "" || $.trim($("#quantity").val()) == "") return;
+        var tx = 0.00;
+        var totalvat = 0.00;
+        if ($("#vat").val() == 5) {
+            tx = 0.00;
+        }
+        else if ($("#vat").val() == 2) {
+        
+            var qty = $("#quantity").val();
+            var vatx = $("#vattotal").val();
+            var rat = $("#unitPrice").val();
+            var actRate = (parseFloat(rat) / 1.000);
+            tx = (parseFloat(qty) * parseFloat(actRate)) * 0.15;
+            totalvat = parseFloat(tx) + parseFloat(vatx);
+            //$("#vattotal").val(totalvat.toFixed(2));
+          //  alert(totalvat);
+
+        }
+
+        console.log('adding');
+        var description = $("#products").val(),
+            name = $("#Name").val(),
+            quantity = $("#quantity").val(),
+            unitPrice = $("#unitPrice").val(),
+            totalcost = (parseFloat(unitPrice) * parseFloat(quantity))
+            vat = tx,
+          //  total = totalcost+vat,
+            detailsTableBody = $("#detailsTable tbody");
+
+       var productItem = '<tr><td>' + description + '</td><td>' + name + '</td><td>' + quantity + '</td><td>' + unitPrice + '</td><td>' + vat + '</td><td>'  + (parseFloat(unitPrice) * parseInt(quantity)) + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
+       // var productItem = '<tr><td>' + description + '</td><td>' + name + '</td><td>' + quantity + '</td><td>' + unitPrice + '</td><td>' + vat + '</td><td>' + total+u '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
+        detailsTableBody.append(productItem);
+        GrossAmount(parseFloat(unitPrice) * parseInt(quantity));
+        VatTotal(vat);
+        clearItem();
+    });
+    //After Add A New description In The List, Clear Clean The Form For Add More description.
+    function clearItem() {
+        $("#description").val('');
+        $("#Name").val('');
+        $("#unitPrice").val('');
+        $("#quantity").val('');
+        $("#vat").val('');
+       // $("#vattotal").val('');
+    }
+
+    // After Add A New Order In The List, If You Want, You Can Remove It.
+    $(document).on('click', 'a.deleteItem', function (e) {
+        e.preventDefault();
+        var $self = $(this);
+        var totalamountt = $self.parents('tr').find('td:eq(4)').html();
+        GrossAmount(-totalamountt);
+        if ($(this).attr('data-itemId') == "0") {
+            $(this).parents('tr').css("background-color", "#ff6347").fadeOut(800, function () {
+                $(this).remove();
+            });
+        }
+    });
+    //After Click Save Button Pass All Data View To Controller For Save Database
+    function saveOrder(data) {
+        return $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: "/Purchase/Create",
+            data: data,
+            success: function (result) {
+                alert(result);
+                location.reload();
+            },
+            error: function (req, textStatus, errorThrown) {
+                //this is going to happen when you send something different from a 200 OK HTTP
+                alert('Ooops, something happened: ' + textStatus + ' ' + errorThrown);
+            }
+        });
+    }
+    //Collect Multiple Quotation List For Pass To Controller
+    $("#saveOrder").click(function (e) {
+        e.preventDefault();
+        debugger
+        var QuotationItemArr = [];
+
+        QuotationItemArr.length = 0;
+
+        $.each($("#detailsTable tbody tr"), function () {
+            QuotationItemArr.push({
+                ProductId: $(this).find('td:eq(0)').html(),
+                ProductName: $(this).find('td:eq(1)').html(),
+                Quantity: $(this).find('td:eq(2)').html(),
+                SalePrice: $(this).find('td:eq(3)').html(),
+                TaxAmount: $(this).find('td:eq(4)').html(),
+                TotalAmount: $(this).find('td:eq(5)').html()
+                // TotalPrice: $(this).find('td:eq(3)').html()
+            });
+        });
+
+        var data = JSON.stringify({
+            VendorUserId: $("#vendorId").val(),
+            Description: $("#Description").val(),
+            SubTotal: $("#Total").val(),
+            VatTotal: $("#vattotal").val(),
+            productss: QuotationItemArr,
+
+        });
+
+        $.when(saveOrder(data)).then(function (response) {
+            console.log(response);
+        }).fail(function (err) {
+            console.log(err);
+        });
+    });
+
+</script>
+
+
+

@@ -1,0 +1,99 @@
+﻿@model ShopMate.Models.VanSale
+
+@{
+    ViewBag.Title = "Edit";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmVanSale", "tbVanSale", true, "Action Successfully Executed")
+
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header"> 
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section> 
+    }
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+</script>
+
+@using (Html.BeginForm("Edit", "VanSale", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmVanSale" }))
+{
+    @Html.AntiForgeryToken()
+
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Approve</h3>
+                    </div>
+                    <!-- form start -->
+
+                    <div role="form">
+                        <div class="box-body">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.Id)
+
+                            <div class="form-group" hidden>
+                                @Html.LabelFor(model => model.WarehouseId, htmlAttributes: new { @class = "" })
+                                @Html.EditorFor(model => model.WarehouseId, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group" hidden>
+                                @Html.LabelFor(model => model.Route, htmlAttributes: new { @class = "" })
+                                @Html.EditorFor(model => model.Route, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Route, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group" hidden>
+                                @Html.LabelFor(model => model.VanId, htmlAttributes: new { @class = "" })
+                                @Html.EditorFor(model => model.VanId, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.VanId, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.approved, htmlAttributes: new { @class = "" })
+                                <div class="col-md-10">
+                                    <div class="checkbox">
+                                        @Html.EditorFor(model => model.approved)
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            @*<div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>*@
+                        </div>
+                        <div class="box-footer">
+                            @Html.StarkInputButtion("Save", "submit", "btn btn-primary", "")
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@

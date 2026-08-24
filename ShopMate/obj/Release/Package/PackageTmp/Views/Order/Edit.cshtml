@@ -1,0 +1,85 @@
+﻿@model ShopMate.Models.Order
+
+@{
+    ViewBag.Title = "Edit";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmOrder", "tbOrder", true, "Action Successfully Executed")
+
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+
+<script type="text/javascript">
+        $(function () {
+            $('select').searchableOptionList({
+                maxHeight: '250px'
+            });
+        });
+</script>
+
+@using (Html.BeginForm("Edit", "Order", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmExpense" }))
+{
+    @Html.AntiForgeryToken()
+
+        <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Edit Order</h3>
+                    </div>
+                    <!-- form start -->
+
+                    <div role="form">
+                        <div class="box-body">
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.orderNumber, new { @class = "" })
+                                @Html.EditorFor(model => model.orderNumber)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.goods, new { @class = "" })
+                                @Html.EditorFor(model => model.goods)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.supplier, new { @class = "" })
+                                @Html.EditorFor(model => model.supplier)
+                            </div>
+                            <div class="form-group">
+                                @Html.Hidden("purchasedate", DateTime.Now)
+                            </div>
+
+
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            @Html.StarkInputButtion("Save", "submit", "btn btn-primary", "")
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+
+

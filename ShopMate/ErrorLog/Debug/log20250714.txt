@@ -1,0 +1,512 @@
+2025-07-14 14:40:02.348 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301739,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "14:39:56",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 15:56:05.211 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301740,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "15:55:59",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 15:58:00.892 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301741,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Double Casing",
+        "price": 15,
+        "priceRTGS": 0,
+        "prodId": 5124,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "15.0",
+    "tax": 2.25,
+    "time": "15:57:55",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 16:02:23.043 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301742,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "16:02:17",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 16:26:37.771 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301743,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "16:26:35",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 16:27:08.995 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301744,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "16:26:57",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 16:27:09.198 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301744,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "16:26:57",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 16:27:09.214 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301744,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "16:26:57",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 16:27:09.219 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301744,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "16:26:57",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 16:27:09.220 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301744,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "16:26:57",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 16:27:09.770 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301744,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "16:26:57",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 16:27:10.040 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301744,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "16:26:57",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 16:27:10.366 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301744,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "16:26:57",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 16:27:10.367 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301744,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "16:26:57",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 16:27:10.432 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301744,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "16:26:57",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-07-14 16:27:10.619 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Farai",
+    "date": "14/07/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 2301744,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "CLASS 10 - Extra meters drilling and casing",
+        "price": 20,
+        "priceRTGS": 0,
+        "prodId": 4702,
+        "quantity": 1,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "20.0",
+    "tax": 3,
+    "time": "16:26:57",
+    "userId": "23175"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index","BarCodeGenerator",FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <h2>BarCode</h2>
+            <input type="text" name="barcode" class="form-control col-4" id="txtcode" />
+            <input type="submit" class="btn btn-primary" id="btnGenerate" value="Generate" />
+            <hr />
+            @if (ViewBag.BarcodeImage!= null)
+            {
+               <img src="@ViewBag.BarcodeImage" alt=""/>
+            }
+        </div>
+    </div>
+}

@@ -1,0 +1,193 @@
+﻿@model ShopMate.ModelDto.GRVDto
+@{
+    ViewBag.Title = "Are you sure you want to delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery1.8.3.print.js"></script>
+
+@{
+    string css1 = Url.Content("~/Content/theme/bootstrap/css/bootstrap.min.css");
+}
+
+
+<style>
+    select {
+        width: 150px;
+    }
+    <!-- https://www.transparenttextures.com/wood-pattern.html -->
+</style>
+
+
+
+
+<section class="content" style="background-color: #996600; background-image: url(@Url.Content("~/Content/bg/brick-wall-dark.png"));">
+    <!-- Small boxes (Stat box)  -->
+    <div class="row">
+        <div class="col-xs-2">
+
+
+            <section class="content">
+                <!-- Small boxes (Stat box) -->
+
+                <div class="col-xs-12">
+
+                    <div class="clearfix"></div>
+                    <br />
+
+
+                    <div class="clearfix"></div>
+
+                    <br /><br /><br />
+
+
+
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+        <div class="col-xs-9">
+
+            <div id="dvContainer" class="content invoice" style=" padding inherit; min-height:842px; width:100%; ">
+
+                <div style="margin-bottom:50px;">
+
+                </div>
+                <div class="row" style="font-size:12px;text-align:center;font-weight:bold;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+
+
+                    <div style="text-align:center;font-size:30px;font-weight:bold;">Goods Recieved Voucher</div>
+
+
+                    <div style="text-align:left;margin-left:40px;">
+
+                        <div style="height:10px; margin-bottom:10px; ">
+
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div style="width:96%;">
+
+                                    <section class="invoice">
+                                        <!-- title row -->
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <h2 class="page-header">
+                                                    @*<i class="fa fa-globe"></i> Invoice #@Model.InvoiceId*@
+                                                    <i class="fa fa-globe"></i> GRV No. <label style="color:red;">@Model.Id</label>
+                                                    <small class="pull-right">Date:@DateTime.Now.ToString("MMM/dd/yyyy") </small>
+                                                </h2>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                        <!-- info row -->
+                                        <div class="row invoice-info">
+                                            <div class="col-sm-2 invoice-col">
+                                                <img src="#" style="width:100px;height:100px;" />
+                                            </div>
+                                            <div class="col-sm-4 invoice-col">
+                                                <address style="margin-left:auto;">
+                                                    <strong>ROSELT MITCHELL</strong><br />
+                                                    42 EDISON CRESENT<br />
+                                                    GRANITESIDE<br />
+                                                    PO BOX BE 1043<br />
+                                                    BELVEDERE <br />
+                                                    HARARE<br />
+                                                </address>
+                                            </div>
+
+                                        </div>
+                                        <!-- /.row -->
+                                        <!-- Table row -->
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-5">Supplier: @Model.supplier</div>
+                                                <div class="col-xs-4" style="margin-left:25%;padding-left:50px;">Order Number: @Model.OrderNumber </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <br />
+
+                                            <div class="col-xs-12">
+                                                <table class="table table-striped">
+                                                    <thead style="background-color:#e5e2e2;">
+                                                        <tr>
+                                                            <th>Quantity</th>
+                                                            <th>Description</th>
+                                                            <th>Unit Price</th>
+                                                            <th>Total Price</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var item in Model.GRVMaterials)
+                                                        {
+                                                            <tr>
+                                                                <td>@item.Quantity</td>
+                                                                <td>@item.Description</td>
+                                                                <td>@item.UnitPrice</td>
+                                                                <td>@item.TotalPrice</td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </section>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div style="height:10px; margin-bottom:20px;">
+
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div class="clearfix"></div>
+
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="col-xs-5" style="padding-left:60px;"> @DateTime.Now.ToString("dd/MMM/yyyy hh:mm:tt")</div>
+                        <div class="col-xs-4" style="margin-left:25%;padding-left:80px;">Printed by: @Env.GetUserInfo("name") </div>
+                    </div>
+                </div>
+                <br />
+                <div class="box box-solid box-primary">
+
+                    <div class="box-body">
+                        <!-- Split button -->
+                        <div class="margin">
+                            @using (Html.BeginForm("Delete", "DeliveryNote", FormMethod.Post, new { id = "frmDeliveryNote" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                @Html.StarkInputButtion("Delete", "submit", "btn btn-danger", "")
+                                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                            }
+                        </div>
+                        <!-- flat split buttons -->
+                    </div><!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+

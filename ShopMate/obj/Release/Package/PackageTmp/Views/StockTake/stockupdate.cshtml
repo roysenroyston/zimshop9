@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Stock Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.MenuOpen = "Product";
+}
+@section ScriptsOrCss
+    {
+    <link href="~/Content/DataTable/new/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="~/Content/DataTable/new/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="~/Content/DataTable/new/dataTables.buttons.min.js" type="text/javascript"></script>
+    <script src="~/Content/DataTable/new/jszip.min.js" type="text/javascript"></script>
+    <script src="~/Content/DataTable/new/pdfmake.min.js" type="text/javascript"></script>
+    <script src="~/Content/DataTable/new/vfs_fonts.js" type="text/javascript"></script>
+    <script src="~/Content/DataTable/new/buttons.html5.min.js" type="text/javascript"></script>
+    <link href="~/Content/DataTable/new/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/DataTable/new/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Content/DataTable/new/buttons.print.min.js"></script>
+    <script src="~/Content/DataTable/new/buttons.colVis.min.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+
+}
+<script src="~/Scripts/quagga.js"></script>
+
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+        <small> @ViewBag.Title</small>
+    </h1>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-solid box-primary">
+
+                <div class="box-body">
+                    <div class="margin">
+                        <div class="card animated fadeInRight mr-5 ml-5" bis_skin_checked="1">
+                            <div class="card-header  with-border" bis_skin_checked="1">
+                                <h3 class="card-title">Import CSV file only</h3>
+                                <div id="form_result" bis_skin_checked="1"></div>
+                            </div>
+                            <div class="card-body" bis_skin_checked="1">
+                                <p class="card-text">
+                                    The first line in downloaded csv file should remain as it is. Please do not change
+                                    the order of columns in csv file.
+                                </p>
+								 @*<p> Export the following Id, Name, Barcode, Purchase Price,Sale Price, ProductDescription,WarehouseId,RemainingQuantity</p>*@
+                          
+                                <input type="hidden" name="_token" value="Jf1e6Nt9c1gvlKzkKO9CoHECu3898vXGJsLDhyz2">                    <div class="row" bis_skin_checked="1">
+                                    <div class="col-md-4" bis_skin_checked="1">
+                                        <div class="form-group" bis_skin_checked="1">
+                                            <fieldset class="form-group">
+                                                <label for="logo">Upload File</label>
+                                                <input type="file" class="form-control-file" name="importFile" id="importFile" accept=".xlsx, .xls, .csv">
+                                                <small>Please select csv file (allowed file size 2MB)</small>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-1" bis_skin_checked="1">
+                                    <div class="form-actions box-footer" bis_skin_checked="1">
+                                        <button id="btnUpload" name="import_form" class="btn btn-primary">
+                                            <i class="fa fa fa-check-square-o"></i> Import
+                                        </button>
+                                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<script>
+    $(document).on("click", "#btnUpload", function () {
+        var files = $("#importFile").get(0).files;
+        var formData = new FormData();
+        formData.append('importFile', files[0]);
+        $.ajax({
+            url: '/StockTake/UpdateFile',
+            data: formData,
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                console.log(JSON.stringify(data));
+                if (data.Status === 1) {
+                    alert(data.Message);
+                    window.location.reload();
+                } else {
+                    alert("Failed to Import");
+                    window.location.reload();
+                }
+            }
+        });
+    });
+</script>

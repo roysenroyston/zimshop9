@@ -1,0 +1,67 @@
+2025-09-15 11:15:57.014 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "CreditNote",
+    "receiptCurrency": "USD",
+    "receiptCounter": 2,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "1509202511",
+    "buyerData": null,
+    "receiptNotes": "Wrong Price",
+    "receiptDate": "2025-09-15T11:09:06.347",
+    "creditDebitNote": {
+      "receiptID": 180857122
+    },
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "150g Chocolate Biscuits",
+        "receiptLinePrice": 4.00,
+        "receiptLineQuantity": 25.0,
+        "receiptLineTotal": 100.00,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      },
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 2,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "150g Vanilla Biscuits",
+        "receiptLinePrice": 4.00,
+        "receiptLineQuantity": 25.0,
+        "receiptLineTotal": 100.00,
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "A",
+        "taxPercent": 15,
+        "taxID": 1,
+        "taxAmount": -30.00,
+        "salesAmountWithTax": -230.00
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": -230.00
+      }
+    ],
+    "receiptTotal": -230.00,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-09-15 11:17:02.443 +02:00 [FTL] {"date":"2025-09-15T11:16:11","deviceBranchAddress":{"city":"Harare","houseNo":"17050A","province":"Harare","street":"Bishoff Drive, Graniteside"},"deviceBranchContacts":{"email":"supersbiscuits@gmail.com","phoneNo":"772202848"},"deviceBranchName":"SUPER STAR BISCUITS & CONFECTIONERY (PRIVATE) LIMITED","deviceID":"22925","deviceSerialNo":"H10S755247J1630","fiscalDayNumber":"1","invoiceNumber":"1509202511","qrString":"https://fdms.zimra.co.zw/0000022925150920250000000008E62CAFE072EDED4D","qrUrl":"https://fdms.zimra.co.zw","receiptCounter":8,"receiptGlobalNo":8,"receiptID":180874179,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"150g Chocolate Biscuits","receiptLineNo":1,"receiptLinePrice":-4.0,"receiptLineQuantity":25.0,"receiptLineTotal":-100.0,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15},{"receiptLineHSCode":"12345678","receiptLineName":"150g Vanilla Biscuits","receiptLineNo":2,"receiptLinePrice":-4.0,"receiptLineQuantity":25.0,"receiptLineTotal":-100.0,"receiptLineType":"Sale","taxCode":"A","taxID":1,"taxPercent":15}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":-230.0}],"receiptTaxes":[{"salesAmountWithTax":-230.0,"taxAmount":-30.0,"taxCode":"A","taxID":1,"taxPercent":15.0}],"receiptTotal":-230.0,"taxCode":"A","taxPayerName":"SUPER STAR BISCUITS & CONFECTIONERY (PRIVATE) LIMITED","taxPayerTIN":"2001698285","taxPercentage":"15","vatNumber":"220378596","verificationCode":"e62cafe072eded4dcb41882847d448ec"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-09-15 11:17:02.665 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-09-15 11:17:03.421 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.

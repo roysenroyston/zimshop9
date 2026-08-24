@@ -1,0 +1,293 @@
+﻿@model ShopMate.Models.Quotation
+
+@{
+    ViewBag.Title = "Create";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmQuotation", "tbQuotation", true, "Action Successfully Executed")
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+</script>
+@using (Html.BeginForm("Create", "Quotation", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmQuotation" }))
+{
+    @Html.AntiForgeryToken()
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Fill Quotation Form</h3>
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+                    <form id="NewOrderForm">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Customer Name</label>
+                                        @Html.DropDownList("CustomerUserId", null, "- Select Customer -", new { @id = "customerid" })<br />
+                                        @Html.StarkDropDownAjaxLink("/User/CreateCustomer", "AddMore", "")
+                                    </div>
+                                </div>
+                                <div class="col-md-12 column" style="margin:5px 0px 5px 0px">
+                                    <table class="table table-bordered table-hover" id="tablogic">
+                                        <thead>
+                                            <tr>
+                                                <td style="width:25%">Product</td>
+                                                <th style="width:30%">Description</th>
+                                                <th style="width:20%">Unit Price</th>
+                                                <th style="width:15%">Quantity</th>
+                                                <th style="width:10%">VAT</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td id="partialDiv ">                           
+                                                    @Html.DropDownList("ProductId", null, "- Select Product -", new { @id = "productid" })<br />
+                                                </td>
+                                                <td class="form-group" style="display:none;">
+                                                    <input type="text" id="Name" name="Name" placeholder="" class="form-control" readonly />
+                                                </td>
+                                                <td>
+                                                    <input type="text" id="description" name="description" placeholder="Description" class="form-control" readonly />
+                                                </td>
+
+                                                <td>
+                                                    <input type="number" id="rate" name="rate" placeholder="Rate" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" id="Quantity" name="quantity" placeholder="Quantity" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="text" id="vat" name="vat" placeholder="VAT" class="form-control" readonly />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="col-md-12">
+                                        <a id="addList" class="btn btn-primary">Add To List</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 column" style="margin:5px 0px 5px 0px">
+                                    <table id="materialsDetailsTb" class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Product</th>
+                                                <th style="width:30%">Name</th>
+                                                <th style="width:30%">Description</th>
+                                                <th style="width:20%">Quantity</th>
+                                                <th style="width:15%">Unit Price</th>
+                                                <th style="width:25%">VAT</th>
+                                                <th style="width:10%">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                                <hr />
+                                <div class="col-md-6 col-md-offset-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.SubTotal, new { @class = "" })
+                                        <input type="number" value="0" id="subtotal" name="subtotal" placeholder="Subtotal" class="form-control" readonly/>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.VAT, new { @class = "" })
+                                        <input type="number" value="0" id="vattotal" name="vattotal" placeholder="VAT Total" class="form-control" readonly/>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Total, new { @class = "" })
+                                        <input type="number" value="0" id="total" name="total" placeholder="Total" class="form-control" readonly/>
+                                    </div>   
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Ware house</label>
+                                        @Html.DropDownList("WarehouseId", null, new { @Id = "wareId" })<br />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Hidden("AddedBy", Env.GetUserInfo("userid"))
+                                </div>
+                                <div class="form-group">
+                                    @Html.Hidden("DateAdded", DateTime.Now)
+                                </div>
+                                <div class="form-group">
+                                    @Html.Hidden("DateModied", DateTime.Now)
+                                </div>
+                                <div class="form-group">
+                                    @Html.Hidden("ModifiedBy", Env.GetUserInfo("userid"))
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <button id="saveOrder" type="submit" class="btn btn-primary">Create New Quotation</button>
+                                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+<script>
+    $(document).ready(function()
+    {
+
+        $("#productid").on("change", function()
+        {   var selectedProductId = $(this).children("option:selected").val();
+            var value = $('#dropDownId:selected').val();
+            console.log(value);
+            $.ajax(
+            {
+                url: '/Product/GetDetails?id=' + $(this).children("option:selected").val(),
+                type: 'GET',
+                data: "",
+                contentType: 'application/json; charset=utf-8',
+                success: function(data)
+                {
+                    //alert(data.price);
+                    //$("#partialDiv").html(data);
+                    $("#rate").val(data.price.toFixed(2));
+                    $("#description").val(data.description);
+                    $("#Name").val(data.Name);
+                    $("#vat").val(data.vat);
+                },
+                error: function()
+                {
+                    alert("error");
+                }
+            });
+        });
+    });
+
+    
+
+    //get the customer vat reg
+
+     //Add Multiple Artisan.
+    $("#addList").click(function (e) {
+        e.preventDefault();
+
+        var tx = 0.00;
+        var totalvat = 0.00;
+        if ($.trim($("#Quantity").val()) == "") return;
+        if ($("#vat").val() == 1) {
+            tx = 0.00;
+        }
+        else if($("#vat").val() == 2) {
+
+             var qty = $("#Quantity").val();
+            var vatx = $("#vattotal").val();
+            var rat = $("#rate").val();
+            tx = (parseFloat(qty) * parseFloat(rat)) * 0.15;
+            totalvat = parseFloat(tx) + parseFloat(vatx);
+        }
+        var produtId = $("#productid").val(),
+            name = $("#Name").val(),
+            description = $("#description").val(),
+            quantity = $("#Quantity").val(),
+            rate = $("#rate").val(),
+            vat = tx,
+            materialsDetailsTbBody = $("#materialsDetailsTb tbody");
+        var am = parseFloat(quantity) * parseFloat(rate);
+        var amg = am + tx;
+        var gtx = vat;
+         var productItem = '<tr><td>' + produtId + '</td><td>' + name +'</td><td>'+ description + '</td><td>' + quantity + '</td><td>' + rate + '</td><td>' + vat.toFixed(2) + '</td><td>' + amg.toFixed(2) + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
+            materialsDetailsTbBody.append(productItem);
+            GrossAmount(am, gtx);
+            clearArtisan();
+
+
+    });
+    function clearArtisan() {
+        $("#description").val('');
+        $("#Quantity").val('');
+        $("#rate").val('');
+        $("#vat").val('');
+    }
+     function GrossAmount(amount, tax) {
+        var oldAmount = $("#subtotal").val();
+         var Sutotal = parseFloat(oldAmount) + parseFloat(amount);
+         var oldtax = $("#vattotal").val();
+         var taxs =  parseFloat(oldtax) + parseFloat(tax);
+         var total = parseFloat(Sutotal) + parseFloat(taxs);
+         var bal = parseFloat(total);
+         $("#subtotal").val(Sutotal.toFixed(2));
+         $("#vattotal").val(taxs.toFixed(2));
+         $("#total").val(total.toFixed(2));
+         $("#balance").val(bal.toFixed(2));
+
+    }
+     function balance() {
+        var paid = $("#payments").val();
+
+        var tot = $("#balance").val();
+
+         var bala = tot - parseFloat(paid);
+         $("#balance").text(bala.toFixed(2));
+
+
+    }
+
+    // After Add A New Order In The List, If You Want, You Can Remove It.
+    $(document).on('click', 'a.deleteItem', function (e) {
+        e.preventDefault();
+        var $self = $(this);
+        if ($(this).attr('data-itemId') == "0") {
+            $(this).parents('tr').css("background-color", "#ff6347").fadeOut(800, function () {
+                $(this).remove();
+
+            });
+        }
+    });
+    //After Click Save Button Pass All Data View To Controller For Save Database
+    function saveOrder(data) {
+        return $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: "/Quotation/Create",
+            data: data,
+            success: function (result) {
+                if (result == "Submitted") {
+                                $.sticky('<br/> Sale Successful ', { stickyClass: 'success' });
+                                @*window.location = "@Env.GetSiteRoot()/Invoice/Print/" + result[0].value;*@
+                                window.location = "@Env.GetSiteRoot()/Quotation/Create";
+                            }
+            },
+            error: function (req, textStatus, errorThrown) {
+               alert('Ooops, something happened: ' + textStatus + ' ' + errorThrown + ' ' + req );
+            }
+        });
+    }
+    
+
+</script>
+

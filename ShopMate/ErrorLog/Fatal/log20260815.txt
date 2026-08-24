@@ -1,0 +1,253 @@
+2026-08-15 12:29:37.752 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "4168056",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-08-15T12:18:30.063",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Chimombe 1L X 6",
+        "receiptLinePrice": 8.20,
+        "receiptLineQuantity": 3.00,
+        "receiptLineTotal": 24.60,
+        "taxCode": "B",
+        "taxPercent": 0.0,
+        "taxID": 2
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 517,
+        "taxAmount": 0.00,
+        "salesAmountWithTax": 24.60
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 24.60
+      }
+    ],
+    "receiptTotal": 24.60,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:37.752 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "4168056",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-08-15T12:18:30.063",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Chimombe 1L X 6",
+        "receiptLinePrice": 8.20,
+        "receiptLineQuantity": 3.00,
+        "receiptLineTotal": 24.60,
+        "taxCode": "B",
+        "taxPercent": 0.0,
+        "taxID": 2
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 517,
+        "taxAmount": 0.00,
+        "salesAmountWithTax": 24.60
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 24.60
+      }
+    ],
+    "receiptTotal": 24.60,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:37.752 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "4168056",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-08-15T12:18:30.063",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Chimombe 1L X 6",
+        "receiptLinePrice": 8.20,
+        "receiptLineQuantity": 3.00,
+        "receiptLineTotal": 24.60,
+        "taxCode": "B",
+        "taxPercent": 0.0,
+        "taxID": 2
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 517,
+        "taxAmount": 0.00,
+        "salesAmountWithTax": 24.60
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 24.60
+      }
+    ],
+    "receiptTotal": 24.60,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:37.753 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "4168056",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-08-15T12:18:30.063",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Chimombe 1L X 6",
+        "receiptLinePrice": 8.20,
+        "receiptLineQuantity": 3.00,
+        "receiptLineTotal": 24.60,
+        "taxCode": "B",
+        "taxPercent": 0.0,
+        "taxID": 2
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 517,
+        "taxAmount": 0.00,
+        "salesAmountWithTax": 24.60
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 24.60
+      }
+    ],
+    "receiptTotal": 24.60,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:38.212 +02:00 [FTL] {
+  "receipt": {
+    "receiptType": "FiscalInvoice",
+    "receiptCurrency": "USD",
+    "receiptCounter": 1,
+    "receiptGlobalNo": 31,
+    "invoiceNo": "4168056",
+    "buyerData": null,
+    "receiptNotes": null,
+    "receiptDate": "2026-08-15T12:18:30.063",
+    "creditDebitNote": null,
+    "receiptLinesTaxInclusive": false,
+    "receiptLines": [
+      {
+        "receiptLineType": "Sale",
+        "receiptLineNo": 1,
+        "receiptLineHSCode": "12345678",
+        "receiptLineName": "Chimombe 1L X 6",
+        "receiptLinePrice": 8.20,
+        "receiptLineQuantity": 3.00,
+        "receiptLineTotal": 24.60,
+        "taxCode": "B",
+        "taxPercent": 0.0,
+        "taxID": 2
+      }
+    ],
+    "receiptTaxes": [
+      {
+        "taxCode": "E",
+        "taxPercent": 15.5,
+        "taxID": 517,
+        "taxAmount": 0.00,
+        "salesAmountWithTax": 24.60
+      }
+    ],
+    "receiptPayments": [
+      {
+        "moneyTypeCode": "Cash",
+        "paymentAmount": 24.60
+      }
+    ],
+    "receiptTotal": 24.60,
+    "receiptPrintForm": "Receipt48"
+  }
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:39.233 +02:00 [FTL] Invoice submission already in progress
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:39.235 +02:00 [FTL] Invoice submission already in progress
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:39.347 +02:00 [FTL] ZIMRA request failed
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:39.375 +02:00 [FTL] ZIMRA request failed
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:39.481 +02:00 [FTL] {"date":"2026-08-15T12:29:39","deviceBranchAddress":{"city":"Harare","houseNo":"Shop 1","province":"Harare","street":"995 Main Street, Highfield"},"deviceBranchContacts":{"email":"sales@gilead.co.zw","phoneNo":"0774856415"},"deviceBranchName":"Gilead Technologies","deviceID":"27925","deviceSerialNo":"H10E731253ZP1190","fiscalDayNumber":"5","invoiceNumber":"4168056","qrString":"https://fdmstest.zimra.co.zw/0000027925150820260000000012C5738EB9152BFA60","qrUrl":"https://fdmstest.zimra.co.zw","receiptCounter":2,"receiptGlobalNo":12,"receiptID":11497959,"receiptLines":[{"receiptLineHSCode":"12345678","receiptLineName":"Chimombe 1L X 6","receiptLineNo":1,"receiptLinePrice":8.2,"receiptLineQuantity":3.0,"receiptLineTotal":24.6,"receiptLineType":"Sale","taxCode":"B","taxID":2,"taxPercent":0.0}],"receiptPayments":[{"moneyTypeCode":"Cash","paymentAmount":24.6}],"receiptTaxes":[{"salesAmountWithTax":24.6,"taxAmount":0.0,"taxCode":"B","taxID":2,"taxPercent":0.0}],"receiptTotal":24.6,"taxCode":"A","taxPayerName":"GILEAD TECHNOLOGIES","taxPayerTIN":"2000886756","taxPercentage":"15.5","validationErrorColor":null,"validationErrors":[],"vatNumber":"220360301","verificationCode":"c5738eb9152bfa6073dfd0e9461251dc"}
+
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:39.553 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:39.578 +02:00 [FTL] ShopMate.Models.myResponse
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:39.595 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:39.645 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:39.673 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-08-15 12:29:39.785 +02:00 [FTL] 
+System.Exception: Exception of type 'System.Exception' was thrown.

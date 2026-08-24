@@ -1,0 +1,201 @@
+﻿@model ShopMate.Models.DeliveryNote
+
+@{
+    ViewBag.Title = "Create";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmDeliveryNote", "tbDeliveryNote", true, "Action Successfully Executed")
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+</script>
+@using (Html.BeginForm("Create", "DeliveryNote", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmDeliveryNote" }))
+{
+    @Html.AntiForgeryToken()
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Fill DeliveryNote Form</h3>
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+                    <div role="form">
+                        <div class="box-body">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.invoiceNo, new { @class = "" })
+                                @Html.EditorFor(model => model.invoiceNo, new { @Id = "invoiceNo" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.OrderNo, new { @class = "" })
+                                @Html.EditorFor(model => model.OrderNo, new { @Id = "OrderNo" })
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table table-bordered table-hover" id="tab_logic">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:25%">Quantity</th>
+                                            <th style="width:25%">Description</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="number" id="quantity" name="quantity" placeholder="Quantity" class="form-control" />
+                                            </td>
+                                            <td>
+                                                <input type="text" id="description" name="description" placeholder="description Name" class="form-control" />
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="col-md-12">
+                                    <a id="addToList" class="btn btn-primary">Add To List</a>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <table id="detailsTable" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+
+                                            <th style="width:20%">Quantity</th>
+                                            <th style="width:30%">Description</th>
+
+                                            <th style="width:10%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                            <div class="form-group">
+                                @Html.Hidden("ddate", DateTime.Now, new { @Id = "ddate" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.DropDownList("CustomerUserId", null, new { @Id = "CustomerUserId" })<br />
+                            </div>
+
+                            <br />
+                            <br />
+
+                            <div class="box-footer">
+                                <button id="saveOrder" type="submit" class="btn btn-primary">Create New DNote</button>
+                                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+<script>
+        //Add Multiple Materails.
+        $("#addToList").click(function (e) {
+            e.preventDefault();
+
+           // if ($.trim($("#description").val()) == ""  || $.trim($("#quantity").val()) == "") return;
+
+            console.log('adding');
+            var quantity = $("#quantity").val(),
+                description = $("#description").val(),
+                detailsTableBody = $("#detailsTable tbody");
+
+            var productItem = '<tr><td>' + quantity + '</td><td>' + description + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
+            detailsTableBody.append(productItem);
+            clearItem();
+        });
+        //After Add A New description In The List, Clear Clean The Form For Add More description.
+        function clearItem() {
+            $("#description").val('');
+            $("#quantity").val('');
+        }
+
+        // After Add A New Order In The List, If You Want, You Can Remove It.
+        $(document).on('click', 'a.deleteItem', function (e) {
+            e.preventDefault();
+            var $self = $(this);
+            if ($(this).attr('data-itemId') == "0") {
+                $(this).parents('tr').css("background-color", "#ff6347").fadeOut(800, function () {
+                    $(this).remove();
+                });
+            }
+        });
+        //After Click Save Button Pass All Data View To Controller For Save Database
+        function saveOrder(data) {
+            return $.ajax({
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                type: 'POST',
+                url: "/DeliveryNote/Create",
+                data: data,
+                success: function (result) {
+                    alert(result);
+                    location.reload();
+                },
+                error: function () {
+                    alert("Error!")
+                }
+            });
+        }
+        //Collect Multiple Quotation List For Pass To Controller
+        $("#saveOrder").click(function (e) {
+            e.preventDefault();
+
+            var QuotationItemArr = [];
+
+            QuotationItemArr.length = 0;
+
+            $.each($("#detailsTable tbody tr"), function () {
+                QuotationItemArr.push({
+                    quantity: $(this).find('td:eq(0)').html(),
+                    description: $(this).find('td:eq(1)').html()
+
+                });
+            });
+
+            var data = JSON.stringify({
+                invoiceNo: $("#invoiceNo").val(),
+                OrderNo: $("#OrderNo").val(),
+                ddate: $("#ddate").val(),
+                CustomerUserId: $("#CustomerUserId").val(),
+                delivered: true,
+                dnotematerial: QuotationItemArr,
+
+            });
+
+            $.when(saveOrder(data)).then(function (response) {
+                console.log(response);
+            }).fail(function (err) {
+                console.log(err);
+            });
+        });
+</script>
+
+

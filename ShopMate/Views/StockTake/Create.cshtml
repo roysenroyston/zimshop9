@@ -1,0 +1,255 @@
+﻿@model ShopMate.Models.StockTake
+
+@{
+    ViewBag.Title = "Create";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+@section ScriptsOrCss
+{
+    <link href="~/Content/DataTable/new/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="~/Content/DataTable/new/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="~/Content/DataTable/new/dataTables.buttons.min.js" type="text/javascript"></script>
+    <script src="~/Content/DataTable/new/jszip.min.js" type="text/javascript"></script>
+    <script src="~/Content/DataTable/new/pdfmake.min.js" type="text/javascript"></script>
+    <script src="~/Content/DataTable/new/vfs_fonts.js" type="text/javascript"></script>
+    <script src="~/Content/DataTable/new/buttons.html5.min.js" type="text/javascript"></script>
+    <link href="~/Content/DataTable/new/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/DataTable/new/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Content/DataTable/new/buttons.print.min.js"></script>
+    <script src="~/Content/DataTable/new/buttons.colVis.min.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+}
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+<script src="~/Scripts/quagga.js"></script>
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+@Html.StarkAjaxFormSubmiter("frmStockTake", "tbStockTake", true, "Action Successfully Executed")
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+
+    let data = ''
+
+    window.onload = function () {
+        window.document.body.addEventListener('keydown', function (event) {
+            if (event.keyCode == 13 || event.keyCode == 16 || event.keyCode == 17) {
+                event.preventDefault();
+                return;
+            }
+
+            if (event.ctrlKey) {
+                event.preventDefault();
+                return;
+            }
+
+            data += event.key
+            console.log(data)
+        });
+    }
+
+    //BarCode reader
+    function order_by_occurrence(arr) {
+        var counts = {};
+        arr.forEach(function (value) {
+            if (!counts[value]) {
+                counts[value] = 0;
+            }
+            counts[value]++;
+        });
+
+        return Object.keys(counts).sort(function (curKey, nextKey) {
+            return counts[curKey] < counts[nextKey];
+        });
+    }
+
+    $(document).ready(function () {
+        loadProducts();
+
+    });
+      function loadProducts(){
+        var oTableStockTake = "";
+        var ControlerNameStockTake = "@Url.Content("~/StockTake")";
+        // debugger;
+        oTableStockTake = $("#tbStockTake").dataTable({
+
+            "bProcessing": true,
+            "bDestroy": true,
+            "dom": 'lBfrtip',
+            "sAjaxSource": "@Url.Content("~/StockTake/GetGrid")",
+            "buttons": [
+                 { extend: 'copyHtml5', exportOptions: { columns: ':visible' } }
+                , { extend: 'excelHtml5', exportOptions: { columns: ':visible' } }
+                , { extend: 'csvHtml5', exportOptions: { columns: ':visible' } }
+                , { extend: 'pdfHtml5', exportOptions: { columns: ':visible' } }
+                , { extend: 'print', exportOptions: { columns: ':visible' } }
+                , 'colvis'
+            ], columnDefs: [{ visible: false }],
+            "pageLength": 10,
+            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+            "aoColumns": [
+
+ {}
+, {}
+, {}
+             //   , {}, {}
+    //            , {
+    //                "mRender": function (oObj, type, row) {
+    //                    return '<input type="number" id="purchase' + row[0] + '" value="0"/>';
+    //                    //return '<input type="number" id="variance" value="0"/>';
+    //}}
+                , {
+                    "mRender": function (oObj, type, row) {
+
+                        //return '<input type="number" id="variance" value="0"/>';
+                        return '<input type="number" id="counted' + row[0] + '" value="0"/>';
+                }
+                }
+
+
+]
+
+        }
+      );
+
+}
+//dummy funtion for success
+function AjaxSucceeded() {
+}
+
+//Any AJAX failure method
+function AjaxFailed(err) {
+    alert(err.responseText);
+}
+</script>
+<style type="text/css">
+    td {
+        padding: 0 15px 0 15px;
+    }
+</style>
+@using (Html.BeginForm("Create", "StockTake", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmStockTake" }))
+{
+    @Html.AntiForgeryToken()
+    <!-- Main content -->
+    <section class="content">
+
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Fill Stock Take Form</h3>
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+                    <div role="form">
+
+                        <table id="tbStockTake" class="table-bordered">
+                            <thead>
+                                <tr>
+                                    @*<th>Actions</th>*@
+                                    <td>Product Id</td>
+                                    <td style="width:30%">Product</td>
+                                    @*<td style="width:20%;color:cornflowerblue;">Category</td>*@
+                                    <td>BarCode</td>
+                                    @*<td>Actual Quantity</td>*@
+                                 
+                                    <td>Counted Quantity</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+                        </table>
+
+
+
+
+
+                    </div>
+                    <div class="box-footer">
+                        @*<button id="saveOrder" type="submit" class="btn btn-primary">Upate Stock</button>*@
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Upload", "Stockupdate", null, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+}
+
+<!-- Small boxes (Stat box) -->
+<script>
+
+
+    function saveOrder(data) {
+        return $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: "/Stocktake/Create",
+            data: data,
+            success: function (result) {
+                //alert(result);
+                window.location.reload();
+            },
+            error: function (req, textStatus, errorThrown) {
+                //this is going to happen when you send something different from a 200 OK HTTP
+                alert('Ooops, something happened: ' + textStatus + ' ' + errorThrown);
+            }
+        });
+    }
+    //Collect Multiple Quotation List For Pass To Controller
+    $("#saveOrder").click(function (e) {
+        e.preventDefault();
+        debugger
+        var QuotationItemArr = [];
+
+        QuotationItemArr.length = 0;
+
+        $.each($("#tbStockTake tbody tr"), function () {
+            QuotationItemArr.push({
+                ProductId: $(this).find('td:eq(0)').html(),
+                actualquantity: $(this).find('td:eq(4)').html(),
+                //counted: $(this).find('td:eq(5)').innerHTML,
+                counted: document.getElementById("counted" + $(this).find('td:eq(0)').html()).value,
+               // purchase: document.getElementById("purchase" + $(this).find('td:eq(0)').html()).value,
+
+            });
+        });
+
+        var data = JSON.stringify({
+            //InvoiceNumber: $("#invoiceNumber").val(),
+            //VendorUserId: $("#vendorId").val(),
+            ObjStocktake: QuotationItemArr,
+
+        });
+
+        $.when(saveOrder(data)).then(function (response) {
+            console.log(response);
+        }).fail(function (err) {
+            console.log(err);
+        });
+    });
+
+
+
+</script>

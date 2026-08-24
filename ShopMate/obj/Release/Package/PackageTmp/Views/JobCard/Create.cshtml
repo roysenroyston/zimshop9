@@ -1,0 +1,359 @@
+﻿@model ShopMate.Models.JobCard
+
+@{
+    /**/
+
+    ViewBag.Title = "Create";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmJobCard", "tbJobCard", true, "Action Successfully Executed")
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+            </h1>
+        </section>
+    }
+}
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+</script>
+
+<!-- Main content -->
+<section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-solid box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Fill JobCard Form</h3>
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                <form id="NewOrderForm">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.customername, new { @class = "" })
+                                    @Html.DropDownList("userId", null, new { @Id = "customername" })
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.WarehouseId, new { @class = "" })
+                                    @Html.DropDownList("WarehouseId", (IEnumerable<SelectListItem>)ViewBag.WarehouseId, "select warehouse", new { @Id = "WarehouseId" })
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.JobNo, new { @class = "" })
+                                    <input type="number" id="jobNo" name="jobNo" placeholder="Job Number" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-8" hidden>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.address, new { @class = "" })
+                                    <input type="text" id="address" name="address" placeholder="Address" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.OrderNumber, new { @class = "" })
+                                    <input type="number" id="OrderNumber" name="OrderNumber" placeholder="Order number" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Description, new { @class = "" })
+                                    <input type="text" id="Description" name="Description" placeholder="Description" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <table class="table table-bordered table-hover" id="tab_logic">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:40%">Material</th>
+                                            <th style="width:30%">Quantity</th>
+                                            <th style="width:30%">Unit Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="text" id="material" name="material" placeholder="material Name" class="form-control" />
+                                            </td>
+                                            <td>
+                                                <input type="number" id="quantity" name="quantity" placeholder="Quantity" class="form-control" />
+                                            </td>
+                                            <td>
+                                                <input type="number" id="price" name="price" placeholder="Product Price" class="form-control" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="col-md-12">
+                                    <a id="addToList" class="btn btn-primary">Add To List</a>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <table id="detailsTable" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:30%">Material</th>
+                                            <th style="width:20%">Unit Price</th>
+                                            <th style="width:15%">Quantity</th>
+                                            <th style="width:25%">Total Amount</th>
+                                            <th style="width:10%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+
+                            <div class="col-md-12 column" style="margin:5px 0px 5px 0px">
+                                <table class="table table-bordered table-hover" id="tablogic">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:30%">Artisan</th>
+                                            <th style="width:20%">Machine Used</th>
+                                            <th style="width:15%">Hours</th>
+                                            <th style="width:25%">Price</th>
+                                            <th style="width:25%">Rate</th>
+                                            <th style="width:10%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                @*<input type="text" id="artisan" name="artisan" placeholder="Artisan" class="form-control" />*@
+                                                @Html.DropDownList("artisanId", null, new { @Id = "artisan" })
+                                            </td>
+                                            <td>
+                                                @*<input type="text" id="machineused" name="machineused" placeholder="Machine used" class="form-control" />*@
+                                                @Html.DropDownList("machineId", null, new { @Id = "machineused" })
+                                            </td>
+                                            <td>
+                                                <input type="number" id="hours" name="hours" placeholder="Hours" class="form-control" />
+                                            </td>
+                                            <td>
+                                                <input type="number" id="prices" name="price" placeholder="Price" class="form-control" />
+                                            </td>
+                                            <td>
+                                                <input type="number" id="rate" name="rate" placeholder="rate" class="form-control" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="col-md-12">
+                                    <a id="addList" class="btn btn-primary">Add Material To List</a>
+                                </div>
+                            </div>
+                            <div class="col-md-12 column" style="margin:5px 0px 5px 0px">
+                                <table id="artisanDetailsTb" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:30%">Artisan</th>
+                                            <th style="width:20%">Machine Used</th>
+                                            <th style="width:15%">Hours</th>
+                                            <th style="width:25%">Price</th>
+                                            <th style="width:25%">Rate</th>
+                                            <th style="width:10%"></th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                            <hr />
+                            <div class="col-md-6 col-md-offset-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.sandries, new { @class = "" })
+                                    <input type="text" id="sandries" name="sandries" placeholder="Sandries" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.totalbfvat, new { @class = "" })
+                                    <input type="text" id="totalbfvat" name="totalbfvat" placeholder="Total before vat" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.VAT, new { @class = "" })
+                                    <input type="text" id="VAT" name="VAT" placeholder="VAT" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.TotalAmountWithTax, new { @class = "" })
+                                    <input type="text" id="TotalAmountWithTax" name="TotalAmountWithTax" placeholder="Total Amount With Tax" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.completed, new { @class = "" })
+                                    @Html.EditorFor(model => model.completed)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <button id="saveOrder" type="submit" class="btn btn-primary">Create New JobCard</button>
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    //totals
+    function GrossAmount(amount) {
+        var oldAmount = $("#totalbfvat").text();
+        var total = parseFloat(oldAmount) + parseFloat(amount);
+        $("#totalbfvat").text(total.toFixed(2));
+    }
+
+    //Add Multiple Materails.
+
+    $("#addToList").click(function (e) {
+        e.preventDefault();
+
+        if ($.trim($("#material").val()) == ""|| $.trim($("#quantity").val()) == "") return;
+
+        var material = $("#material").val(),
+            quantity = $("#quantity").val(),
+            price = $("#price").val(),
+            detailsTableBody = $("#detailsTable tbody");
+        var total = quantity * price;
+
+        GrossAmount(total);
+        var productItem = '<tr><td>' + material + '</td><td>' + quantity + '</td><td>' + price + '</td><td>' + (parseFloat(price) * parseInt(quantity)) + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
+        detailsTableBody.append(productItem);
+        clearItem();
+    });
+    //After Add A New Material In The List, Clear Clean The Form For Add More Material.
+    function clearItem() {
+        $("#material").val('');
+        $("#price").val('');
+        $("#quantity").val('');
+    }
+
+    //Add Multiple Artisan.
+    $("#addList").click(function (e) {
+        e.preventDefault();
+
+     //   if ($.trim($("#artisan").val()) == "" || $.trim($("#machineused").val()) == "" || $.trim($("#hours").val()) == ""|| $.trim($("#rate").val()) == "") return;
+
+        var artisan = $("#artisan").val(),
+            machineused = $("#machineused").val(),
+            hours = $("#hours").val(),
+            prices = $("#prices").val(),
+            rate = $("#rate").val(),
+            artisanDetailsTbBody = $("#artisanDetailsTb tbody");
+
+        var total = hours * rate;
+
+        GrossAmount(total);
+
+        var productItem = '<tr><td>' + artisan + '</td><td>' + machineused + '</td><td>' + hours + '</td><td>' + prices + '</td><td>' + rate + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
+        artisanDetailsTbBody.append(productItem);
+        clearArtisan();
+    });
+    //After Add A New Artisa In The List, Clear Clean The Form For Add More Artisan.
+    function clearArtisan() {
+        $("#artisan").val('');
+        $("#machineused").val('');
+        $("#hours").val('');
+        $("#prices").val('');
+        $("#rate").val('');
+    }
+    // After Add A New Order In The List, If You Want, You Can Remove It.
+    $(document).on('click', 'a.deleteItem', function (e) {
+        e.preventDefault();
+        var $self = $(this);
+        if ($(this).attr('data-itemId') == "0") {
+            $(this).parents('tr').css("background-color", "#ff6347").fadeOut(800, function () {
+                $(this).remove();
+            });
+        }
+    });
+    //After Click Save Button Pass All Data View To Controller For Save Database
+    function saveOrder(data) {
+        return $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: "/JobCard/Create",
+            data: data,
+            success: function (result) {
+                alert(result);
+                location.reload();
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.log(errorThrown)
+                console.warn(xhr.responseText)
+            }
+        });
+    }
+    //Collect Multiple JobCard List For Pass To Controller
+    $("#saveOrder").click(function (e) {
+        e.preventDefault();
+
+        var jobCardMaterialsArr = [];
+        var jobCardServicesArr = [];
+
+        jobCardMaterialsArr.length = 0;
+        jobCardServicesArr.length = 0;
+
+        $.each($("#detailsTable tbody tr"), function () {
+            jobCardMaterialsArr.push({
+                material: $(this).find('td:eq(0)').html(),
+                quantity: $(this).find('td:eq(1)').html(),
+                price: $(this).find('td:eq(2)').html(),
+                Totalamount: $(this).find('td:eq(3)').html()
+            });
+        });
+
+        $.each($("#artisanDetailsTb tbody tr"), function () {
+            jobCardServicesArr.push({
+                artisan: $(this).find('td:eq(0)').html(),
+                machineused: $(this).find('td:eq(1)').html(),
+                hours: $(this).find('td:eq(2)').html(),
+                prices: $(this).find('td:eq(3)').html(),
+                rate: $(this).find('td:eq(4)').html()
+            });
+        });
+
+        var data = JSON.stringify({
+            customername: $("#customername").val(),
+            jobNo: $("#jobNo").val(),
+            address: $("#address").val(),
+            OrderNumber: $("#OrderNumber").val(),
+            Description: $("#Description").val(),
+            sandries: $("#sandries").val(),
+            totalbfvat: $("#totalbfvat").val(),
+            VAT: $("#VAT").val(),
+            TotalAmountWithTax: $("#TotalAmountWithTax").val(),
+            jobCardMaterials: jobCardMaterialsArr,
+            jobCardServices: jobCardServicesArr
+        });
+
+        $.when(saveOrder(data)).then(function (response) {
+            console.log(response);
+        }).fail(function (err) {
+            console.log(err);
+        });
+    });
+</script>
+
+

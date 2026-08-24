@@ -1,0 +1,7 @@
+[
+     { "id":1, "text":"Assets","children":[
+	      { "id":2, "text":"Current Assets","children":[
+		     { "id":13, "text":"Bank Accounts"},
+		     { "id":14, "text":"PayPal"},]},
+
+		  { "id":3, "text":"Fixed Assets"},]}

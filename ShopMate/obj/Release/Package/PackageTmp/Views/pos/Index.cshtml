@@ -1,0 +1,880 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section ScriptsOrCss
+{
+    <link href="~/Content/DataTable/new/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="~/Content/DataTable/new/jquery.dataTables.min.js" type="text/javascript"></script>
+    <link href="~/Content/DataTable/new/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/quagga.js"></script>
+}
+
+<style>
+    #tbProduct_wrapper select {
+        display: none;
+    }
+
+    #tbProduct_filter input {
+        width: 190px;
+        margin-right: 20px;
+    }
+
+    .selecttax {
+        font-size: 11px;
+        height: 20px;
+        padding: 0;
+        width: 150px;
+    }
+</style>
+
+<script type="text/javascript">
+
+    var amountsCurrenciesInTextboxes = [];
+
+    function getAmountsCurrenciesInTextboxes() {
+
+        amountsCurrenciesInTextboxes = [
+            { "currency": "USD", "amount": $("#usdtxt").val() },
+      //      { "currency": "Rand", "amount": $("#randtxt").val() },
+         //   { "currency": "Pula", "amount": $("#pulatxt").val() },
+            { "currency": "CASH", "amount": $("#cashtxt").val() },
+            { "currency": "ECOCASH", "amount": $("#ecocashtxt").val() },
+            { "currency": "ZIPIT", "amount": $("#swipetxt").val() },
+            { "currency": "ECOCASHUSD", "amount": $("#telecashtxt").val() },
+         //   { "currency": "One Money", "amount": $("#onemoneytxt").val() },
+           // { "customerInfo": "customer", "amount": $("#customerinfotxt").val() }, //ngoni
+        ];
+
+    }
+
+    $(document).on("keypress", function (e) {
+        if (e.which == 13) {
+            document.getElementById("btnPlus").click();
+        }
+    });
+    let data = '';
+
+    window.onload = function () {
+        window.document.body.addEventListener('keydown', function (event) {
+
+
+            if (event.ctrlKey) {
+                event.preventDefault();
+                return;
+            }
+
+            //data += event.key;
+            //console.log(data);
+        });
+    }
+
+    $(document).ready(function () {
+
+        getproducts();
+          updatep();
+    });
+    function cleartext(){
+        $('.dataTables_filter input').val('');
+    }
+
+    function getproducts() {
+        var oTableProduct = "";
+        var ControlerNameProduct = "@Url.Content("~/pos")";
+        // debugger; this is the product from get product in pos controler
+        oTableProduct = $("#tbProduct").dataTable({
+            "bRetrieve": true,
+            "bProcessing": true,
+            "dom": 'lBfrtip',
+            "sAjaxSource": "@Url.Content("~/pos/GetProduct")",
+            "pageLength": 50,
+            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+            "aoColumns": [
+                 {
+                     "mRender": function (oObj, type, row,full) {
+
+                         var content = '<img src="/Uploads/' + row[3] + '" style="width:50px;height:50px;" /> &nbsp;<b>' + row[6] + '</b>&nbsp;' + row[0] + ' <br/><b>Price: ' + row[1] + '</b> <br/>Remain:<input type="number" value="'+ row[7] +'" style="width:88px;" id="remainq" readonly/>';
+
+                         return content;
+                     }
+
+                 },
+
+            {
+                "mRender": function (oObj, type, row) {
+
+
+                    var buttons = '<div class="text-center"> <input type="number" value="1" style="width:44px;" id="Qty' + row[2] + '"/> <button onclick="addInv(' + row[2] + ',' + row[4] + ',' + row[5] + ',\'' + row[0] + '\','+row[7]+')" type="button" id="btnPlus" class="btn btn-default btn-xs btn-warning" title="Click To Add" > <i class="fa fa-plus"></i></button></div>';
+
+                    return buttons;
+                }
+
+            },
+
+            ]
+
+        });
+
+        $(".dataTables_filter input").on("keypress", function (e) {
+            if (e.which == 13) {
+                document.getElementById("btnPlus").click();
+            }
+        });
+
+        $("#tbody").on('click', ".delete", function () {
+
+           // var qty = document.getElementById("Qty" + id).value;
+            var amt = $(this).attr("value");
+            $(this).parents('.item-row').remove();
+           /// GrossAmount(-amt, -tax);
+          //  alert(qty);
+
+        });
+
+        $("#btnPayOut").on('click', function () {
+            if (confirm("are you sure you want to payout!") == true) {
+                var products = [];
+                //var quantity = [];
+
+
+                getAmountsCurrenciesInTextboxes();
+
+                $("tr.item-row").each(function () {
+                    $this = $(this);
+                    products.push({ product: $this.attr("id"), qty: $this.attr("qty") });
+                    //quantity.push($this.attr("qty"));
+                });
+
+                var cs = $("#cashtxt").val();
+                var eco = $("#ecocashtxt").val();
+                var swipee = $("#swipetxt").val();
+
+                var usdAmount =  $("#usdtxt").val();
+                var randAmount = $("#randtxt").val();
+                var pulaAmount = $("#pulatxt").val();
+                var telecashAmount = $("#telecashtxt").val();
+                var oneMoneyAmount = $("#onemoneytxt").val();
+                //var customerinfo = $("#customerInfotxt").val();//ngoni
+
+                var gt = $("#GrossAmount").val();
+                var customerId = $("#CustomerUserId").val();
+                var PaidAmount = $("#tmoney").val();
+               // var CustomerInfo = $("#customerinfotxt").val();//ngoni
+                console.log(customerId);
+                //console.log(CustomerInfo);//ngoni
+                var ttol = parseFloat(cs) + parseFloat(swipee) + parseFloat(eco) + parseFloat(usdAmount) + parseFloat(randAmount) + parseFloat(pulaAmount) + parseFloat(telecashAmount) + parseFloat(oneMoneyAmount);
+                if (customerId >= 0) {
+                    //if ($("#PaymentModeId").val() >= 0) {
+                    //if (parseFloat(gt) >= ttol)
+
+                    if (PaidAmount >= parseFloat(gt)) {
+                        console.log(gt)
+                        console.log(PaidAmount)
+                            $.ajax({
+                                url: "/pos/Sale",
+                                type: "POST",
+                                data: {
+                                    'products': products,
+                                    'CustomerUserId': $("#CustomerUserId").val(),
+                                    'orderNo': 0,
+                                    'PaymentModeId': 6,
+                                    'SaleNote': $("#SaleNote").val(),
+                                    'TaxName': $(".selecttax").val(),
+                                    "currencyAmounts": amountsCurrenciesInTextboxes,
+                                    'Change': $("#ichange").val(),
+                                    'wareId': $("#WarehouseId").val(),
+                                    "GrossTax": $("#GrossTax").val(),
+                                    "TotalAmount": $("#GrossAmount").val(),
+                                    "CurrencyTotals": $("#NewID").val()
+                                },
+                                dataType: 'json',
+                                success: function (data) {
+                                    if (data[0].msg == "Done") {
+                                        $.sticky('<br/> Sale Successful ', { stickyClass: 'success' });
+                                        window.location = "@Env.GetSiteRoot()/pos/print/" + data[0].value;
+                                        @*window.location = "@Env.GetSiteRoot()/pos";*@
+                                    }
+                                    else {
+                                        $.sticky('<br/> ! Something  went wrong. <br/> ' + data + '', { stickyClass: 'error' });
+                                    }
+                                }, error: function () { $.sticky('<br/> ! Something went wrong. <br/> ' + data + '', { stickyClass: 'error' }); }
+                            });
+                        } else {
+                             $.sticky('<br/> ! Total Amount tendered should be equal to total sale amount. <br/>  ', { stickyClass: 'error' });
+                        }
+                    //} else {
+                    //    $.sticky('<br/> ! Select Payment Mode First. <br/>  ', { stickyClass: 'error' });
+                    //}
+                } else {
+                    $.sticky('<br/> ! Select Customer First. <br/>  ', { stickyClass: 'error' });
+                }
+            }
+        });
+    }
+    function updatep() {
+
+        $("#upbtn").click(function () {
+
+
+            var catId = $("#usID").val();
+            var pernt = $("#amount").val();
+            var payment = $("#paymentfor").val();
+            var cashacc = $("#cashaccount").val();
+            var eco = $("#ecocashaccount").val();
+            var swip = $("#swipeaccount").val();
+            var telecashacc = $("#telecashaccount").val();
+             var onemoneyacc = $("#onemoneyaccount").val();
+            var usdacc = $("#usdhaccount").val();
+            var randacc = $("#randaccount").val();
+            var pulaacc = $("#pulaaccount").val();
+            $.ajax({
+                type: "POST",
+                //url: "~/UpdatePrice?Id=" + catId + "&addprice=" + pernt + "",
+                url: "@Url.Action("Accountpay", "pos")?Ids=" + catId + " &addbalance= " + pernt + " &description=" + payment + " &cash=" + cashacc + " &ecocash=" + eco + " &swipe=" + swip + "&telecash ="+ telecashacc +"&onemoney ="+ onemoneyacc +"&usd ="+ usdacc +"&rand ="+ randacc +"&pula ="+ pulaacc +"",
+
+                datatype: "json",
+                data: '{Ids:' + catId + ', addbalance: "' + pernt + '",description: "' + payment + '",cash: "' + cashacc + '",ecocash: "' + eco + '",swipe: "' + swip + '",telecash: "' + telecashacc + '",onemoney: "' + onemoneyacc + '",usd: "' + usdacc + '",rand: "' + randacc + '",pula: "' + pulaacc + '" }',
+                success: function () {
+
+                    $("#upbtn").closest("tr").find("td:eq(4)").text(400);
+                    $('#progressmodal').modal('hide');
+
+
+                },
+                error: function (req, textStatus, errorThrown) {
+                    //this is going to happen when you send something different from a 200 OK HTTP
+                    alert('Ooops, something happened: ' + textStatus + ' ' + errorThrown);
+                }
+
+            });
+
+
+        });
+    }
+    function addInv(id,price,tax,name,remaining)
+    {
+
+       // var remainingquantity = document.getElementById("remainq" + id).value;
+        var qty = document.getElementById("Qty" + id).value;
+
+
+        if (qty > 0)
+
+        {
+            if (parseInt(remaining) >= parseInt(qty) ) {
+            //if (parseInt(remaining) > 0 ) {
+                var taxAmount = 0;
+
+
+               // if ($("#tbody").find("#" + id).length > 0) { //if row already have then remove old one
+                   // $($("#tbody").find("#" + id).find(".delete")).click();
+                 //  qty++;
+
+                //}
+                //if (tax == 15) {
+                //    alert("eeh ndizvo " + tax)
+                //    taxAmount = TaxAmount+ 
+                //} else {
+                //    alert("haa maya "+ tax)
+                //}
+
+
+
+                var total = (parseFloat(qty) * parseFloat(price));
+                var TaxAmount = (parseFloat(tax) / 100) * (parseFloat(total));
+                var grosstotal = total;
+                // (total + TaxAmount)
+                //alert("MADII NDAPFURA NEPANO1 "+ tax);
+
+
+                //var div = '<tr class="item-row" id="' + id + '"  qty="' + qty + '" >   <td> <a class="delete" value="' + grosstotal + '" href="javascript:;" title="Remove row">X</a> &nbsp; ' + name + '</td> <td>' + price + '</td> <td> <select class="selecttax"><option value="VAT @@' + tax + '%">VAT @@' + tax + '%</option><option value="None @@' + tax + '%">None @@' + tax + '%</option> @Html.Raw(ViewBag.moreTax)  </select> </td>  <td>' + qty + '</td> <td>' + grosstotal + '</td>   </tr>';
+                //var div = '<tr class="item-row" id="' + id + '"  qty="' + qty + '" >   <td> <a class="delete" value="' + grosstotal + '" href="javascript:;" title="Remove row">X</a> &nbsp; ' + name + '</td> <td>' + price + '</td> <td><select class="selecttax"><option value="VAT @@' + tax + '%">VAT @@' + tax + '%</option>@Html.Raw(ViewBag.moreTax)  </select></td>  <td>' + qty + '</td> <td>' + grosstotal + '</td>   </tr>';
+                var div = '<tr class="item-row" id="' + id + '"  qty="' + qty + '" >   <td> <a class="delete" value="' + grosstotal + '" href="javascript:;" title="Remove row">X</a> &nbsp; ' + name + '</td> <td>' + price + '</td> <td> <option class="selecttax" value="VAT @@' + tax + '%">VAT @@' + tax + '%</option>@Html.Raw(ViewBag.moreTax) </td>  <td>' + qty + '</td> <td>' + grosstotal + '</td>   </tr>';
+                alert(tax);
+                             $("#tbody").append(div);
+                cleartext();
+                GrossAmount(grosstotal, TaxAmount);
+
+                currenciesListInputChange();
+
+                $("#divPayout").show();
+                }
+
+            else {
+                if (parseInt(remaining) > 0) {
+                    alert("Product Stock " + remaining + "  left");
+                    cleartext();
+                }
+                else
+                {
+                    alert("Product Not Available in Stock");
+                    cleartext();
+                }
+
+            }
+        }
+        else
+        {
+            alert("Increase Quantity First");
+        }
+    }
+
+    function GrossAmount(amount,Tamount)
+    {
+
+
+
+
+        var oldTax = $("#GrossTax").val();
+        var newTaxAmount = parseFloat(oldTax) + parseFloat(Tamount);
+
+        $("#GrossTax").val(newTaxAmount);
+
+
+   
+        var oldAmount = $("#subtotal").val();
+        var total = parseFloat(oldAmount) + parseFloat(amount);
+
+        var grossAmount = total + newTaxAmount;
+
+        $("#subtotal").val(total);
+
+        $("#GrossAmount").val(grossAmount);
+
+        
+
+        CustomerChange();
+    }
+
+    function CustomerChange() {
+
+        var fromcustomer = $("#tmoney").val();
+
+        var gross = $("#GrossAmount").val();
+       // var gross = $("#NewID").val();
+        var change = fromcustomer - parseFloat(gross);
+        $("#ichange").val(change.toFixed(2));
+        $("#tenderedmoney").text(fromcustomer);
+
+    }
+    //BarCode reader
+
+
+    //get method for rates
+    function getRates() {
+        var oTableRates = "";
+        var ControlerRates = "@Url.Content("~/Rates")";
+        // debugger;
+        oTableRates = $("#tbRate").dataTable({
+            "bRetrieve": true,
+            "bProcessing": true,
+            "dom": 'lBfrtip',
+            "sAjaxSource": "@Url.Content("~/Rates/GetGrid")",
+            "pageLength": 50,
+            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+            "aoColumns": [
+                 {
+                     "mRender": function (oObj, type, row) {
+
+                         var content = '<img src="/Uploads/' + row[3] + '" style="width:50px;height:50px;" /> &nbsp;<b>' + row[6] + '</b>&nbsp;' + row[0] + ' <br/><b>Price: ' + row[1] + '</b>';
+
+                         return content;
+                     }
+
+                 },
+            {
+                "mRender": function (oObj, type, row) {
+
+                    var buttons = '<div class="text-center"> <input type="number" value="1" style="width:44px;" id="Qty' + row[2] + '"/> <button onclick="addInv(' + row[2] + ',' + row[4] + ',' + row[5] + ',\'' + row[0] + '\')" type="button" id="btnPlus" class="btn btn-default btn-xs btn-warning" title="Click To Add" > <i class="fa fa-plus"></i></button></div>';
+
+                    return buttons;
+                }
+
+            }
+            ]
+        });
+    }
+    // Event Listeners
+
+
+    function currenciesListInputChange() {
+        // variables  for the currencies
+        var baseCurrencyAmount, baseRate, baseTendered, baseBalance, baseChange;
+        var bondRate, bondTendered, bondBalance, bondChange;
+        var rtgsRate, rtgsTendered, rtgsBalance, rtgsChange;
+        var ecocashRate, ecocashTendered, ecocashBalance, ecocashChange;
+        var oneMoneyRate, oneMoneyTendered, oneMoneyBalance, oneMoneyChange;
+        var teleCashRate, teleCashTendered, teleCashBalance, teleCashChange;
+        var zwlRate, zwlTendered, zwlBalance, zwlChange;
+
+        //Base Currency
+        baseCurrencyAmount = $('#GrossAmount').text();
+        baseRate = $('#GrossAmount').text();
+        baseTendered = 0.00;
+        baseBalance = baseRate;
+        baseChange = 0.00;
+
+        $('#usdrate').val(baseRate);
+        $('#usdtendered').val(baseTendered.toFixed(2));
+        $('#usdchange').val(baseChange.toFixed(2));
+        $('#usdtendered').on('click', function () {
+            $(this).select();
+        });
+        $('#usdtendered').on('input', function () {
+            var rate, tender, change, balance;
+            rate, balance = baseRate;
+            tender = $('#usdtendered').val();
+            if ((tender - baseBalance) > 0) {
+                $('#usdchange').val(parseFloat(tender - baseBalance).toFixed(2));
+                $('#usdbalance').val(0.00.toFixed(2)) && $('#fcabalance').val(0.00.toFixed(2)) && $('#rgtsbalance').val(00.toFixed(2));
+            } else {
+                $('#usdbalance').val(parseFloat(baseBalance - tender).toFixed(2));
+                $('#usdchange').val(0.00.toFixed(2));
+            }
+        });
+        $('#usdbalance').val(baseBalance);
+
+        $('#fcarate').val(baseRate);
+        $('#fcatendered').val(baseTendered.toFixed(2));
+        $('#fcabalance').val(baseBalance);
+        $('#fcachange').val(baseChange.toFixed(2));
+
+        //RTGS  Dollar
+        rtgsrate = baseCurrencyAmount * 7;
+        rtgstendered = 0.00;
+        rtgsbalance = rtgsrate;
+        rtgschange = 0.00;
+
+        $('#rgtsrate').val(parseFloat(rtgsrate));
+        $('#rgtstendered').val(0.00.toFixed(2));
+        $('#rgtsbalance').val(rtgsbalance.toFixed(2));
+        $('#rgtschange').val(0.00.toFixed(2));
+
+        //Bond Note
+        $('#bondrate').val(baseRate);
+        $('#bondtendered').val(baseTendered.toFixed(2));
+        $('#bondbalance').val(baseBalance);
+        $('#bondchange').val(baseChange.toFixed(2));
+
+        ////Ecocash
+        $('#ecocashrate').val(parseFloat(baseRate * 7.25));
+        $('#ecocashtendered').val(baseTendered.toFixed(2));
+        $('#ecocashbalance').val(baseBalance);
+        $('#ecocashchange').val(baseChange.toFixed(2));
+
+        ////Telecash
+        $('#telecashrate').val(parseFloat(baseRate * 7.5));
+        $('#telecashtendered').val(baseTendered.toFixed(2));
+        $('#telecashbalance').val(baseBalance);
+        $('#telecashchange').val(baseChange.toFixed(2));
+
+        ////Onemoney
+        $('#onemoneyrate').val(parseFloat(baseRate * 7.2));
+        $('#onemoneytendered').val(baseTendered.toFixed(2));
+        $('#onemoneybalance').val(baseBalance);
+        $('#onemoneychange').val(baseChange.toFixed(2));
+
+    }
+    function cmurrenciesListInputChange() {
+        var baseCurrencyAmount = $('#GrossAmount').text();
+        var usd = $('#usdrate').val(parseFloat(baseCurrencyAmount));
+        var bond = usd * 4.2;
+        $('#bondrate').val(bond);
+        //if (baseCurrencyAmount !== newBaseCurrencyAmount || isNewBaseCurrency) {
+        //    baseCurrencyAmount = newBaseCurrencyAmount;
+        //    const baseCurrencyRate = currencies.find(currency => currency.abbreviation === baseCurrency).rate;
+        //    currenciesList.querySelectorAll(".currency").forEach(currencyLI => {
+        //        if (currencyLI.id !== baseCurrency) {
+        //            const currencyRate = currencies.find(currency => currency.abbreviation === currencyLI.id).rate;
+        //            const exchangeRate = currencyLI.id === baseCurrency ? 1 : (currencyRate / baseCurrencyRate).toFixed(4);
+        //            currencyLI.querySelector(".input input").value = exchangeRate * baseCurrencyAmount !== 0 ? (exchangeRate * baseCurrencyAmount).toFixed(4) : "";
+        //        }
+        //    });
+        //}
+    }
+
+    currenciesList.addEventListener("focusout", currenciesListFocusOut);
+
+    function currenciesListFocusOut(event) {
+        const inputValue = event.target.value;
+        if (isNaN(inputValue) || Number(inputValue) === 0) event.target.value = "";
+        else event.target.value = Number(inputValue).toFixed(4);
+    }
+
+    currenciesList.addEventListener("keydown", currenciesListKeyDown);
+
+    function currenciesListKeyDown(event) {
+        if (event.key === "Enter") event.target.blur();
+    }
+    // Auxiliary Functions
+</script>
+
+<section class="content" style="background-color: #ff0000; background-image: url(@Url.Content("~/Content/bg/woven-light.png"));">
+    <!-- Small boxes (Stat box)  -->
+    <div class="row">
+
+        <div class="col-xs-4" style="padding-right:0px;">
+
+            <section class="content">
+
+                <div class="col-xs-12" style="padding-left:0px;height:640px;overflow:auto;">
+
+                    <div class="clearfix"></div>
+                    <br />
+
+                    <table id="tbProduct" class="display">
+                        <thead>
+                            <tr>
+                                <th style="width:100px !important;"> Product  </th>
+                                <th style="width:100px !important;"> Qty  </th>
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <div class="clearfix"></div>
+                    <br />
+
+                </div>
+
+                <div class="clearfix"></div>
+                <br />
+            </section>
+
+        </div>
+
+        <div class="col-xs-8" style="padding-left:0px;padding-right:0px;">
+            <div id="barcode-scanner" style="display:none;"></div>
+            <a href="~/Sale/" class="btn btn-block btn-default btn-xs">Go To Sale List</a>
+            <div class="btn-group">
+                <button id="accountpay" class="btn btn-success" data-target="#progressmodal" data-toggle="modal">Account Payment</button>
+
+            </div>
+            <div id="dvContainer" class="content invoice" style="padding: inherit; min-height: 135mm;  width:93%; ">
+
+                <div style="margin-bottom:50px;">
+
+                </div>
+                <div class="row" style="font-size:12px;text-align:center;font-weight:bold;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+
+
+                    <div style="text-align:center;font-size:30px;font-weight:bold;">Point Of Sale</div>
+
+
+                    <div style="text-align:left;margin-left:40px;">
+                        <div style="height:10px; margin-bottom:10px; ">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div style="width:96%;">
+                                    <table id="tbInvoiceItem" class="table table-striped table-bordered">
+                                        <thead style="background-color:#e5e2e2;">
+                                            <tr>
+                                                <th>Product Name </th>
+                                                <th>Price </th>
+                                                <th>Tax </th>
+                                                <th>Quantity </th>
+                                                <th> Total </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody"> </tbody>
+                                        <tfoot style="background-color:#e5e2e2;">
+                                            <tr>
+                                                <th> </th>
+                                                <th> </th>
+                                                <th></th>
+                                                <th> </th>
+                                                <th> </th>
+
+                                            </tr>
+                                
+                                            <tr>
+                                                <th> </th>
+                                                <th>Subtotal  </th>
+                                                <th><input id="subtotal" value="0" readonly /></th>
+
+                                                <th>Gross Tax </th>
+                                                <th><input id="GrossTax" value="0" readonly /></th>
+                                            </tr>
+                                            <tr>
+                                                <th> </th>
+                                                <th> </th>
+                                                <th></th>
+
+                                                <th>Gross Amount </th>
+                                                <th><input id="GrossAmount" value="0" readonly /></th>
+                                            </tr>
+
+                                      
+
+                                            <tr>
+                                                <th> </th>
+
+                                                <th>From Customer </th>
+                                                <th><input type="number" id="tmoney" onkeyup="CustomerChange();" readonly /></th>
+                                                <th>Customer Change </th>
+                                                <th><input id="ichange" value="0" readonly /></th>
+
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                    <div class="dropdown">
+                         
+                                        <div class="form-group">
+                                   
+
+                                            @Html.DropDownList("PaymentModes", null, "-Select Currency-", new { @id = "currencyDropDown" })
+                                            <div class="editor-field">
+
+                                            </div>
+
+                                            <input id="NewID" value="0" readonly />
+                                        </div>
+
+                                        <!--<div>-->
+                                    
+                                    </div>
+
+                                    <div id="divPayout" style="display:none;">
+                                        <div style="display:none">
+                                            @Html.DropDownList("CustomerUserId", " -Select Customer- ")<br />
+                                        </div>
+                                        <div>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Cash ZWG</th>
+                                                        <th >ZIPIT</th>
+                                                        <th >ECOCASH</th>
+                                                        <th>ECOCASHUSD</th>
+                                   
+                                                        <th>Cash Usd</th>
+                                              
+
+                                                    </tr>
+
+                                                </thead>
+                                                <tr>
+                                                    <td><input value="0" type="number" class="form-control" id="cashtxt" /></td>
+                                                    <td ><input value="0" type="number" class="form-control" id="swipetxt" /></td>
+                                                    <td ><input value="0" type="number" class="form-control" id="ecocashtxt" /></td>
+                                                    <td><input value="0" type="number" class="form-control" id="telecashtxt" /></td>
+                                                    
+                                                    <td><input value="0" type="number" class="form-control" id="usdtxt" /></td>
+                                              
+                                                </tr>
+
+                                            </table>
+                                            @*<input value="customer Info" type="text" class="form-control" id="customerinfotxt" />*@
+                                        </div>
+
+                                        <div style="display:none">
+
+                                            @Html.DropDownList("PaymentModes", " -Select Payment Mode- ")<br />
+                                            <input type="text" id="SaleNote" placeholder="Any Remarks" value="Sale" style="width:325px" />
+                                        </div>
+
+                                        <input style="margin-top:10px;" type="button" id="btnPayOut" class="btn btn-primary" value="PayOut And Print" />
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <div style="height:10px; margin-bottom:20px;">
+
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div class="clearfix"></div>
+
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="col-xs-5" style="padding-left:60px;"> @DateTime.Now.ToString("dd/MMM/yyyy hh:mm:tt")</div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <div class="modal" id="progressmodal" data-keyboad="false" data-backdrop="static" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Account Payment</h4>
+                    <button class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" id="progrdata">
+                    <div class="form-group">
+                        <label id="pincdelb">Customer Name</label>
+                        @*" -Select- "*@
+                        @*@ @Html.DropDownList("UserId", new { @id = "usID" }, " -Select- ") *@
+                        @Html.DropDownList("UserId", null, new { @id = "usID" })
+                        @Html.StarkDropDownAjaxLink("/User/CreateCustomer", "AddMore", "")
+
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Amount Paid</label>
+                        <input type="number" id="amount" readonly />
+                    </div>
+                    <div class="md-form">
+                        <label for="form10">Payment For</label>
+                        <i class="fas fa-pencil-alt prefix"></i>
+                        <textarea id="paymentfor" class="md-textarea form-control" rows="3"></textarea>
+
+                    </div>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cash</th>
+                                    <th>Ecocash</th>
+                                    <th>Swipe</th>
+                                    <th>Telecash</th>
+                                    <th>OneMoney</th>
+                                    <th>USD</th>
+                                    <th>Rand</th>
+                                    <th>Pula</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td><input value="0" type="number" class="form-control" id="cashaccount" /></td>
+                                <td><input value="0" type="number" class="form-control" id="ecocashaccount" /></td>
+                                <td><input value="0" type="number" class="form-control" id="swipeaccount" /></td>
+                                <td><input value="0" type="number" class="form-control" id="telecashaccount" /></td>
+                                <td><input value="0" type="number" class="form-control" id="onemoneyaccount" /></td>
+                                <td><input value="0" type="number" class="form-control" id="usdaccount" /></td>
+                                <td><input value="0" type="number" class="form-control" id="randaccount" /></td>
+                                <td><input value="0" type="number" class="form-control" id="pulaaccount" /></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-primary" id="upbtn">PayOut</button>
+                    <button class="btn-primary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<script>
+
+    var cashToCurrencyConvertorUrl = '/pos/CashToCurrencyConvertor';
+    var currencyToCashConvertorUrl = '/pos/CurrencyToCashConvertor';
+
+    $(function () {
+        $("#currencyDropDown").change(function () {
+
+            var selectedCurrency = $(this).children("option:selected").text();
+            var amountFromCustomer = $("#tmoney").val() ? $("#tmoney").val() : 0.00;
+            var amountToBeConverted = $("#GrossAmount").val() - amountFromCustomer;
+
+            $.ajax({
+                type: "GET",
+                url: cashToCurrencyConvertorUrl,
+                contentType: "application/json",
+                data: {
+                    "selectedCurrecy": selectedCurrency,
+                    "amountToBeConverted": amountToBeConverted
+                },
+                datatype: "json",
+                success: function (data) {
+                    $("#NewID").val(data.toFixed(2));
+                },
+                error: function () {
+                    console.log(error);
+                    alert("Dynamic content load failed.");
+                }
+            });
+        });
+
+        $("#cashtxt, #usdtxt, #randtxt, #pulatxt, #ecocashtxt, #swipetxt, #telecashtxt, #onemoneytxt").on("input", function () {
+            findCustomerAmountByCurrencies();
+        });
+
+        function findCustomerAmountByCurrencies() {
+
+            getAmountsCurrenciesInTextboxes();
+
+            $.ajax({
+                type: "POST",
+                url: currencyToCashConvertorUrl,
+                contentType: "application/json",
+                data: JSON.stringify({ "currencyAmounts": amountsCurrenciesInTextboxes }),
+                datatype: "json",
+                success: function (data) {
+
+                    $("#tmoney").val(data.toFixed(2))
+                    CustomerChange();
+                },
+                error: function () {
+                    console.log(error);
+                    alert("Dynamic content load failed.");
+                }
+            });
+        }
+    });
+
+    //function saveData() {
+    //    localStorage.customer
+    //}
+    //$("#btnPayOut").on('click', function () {
+    //function customerInfo() {
+    //click.addEventListener('click', addData);
+
+
+
+    //function addData() {
+    //    var arr = new Array();
+    //    getData();
+
+    //    var cv = document.getElementById('customer_info').value;
+    //    cv = parseInt(100) + parseInt(cv);
+    //    document.getElementById('customer_info').value = cv;
+    //    arr.push({
+    //        customer_info: document.getElementById('customer_info').value;
+    //    });
+
+    //    localStorage.setItem("localData", JSON.stringify(arr));
+
+    //}
+    //function getData() {
+    //    var str = localStorage.getItem("localData");
+    //    if (str = null)
+    //        arr = JSON.parse(str);
+    //}
+
+
+    //}
+    //function getInputFromTextBox() {
+    //    var input = document.getElementById("customer").value;
+    //    alert(input);
+
+</script>
+

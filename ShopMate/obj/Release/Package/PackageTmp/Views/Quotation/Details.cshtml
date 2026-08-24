@@ -1,0 +1,161 @@
+﻿@model ShopMate.Models.Quotation
+
+@{
+    /**/
+
+    ViewBag.Title = "Details";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Scripts/jquery1.8.3.print.js"></script>
+
+@{
+    string css1 = Url.Content("~/Content/theme/bootstrap/css/bootstrap.min.css");
+}
+
+<link href="~/Content/datetimepicker-master/jquery.datetimepicker.css" rel="stylesheet" />
+<script src="~/Content/datetimepicker-master/jquery.datetimepicker.min.js"></script>
+<script src="~/Content/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
+<script src="~/Content/datetimepicker-master/build/jquery.datetimepicker.full.js"></script>
+<link href="~/Content/theme/plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
+<script src="~/Content/theme/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+</script>
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+    </h1>
+</section>
+<section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-xs-12">
+
+            <div class="box box-solid box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Quotation </h3>
+                </div><!-- /.box-header -->
+
+                <div class="box-body table-responsive">
+                    <div class="col-xs-2">
+
+                        <div class="clearfix"></div>
+
+                        <br /><br /><br />
+
+
+                        <a class="btn btn-app" id="btnPrint">
+                            <i class="fa fa-print"></i>
+                            Print This
+                        </a>
+
+                    </div>
+
+                    <div class="col-xs-9" style="margin-left:10px;">
+
+                        <div id="dvContainer" class="content invoice" style=" padding inherit; min-height 150mm; width:100%; ">
+
+                            <div style="margin-bottom:50px;">
+
+                            </div>
+                            <div class="row" style="font-size:12px;text-align:center;font-weight:bold;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+
+
+                                <div style="text-align:center;font-size:30px;font-weight:bold;"> Quotation Details</div>
+
+
+                                <div style="text-align:left;margin-left:40px;">
+
+                                    <div style="height:10px; margin-bottom:10px; ">
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xs-12">
+
+                                            <div style="width:96%;">
+                                                <div class="col-xs-12">
+                                                    <div class="col-xs-5" style="padding-left:60px;">Date: @Model.IssueDate</div>
+                                                    <div class="col-xs-4" style="margin-left:25%;padding-left:80px;">Job No: @Model.Id </div>
+                                                    <div class="clearfix"></div>
+
+                                                    <br />
+                                                    <div class="col-xs-5" style="padding-left:60px;">Issued by: @Model.AddedBy</div>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                                <br />
+                                                @*<div class="col-xs-12">
+                                                        <div class="col-xs-5" style="padding-left:60px;">Supplier: @Model.supplier</div>
+                                                        <div class="col-xs-4" style="margin-left:25%;padding-left:80px;">Order Number: @Model.OrderNumber </div>
+                                                    </div>*@
+
+                                                <div class="col-xs-12">
+                                                    <table class="table table-striped">
+                                                        <thead style="background-color:#e5e2e2;">
+                                                            <tr>
+                                                                <th>Quantity</th>
+                                                                <th>Unit Price</th>
+                                                                <th>Description</th>
+                                                                <th>Total Price</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @*@if (Model.items.Count() != 0)
+                                                                {
+                                                                    foreach (var items in Model.items)
+                                                                    {
+                                                                        <tr>
+                                                                            <td>@items.Quantity</td>
+                                                                            <td>@items.UnitPrice</td>
+                                                                            <td>@items.Description</td>
+                                                                            <td>@items.TotalPrice</td>
+                                                                        </tr>
+                                                                    }
+                                                                }*@
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="height:10px; margin-bottom:20px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="col-xs-5" style="padding-left:60px;">Date of Issue: @DateTime.Today.Day/@DateTime.Today.Month/@DateTime.Today.Year </div>
+                                    <div class="col-xs-7">
+                                        @*<div class="col-xs-4" style="padding-left:60px;">Requested: @Model.requested</div>
+                                            <div class="col-xs-2" style="margin-left:25%;padding-left:80px;">Approved: @Model.approved </div>*@
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-sec">
+                            <div class="streaming-table">
+                                <div class="box-footer">
+                                    @Ajax.ModalDialogActionLink("Edit", "Edit/" + Model.Id, "Edit", "btn btn-primary")
+
+                                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

@@ -1,0 +1,74 @@
+@{
+    ViewBag.Title = "Return Purchase";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmPurchase", "tbPurchase", true, "Action Successfully Executed")
+ 
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+    function multi() {
+        var Quantity = $("#Quantity").val();
+        var UnitPrice = $("#UnitPrice").val();
+        var TotalAmount = Quantity * UnitPrice;
+        $("#TotalAmount").val(TotalAmount);
+    }
+</script>
+
+@using (Html.BeginForm("PurchaseReturn", "Purchase", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmPurchase" }))
+{
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Return Purchase</h3>
+                    </div>
+                    <!-- form start -->
+
+                    <div role="form">
+                        <div class="box-body">
+                         
+                            <div class="form-group">
+                                <label>Quantity</label> 
+                                <input type="number" value="@ViewBag.qty" name="Quantity" />
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="hidden" name="id" value="@ViewBag.purchaseid" /> 
+                            </div>
+                             
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            @Html.StarkInputButtion("Return", "submit", "btn btn-primary", "") 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+}
+
+

@@ -1,0 +1,29 @@
+﻿
+.select-customer h5{
+    display: inline;
+    font-size: 1.8vmin;
+    font-weight: bolder;
+}
+#CustomerUserId{
+    display: inline;
+}
+
+.after-saleorder{
+    position: relative;
+    left: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 600px; height: 60px;
+    padding-top: 10px;
+}
+
+.after-saleorder input{
+    width: 300px;
+}
+
+#QuotationId{
+    width: 135px;
+    text-align:center;
+}

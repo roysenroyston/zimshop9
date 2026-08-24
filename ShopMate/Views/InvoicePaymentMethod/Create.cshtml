@@ -1,0 +1,108 @@
+﻿@model ShopMate.Models.InvoicePaymentMethod
+@{
+    /**/
+    ViewBag.Title = "Create";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+        }
+    }
+
+    <script type="text/javascript">
+        $(function () {
+            $('select').searchableOptionList({
+                maxHeight: '250px'
+            });
+        });
+    </script>
+
+
+
+    @using (Html.BeginForm("Create", "InvoicePaymentMethod", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmInvoicePaymentMethod" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <section class="content">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box box-solid box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">Fill Payment Method Form</h3>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                        </div>
+                        <div role="form">
+                            <div class="box-body">
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "" })
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.DueIn, htmlAttributes: new { @class = "" })
+                                    @Html.EditorFor(model => model.DueIn, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DueIn, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="box-footer">
+                                    @*<input type="submit" value="Create" class="btn btn-default" />*@
+                                    @Html.StarkInputButtion("Create New", "submit", "btn btn-primary", "")
+                                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+
+                                </div>
+                            </div>
+
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+
+
+
+
+                                @*<div class="form-horizontal">
+                                    <h4>InvoicePaymentMethod</h4>
+                                    <hr />
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                        </div>
+                                        @Html.LabelFor(model => model.DueIn, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.DueIn, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.DueIn, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Create" class="btn btn-default" />
+                                        </div>
+                                    </div>
+                                </div>
+                                }*@
+
+        

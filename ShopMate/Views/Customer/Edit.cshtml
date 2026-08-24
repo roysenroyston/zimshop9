@@ -1,0 +1,122 @@
+﻿@model ShopMate.Models.Customers
+
+@{
+    ViewBag.Title = "Edit";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmCustomer", "tbCustomer", true, "Action Successfully Executed")
+
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+</script>
+
+@using (Html.BeginForm("Edit", "Customer", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmCustomer" }))
+{
+    @Html.AntiForgeryToken()
+
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Edit User</h3>
+                    </div>
+                    <!-- form start -->
+
+                    <div role="form">
+                        <div class="box-body">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.BuyerTradeName, new { @class = "" })
+                                @Html.EditorFor(model => model.BuyerTradeName)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.BuyerRegisterName, new { @class = "" })
+                                @Html.EditorFor(model => model.BuyerRegisterName)
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.BuyerTIN, new { @class = "" })
+                                @Html.EditorFor(model => model.BuyerTIN, new { @Id = "BuyerTIN", @class = "form-control" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.VATNumber, new { @class = "" })
+                                @Html.EditorFor(model => model.VATNumber, new { htmlAttributes = new { @class = "form-control", @id = "VATNumber" } })
+                            </div>
+                            <div class="form-group">
+
+                                @Html.LabelFor(model => model.Email, new { @class = "" })
+                                @Html.EditorFor(model => model.Email, new { @Id = "Email", @class = "form-control" })
+                            </div>
+
+                            <div class="form-group">
+
+                                @Html.LabelFor(model => model.PhoneNo, new { @class = "" })
+                                @Html.EditorFor(model => model.PhoneNo)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Province, new { @class = "" })
+                                @Html.EditorFor(model => model.Province, new { @Id = "Province", @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.City, new { @class = "" })
+                                @Html.EditorFor(model => model.City, new { @Id = "City", @class = "form-control" })
+
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.HouseNo, new { @class = "" })
+                                @Html.EditorFor(model => model.HouseNo, new { @Id = "HouseNo", @class = "form-control" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Street, new { @class = "" })
+                                @Html.EditorFor(model => model.Street)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.isActive, new { @class = "" })
+                                @Html.EditorFor(model => model.isActive)
+                            </div>
+                                   <div class="form-group"hidden>
+                                @Html.LabelFor(model => model.JoinedDate, new { @class = "" })
+                                @Html.EditorFor(model => model.JoinedDate)
+                            </div>
+                            <div class="form-group" hidden>
+                                @Html.LabelFor(model => model.WarehouseId, new { @class = "" })
+                                @Env.WareHouseUC(1)
+                            </div>
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            @Html.StarkInputButtion("Save", "submit", "btn btn-primary", "")
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

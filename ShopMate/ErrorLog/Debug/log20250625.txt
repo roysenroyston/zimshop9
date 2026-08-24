@@ -1,0 +1,64 @@
+2025-06-25 11:23:24.602 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "25/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 92828264,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cut and blowwave",
+        "price": 1,
+        "priceRTGS": 0,
+        "prodId": 4099,
+        "quantity": 34.78,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "34.78",
+    "tax": 5.22,
+    "time": "09:56:51",
+    "userId": "23166"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-06-25 11:27:41.941 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "25/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 92828264,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cut and blowwave",
+        "price": 1,
+        "priceRTGS": 0,
+        "prodId": 4099,
+        "quantity": 34.78,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "34.78",
+    "tax": 5.22,
+    "time": "09:56:51",
+    "userId": "23166"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.

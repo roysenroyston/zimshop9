@@ -1,0 +1,1219 @@
+2025-06-20 14:33:25.141 +02:00 [DBG] [
+  {
+    "change": 0.42999999999999972,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747847,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade 400ml x20",
+        "price": 7.4,
+        "priceRTGS": 0,
+        "prodId": 4684,
+        "quantity": 7,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "51.8",
+    "tax": 7.77,
+    "time": "12:22:27",
+    "userId": "23181"
+  },
+  {
+    "change": 0.59000000000000341,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747848,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Coke Pet 500ml x 12",
+        "price": 4.61,
+        "priceRTGS": 0,
+        "prodId": 4692,
+        "quantity": 8,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "36.88",
+    "tax": 5.53,
+    "time": "12:22:41",
+    "userId": "23181"
+  },
+  {
+    "change": 0.76000000000000512,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747849,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Drinking Yoggie",
+        "price": 14.4,
+        "priceRTGS": 0,
+        "prodId": 4739,
+        "quantity": 4,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "57.6",
+    "tax": 8.64,
+    "time": "12:22:52",
+    "userId": "23181"
+  },
+  {
+    "change": 0.73999999999999488,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747850,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Pfuko buttermilk 500ml x 12",
+        "price": 4.7,
+        "priceRTGS": 0,
+        "prodId": 4687,
+        "quantity": 13,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "61.1",
+    "tax": 9.16,
+    "time": "12:23:05",
+    "userId": "23181"
+  },
+  {
+    "change": 0.75999999999999091,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747851,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade 400ml x20",
+        "price": 7.4,
+        "priceRTGS": 0,
+        "prodId": 4684,
+        "quantity": 4,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Revive Tetra One litre x 6",
+        "price": 4.13,
+        "priceRTGS": 0,
+        "prodId": 4689,
+        "quantity": 6,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Yummy yoghurt 150ml x10",
+        "price": 3.69,
+        "priceRTGS": 0,
+        "prodId": 4688,
+        "quantity": 8,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Revive Pet bottle 500ml x12",
+        "price": 4.13,
+        "priceRTGS": 0,
+        "prodId": 4690,
+        "quantity": 9,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "121.07",
+    "tax": 18.17,
+    "time": "12:23:33",
+    "userId": "23181"
+  },
+  {
+    "change": 0.95000000000000284,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747852,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "REVIVE EDGE UHT",
+        "price": 4.35,
+        "priceRTGS": 0,
+        "prodId": 4750,
+        "quantity": 12,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Pfuko tradional 500ml x12",
+        "price": 4.35,
+        "priceRTGS": 0,
+        "prodId": 4686,
+        "quantity": 9,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Masi milk 500ml units",
+        "price": 0.5,
+        "priceRTGS": 0,
+        "prodId": 4691,
+        "quantity": 2,
+        "tax": 0
+      }
+    ],
+    "rate": 1,
+    "subtotal": "92.35",
+    "tax": 13.7,
+    "time": "12:24:04",
+    "userId": "23181"
+  },
+  {
+    "change": 0.58000000000001251,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747853,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade 400ml x20",
+        "price": 7.4,
+        "priceRTGS": 0,
+        "prodId": 4684,
+        "quantity": 5,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade litre x 6",
+        "price": 4.57,
+        "priceRTGS": 0,
+        "prodId": 4685,
+        "quantity": 6,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "LACTO",
+        "price": 10.2,
+        "priceRTGS": 0,
+        "prodId": 4752,
+        "quantity": 7,
+        "tax": 0
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Fun N Fresh",
+        "price": 5.21,
+        "priceRTGS": 0,
+        "prodId": 11254,
+        "quantity": 7,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "172.29",
+    "tax": 15.129999999999999,
+    "time": "12:24:29",
+    "userId": "23181"
+  },
+  {
+    "change": 0.78000000000000114,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747854,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Pfuko tradional 500ml x12",
+        "price": 4.35,
+        "priceRTGS": 0,
+        "prodId": 4686,
+        "quantity": 8,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Pfuko buttermilk 500ml x 12",
+        "price": 4.7,
+        "priceRTGS": 0,
+        "prodId": 4687,
+        "quantity": 8,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Fun N Fresh",
+        "price": 5.21,
+        "priceRTGS": 0,
+        "prodId": 11254,
+        "quantity": 5,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Life Full Cream Milk 250ml",
+        "price": 7,
+        "priceRTGS": 0,
+        "prodId": 11256,
+        "quantity": 3,
+        "tax": 0
+      }
+    ],
+    "rate": 1,
+    "subtotal": "119.45",
+    "tax": 14.77,
+    "time": "12:25:10",
+    "userId": "23181"
+  },
+  {
+    "change": 0.35999999999999943,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747855,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Drinking Yoggie",
+        "price": 14.4,
+        "priceRTGS": 0,
+        "prodId": 4739,
+        "quantity": 1,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade litre x 6",
+        "price": 4.57,
+        "priceRTGS": 0,
+        "prodId": 4685,
+        "quantity": 6,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade 400ml x20",
+        "price": 7.4,
+        "priceRTGS": 0,
+        "prodId": 4684,
+        "quantity": 5,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "78.82",
+    "tax": 11.82,
+    "time": "12:25:26",
+    "userId": "23181"
+  },
+  {
+    "change": 0.93999999999999773,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747856,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Revive Straw",
+        "price": 4.35,
+        "priceRTGS": 0,
+        "prodId": 4747,
+        "quantity": 13,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Yummy yoghurt 150ml x10",
+        "price": 3.69,
+        "priceRTGS": 0,
+        "prodId": 4688,
+        "quantity": 11,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "REVIVE EDGE UHT",
+        "price": 4.35,
+        "priceRTGS": 0,
+        "prodId": 4750,
+        "quantity": 9,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Natural Joy Tetra",
+        "price": 4.09,
+        "priceRTGS": 0,
+        "prodId": 4743,
+        "quantity": 9,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "173.1",
+    "tax": 25.96,
+    "time": "12:26:15",
+    "userId": "23181"
+  },
+  {
+    "change": 0.42999999999999972,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747857,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade 400ml x20",
+        "price": 7.4,
+        "priceRTGS": 0,
+        "prodId": 4684,
+        "quantity": 7,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "51.8",
+    "tax": 7.77,
+    "time": "12:26:34",
+    "userId": "23181"
+  },
+  {
+    "change": 0.71999999999999886,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747858,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Coke Pet 500ml x 12",
+        "price": 4.61,
+        "priceRTGS": 0,
+        "prodId": 4692,
+        "quantity": 10,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "AMASI FERMETED MILK",
+        "price": 7.6,
+        "priceRTGS": 0,
+        "prodId": 11255,
+        "quantity": 7,
+        "tax": 0
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade 400ml x20",
+        "price": 7.4,
+        "priceRTGS": 0,
+        "prodId": 4684,
+        "quantity": 6,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "143.7",
+    "tax": 13.58,
+    "time": "12:27:06",
+    "userId": "23181"
+  },
+  {
+    "change": 0.0799999999999983,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747859,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Natural Joy Tetra",
+        "price": 4.09,
+        "priceRTGS": 0,
+        "prodId": 4743,
+        "quantity": 7,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "28.63",
+    "tax": 4.29,
+    "time": "12:27:23",
+    "userId": "23181"
+  },
+  {
+    "change": 0.43999999999999773,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747860,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade 400ml x20",
+        "price": 7.4,
+        "priceRTGS": 0,
+        "prodId": 4684,
+        "quantity": 7,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade litre x 6",
+        "price": 4.57,
+        "priceRTGS": 0,
+        "prodId": 4685,
+        "quantity": 8,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Fun N Fresh",
+        "price": 5.21,
+        "priceRTGS": 0,
+        "prodId": 11254,
+        "quantity": 7,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "KINGSIZE CRATE 330ML X 24",
+        "price": 4.35,
+        "priceRTGS": 0,
+        "prodId": 4693,
+        "quantity": 4,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "142.23",
+    "tax": 21.33,
+    "time": "12:29:11",
+    "userId": "23181"
+  },
+  {
+    "change": 0.25,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747861,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade 400ml x20",
+        "price": 7.4,
+        "priceRTGS": 0,
+        "prodId": 4684,
+        "quantity": 5,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "LACTO",
+        "price": 10.2,
+        "priceRTGS": 0,
+        "prodId": 4752,
+        "quantity": 6,
+        "tax": 0
+      }
+    ],
+    "rate": 1,
+    "subtotal": "98.2",
+    "tax": 5.55,
+    "time": "12:30:42",
+    "userId": "23181"
+  },
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747862,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Revive Tetra One litre x 6",
+        "price": 4.13,
+        "priceRTGS": 0,
+        "prodId": 4689,
+        "quantity": 8,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Drinking Yoggie",
+        "price": 14.4,
+        "priceRTGS": 0,
+        "prodId": 4739,
+        "quantity": 7,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade 400ml x20",
+        "price": 7.4,
+        "priceRTGS": 0,
+        "prodId": 4684,
+        "quantity": 8,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "193.04",
+    "tax": 28.96,
+    "time": "12:31:44",
+    "userId": "23181"
+  },
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747863,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Aquaclear Water 750",
+        "price": 3.04,
+        "priceRTGS": 0,
+        "prodId": 4745,
+        "quantity": 7,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Coke Pet 500ml x 12",
+        "price": 4.61,
+        "priceRTGS": 0,
+        "prodId": 4692,
+        "quantity": 7,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Pfuko tradional 500ml x12",
+        "price": 4.35,
+        "priceRTGS": 0,
+        "prodId": 4686,
+        "quantity": 2,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "62.25",
+    "tax": 9.33,
+    "time": "12:32:28",
+    "userId": "23181"
+  },
+  {
+    "change": 0.58000000000001251,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747864,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade 400ml x20",
+        "price": 7.4,
+        "priceRTGS": 0,
+        "prodId": 4684,
+        "quantity": 6,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cascade litre x 6",
+        "price": 4.57,
+        "priceRTGS": 0,
+        "prodId": 4685,
+        "quantity": 10,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Drinking Yoggie",
+        "price": 14.4,
+        "priceRTGS": 0,
+        "prodId": 4739,
+        "quantity": 5,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "162.1",
+    "tax": 24.32,
+    "time": "12:33:07",
+    "userId": "23181"
+  },
+  {
+    "change": 0.040000000000006253,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747865,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Natural Joy Tetra",
+        "price": 4.09,
+        "priceRTGS": 0,
+        "prodId": 4743,
+        "quantity": 17,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "69.53",
+    "tax": 10.43,
+    "time": "12:33:20",
+    "userId": "23181"
+  },
+  {
+    "change": 0.39999999999999858,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747866,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "AMASI FERMETED MILK",
+        "price": 7.6,
+        "priceRTGS": 0,
+        "prodId": 11255,
+        "quantity": 6,
+        "tax": 0
+      }
+    ],
+    "rate": 1,
+    "subtotal": "45.6",
+    "tax": 0,
+    "time": "12:33:35",
+    "userId": "23181"
+  },
+  {
+    "change": 0.31999999999999318,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "17/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 94747867,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Revive Pet bottle 500ml x12",
+        "price": 4.13,
+        "priceRTGS": 0,
+        "prodId": 4690,
+        "quantity": 14,
+        "tax": 15
+      },
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Yummy yoghurt 150ml x10",
+        "price": 3.69,
+        "priceRTGS": 0,
+        "prodId": 4688,
+        "quantity": 9,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "91.03",
+    "tax": 13.65,
+    "time": "12:33:58",
+    "userId": "23181"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-06-20 14:35:28.492 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "20/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 92828262,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cut and blowwave",
+        "price": 1,
+        "priceRTGS": 0,
+        "prodId": 4099,
+        "quantity": 34.78,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "34.78",
+    "tax": 5.22,
+    "time": "12:52:54",
+    "userId": "23166"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-06-20 14:36:24.585 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "20/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 92828261,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cut and blowwave",
+        "price": 1,
+        "priceRTGS": 0,
+        "prodId": 4099,
+        "quantity": 34.78,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "34.78",
+    "tax": 5.22,
+    "time": "12:52:54",
+    "userId": "23166"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-06-20 14:36:56.665 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "20/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 92828261,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cut and blowwave",
+        "price": 1,
+        "priceRTGS": 0,
+        "prodId": 4099,
+        "quantity": 34.78,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "34.78",
+    "tax": 5.22,
+    "time": "12:52:54",
+    "userId": "23166"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-06-20 14:38:44.797 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "20/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 92828261,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cut and blowwave",
+        "price": 1,
+        "priceRTGS": 0,
+        "prodId": 4099,
+        "quantity": 34.78,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "34.78",
+    "tax": 5.22,
+    "time": "12:52:54",
+    "userId": "23166"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-06-20 14:38:56.512 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "20/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 92828261,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cut and blowwave",
+        "price": 1,
+        "priceRTGS": 0,
+        "prodId": 4098,
+        "quantity": 34.78,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "34.78",
+    "tax": 5.22,
+    "time": "12:52:54",
+    "userId": "23166"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-06-20 14:39:59.732 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "20/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 92828261,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cut and blowwave",
+        "price": 1,
+        "priceRTGS": 0,
+        "prodId": 4098,
+        "quantity": 34.78,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "34.78",
+    "tax": 5.22,
+    "time": "12:52:54",
+    "userId": "23166"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-06-20 14:40:45.094 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "20/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 92828261,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cut and blowwave",
+        "price": 1,
+        "priceRTGS": 0,
+        "prodId": 4098,
+        "quantity": 34.78,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "34.78",
+    "tax": 5.22,
+    "time": "12:52:54",
+    "userId": "23166"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-06-20 15:08:07.336 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "20/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 92828262,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cut and blowwave",
+        "price": 1,
+        "priceRTGS": 0,
+        "prodId": 4098,
+        "quantity": 34.78,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "34.78",
+    "tax": 5.22,
+    "time": "12:52:54",
+    "userId": "23166"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-06-20 15:11:37.323 +02:00 [DBG] [
+  {
+    "change": 0,
+    "currency": "USD",
+    "customer": "Customer",
+    "date": "20/06/2025",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 92828262,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 0,
+        "image": "",
+        "name": "Cut and blowwave",
+        "price": 1,
+        "priceRTGS": 0,
+        "prodId": 4098,
+        "quantity": 34.78,
+        "tax": 15
+      }
+    ],
+    "rate": 1,
+    "subtotal": "34.78",
+    "tax": 5.22,
+    "time": "12:52:54",
+    "userId": "23166"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.

@@ -1,0 +1,87 @@
+﻿@model ShopMate.Models.DeliveryNote
+
+@{
+    ViewBag.Title = "Edit";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmDeliveryNote", "tbDeliveryNote", true, "Action Successfully Executed")
+
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+</script>
+
+@using (Html.BeginForm("Edit", "DeliveryNote", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmDeliveryNote" }))
+{
+    @Html.AntiForgeryToken()
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Edit Expense</h3>
+                    </div>
+                    <!-- form start -->
+
+                    <div role="form">
+                        <div class="box-body">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.invoiceNo, new { @class = "" })
+                                @Html.TextBoxFor(model => model.invoiceNo, new { @readonly = "readonly" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.OrderNo, new { @class = "" })
+                                @Html.TextBoxFor(model => model.OrderNo, new { @readonly = "readonly" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.delivered, new { @class = "" })
+                                @Html.EditorFor(model => model.delivered)
+                            </div>
+                            <div class="form-group">
+                                @Html.Hidden("ddate", DateTime.Now)
+                            </div>
+
+                            @*<div class="form-group">
+                                    @Html.DropDownList("CustomerUserId", null, new { @Id = "CustomerUserId" })<br />
+                                </div>*@
+
+
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            @Html.StarkInputButtion("Save", "submit", "btn btn-primary", "")
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+
+

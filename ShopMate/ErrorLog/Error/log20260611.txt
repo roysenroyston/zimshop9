@@ -1,0 +1,25 @@
+2026-06-11 15:52:38.100 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.BaseController.OnActionExecuting(ActionExecutingContext context) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\BaseController.cs:line 48
+2026-06-11 15:52:38.620 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.HomeController.Index(String Date) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\HomeController.cs:line 402
+2026-06-11 16:35:42.345 +02:00 [ERR] Sequence contains no elements
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at ShopMate.Controllers.DebitCreditNoteController.<CreateAsync>d__6.MoveNext() in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\DebitCreditNoteController.cs:line 218

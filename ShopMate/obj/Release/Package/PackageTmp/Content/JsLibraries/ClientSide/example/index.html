@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Imagecropper 0.1
+		</title>
+		<!-- META -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <!-- STYLES -->
+	    <link rel="stylesheet" href="../dist/css/imagecrop_white.min.css">
+	    <style type="text/css">
+		    body {
+				background-color: #c9c9c9;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ENTER CONTENT -->
+
+         
+        <input type='file' id="ImageUrl" name="ImageUrl" onchange="readURL(this);" />
+        
+         
+         <script>
+             var imgs;
+             function readURL(input) {
+                 if (input.files && input.files[0]) {
+                     var reader = new FileReader();
+
+                     reader.onload = function (e) {
+
+                         $('.test-imagecrop').attr('src', e.target.result);
+                         imgs = e.target.result;
+                     };
+
+                     reader.readAsDataURL(input.files[0]);
+                     loadcropjs();
+                 }
+             }
+
+
+            
+         </script>
+   
+        <div style="width:70%;max-height:580px;overflow:auto;">
+		    <div class="test-imagecrop"></div>
+         </div>
+		<button type="button" class="crop-button">
+			<span>Crop!</span>
+		</button>
+		<button type="button" class="destroy-button" style="display:none;">
+			<span>Destroy</span>
+		</button>
+		<button type="button" class="create-button" style="display:none;">
+			<span>Create</span>
+		</button>
+		<div class="preview"></div>
+		 
+        <textarea id="dta"></textarea>
+
+        <script type="text/javascript" src="jquery-1.10.2.js"></script>
+ 
+        <script>
+            function loadcropjs() {
+                js = document.createElement("script");
+                js.src =  'app.js';
+                js.id = "nl";
+                document.body.appendChild(js); 
+            } 
+        </script>
+        
+	</body>
+</html>

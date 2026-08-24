@@ -1,0 +1,79 @@
+﻿@model ShopMate.Models.Payment
+
+@{
+    ViewBag.Title = "Details";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+        <small>Details</small>
+    </h1>
+</section>
+<section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-xs-12">
+
+            <div class="box box-solid box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Detail of Payment</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive">
+
+                    <div class="widget-sec">
+                        <div class="streaming-table">
+                            <table class="table table-striped table-bordered">
+                                <tr>
+                                    <td>CustomrId</td>
+                                    <td>@Html.DisplayFor(model => model.CustomerId)</td>
+                                </tr>
+                                <tr>
+                                    <td>InvoiceId</td>
+                                    <td>@Html.DisplayFor(model => model.InvoiceId)</td>
+                                </tr>
+                                @*<tr>
+                                    <td>BankId</td>
+                                    <td>@Html.DisplayFor(model => model.BankId)</td>
+                                </tr>*@
+                                <tr>
+                                    <td>BankAcount</td>
+                                    <td>@Html.DisplayFor(model => model.BankAccount)</td>
+                                </tr>
+                                <tr>
+                                    <td>Amount</td>
+                                    <td>@Html.DisplayFor(model => model.Amount)</td>
+                                </tr>
+                                <tr>
+                                    <td>PaymentModeId</td>
+                                    <td>@Html.DisplayFor(model => model.PaymentModeId)</td>
+                                </tr>
+                                <tr>
+                                    <td>CurrencyAmount</td>
+                                    <td>@Html.DisplayFor(model => model.CurrencyAmount)</td>
+                                </tr>
+                                <tr>
+                                    <td>PaymentDate</td>
+                                    <td>@Html.DisplayFor(model => model.PaymentDate)</td>
+                                </tr>
+
+
+                            </table>
+                            <div class="box-footer">
+                                @*@Ajax.ModalDialogActionLink("Edit", "Edit/" + Model.Id, "Edit", "btn btn-primary")*@
+
+                                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

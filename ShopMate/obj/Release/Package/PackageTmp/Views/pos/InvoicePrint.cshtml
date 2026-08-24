@@ -1,0 +1,262 @@
+﻿@model ShopMate.ModelDto.InvoiceDto
+@{
+    ViewBag.Title = "INVOICE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery1.8.3.print.js"></script>
+
+@{
+    string css1 = Url.Content("~/Content/theme/bootstrap/css/bootstrap.min.css");
+}
+
+
+<script type="text/javascript">
+    $("#btnPrint").live("click", function () {
+        var divContents = $("#dvContainer").html();
+        var printWindow = window.open('', '', 'height=700,width=900');
+        printWindow.document.write('<html><head>');
+        printWindow.document.write('<link href="../../Content/theme/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
+
+        printWindow.document.write('</head><body >');
+        printWindow.document.write(divContents);
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+        printWindow.print();
+
+    });
+
+
+</script>
+
+
+<style>
+    select {
+        width: 150px;
+    }
+    <!-- https://www.transparenttextures.com/wood-pattern.html -->
+</style>
+
+
+
+
+<section class="content" style="background-color: #996600; background-image: url(@Url.Content("~/Content/bg/brick-wall-dark.png"));">
+    <!-- Small boxes (Stat box)  -->
+    <div class="row">
+        <div class="col-xs-2">
+
+
+            <section class="content">
+                <!-- Small boxes (Stat box) -->
+
+                <div class="col-xs-12">
+
+                    <div class="clearfix"></div>
+                    <br />
+
+
+                    <div class="clearfix"></div>
+
+                    <br /><br /><br />
+
+
+                    <a class="btn btn-app" id="btnPrint">
+                        <i class="fa fa-print"></i>
+                        Print This
+                    </a>
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+        <div class="col-xs-9">
+
+            <div id="dvContainer" class="content invoice" style=" padding inherit; min-height 312mm; width:100%; ">
+
+                <div style="margin-bottom:50px;">
+
+                </div>
+                <div class="row" style="font-size:12px;text-align:center;font-weight:bold;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+
+
+                    <div style="text-align:center;font-size:30px;font-weight:bold;"> INVOICE</div>
+
+
+                    <div style="text-align:left;margin-left:40px;">
+
+                        <div style="height:10px; margin-bottom:10px; ">
+
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div style="width:96%;">
+
+                                    <section class="invoice">
+                                        <!-- title row -->
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <h2 class="page-header">
+                                                    <i class="fa fa-globe"></i> Invoice #@Model.InvoiceId
+                                                    <small class="pull-right">Date:@DateTime.Now.ToString("MMM/dd/yyyy") </small>
+                                                </h2>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                        <!-- info row -->
+                                        <div class="row invoice-info">
+                                            <div class="col-sm-2 invoice-col">
+                                                <img src="@Model.Logo" style="width:100px;height:100px;" />
+                                            </div>
+                                            <div class="col-sm-4 invoice-col">
+                                                @if (Model.Type == "Purchase")
+                                                {<span>To</span>}
+                                                else
+                                                {<span>From</span> }
+                                                <address>
+                                                    <strong>@Model.CompanyName</strong><br>
+                                                    @Html.Raw(Model.CompanyAddress)<br>
+                                                    @Html.Raw(Model.CompanyContact)
+                                                </address>
+                                            </div>
+                                            <!-- /.col -->
+                                            <div class="col-sm-4 invoice-col">
+                                                @if (Model.Type == "Purchase")
+                                                {<span>From</span>}
+                                                else
+                                                {<span>To</span> }
+
+                                                <address>
+                                                    <strong>@Model.ToName</strong><br>
+                                                    @Html.Raw(Model.ToInfo)
+                                                </address>
+                                            </div>
+                                            <!-- /.col -->
+
+                                        </div>
+                                        <!-- /.row -->
+                                        <!-- Table row -->
+                                        <div class="row">
+                                            <div class="col-xs-12 table-responsive">
+                                                <table class="table">
+                                                    <thead style="background-color:#e5e2e2;">
+                                                        <tr>
+                                                            <th>Product</th>
+                                                            <th>Price</th>
+                                                            <th>Qty</th>
+                                                            <th>Tax</th>
+                                                            <th>Tax Info</th>
+                                                            <th>Subtotal</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @if (Model.invoiceItem != null)
+                                                        {
+                                                            if (Model.invoiceItem.Count > 0)
+                                                            {
+                                                                foreach (var item in Model.invoiceItem)
+                                                                {
+                                                                    <tr>
+                                                                        <td>@item.ProcuctName</td>
+                                                                        <td>@item.Price</td>
+                                                                        <td>@item.Quantity</td>
+                                                                        <td>@Model.CurrencySymbol @item.Tax</td>
+                                                                        <td>@item.TaxInfo</td>
+                                                                        <td>@Model.CurrencySymbol @item.SubTotal</td>
+                                                                    </tr>
+                                                                }
+                                                            }
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                        <!-- /.row -->
+                                        <div class="row">
+                                            <!-- accepted payments column -->
+                                            <div class="col-xs-6">
+
+                                            </div>
+                                            <!-- /.col -->
+                                            <div class="col-xs-6">
+                                                <p class="lead">Amount Due @Model.InvoiceDate.ToString("MM/dd/yyyy")</p>
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th style="width:50%">Subtotal:</th>
+                                                                <td>@Model.CurrencySymbol @Model.SubTotal</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Tax</th>
+                                                                <td>@Model.CurrencySymbol @Model.Tax</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Total:</th>
+                                                                <td>@Model.CurrencySymbol @Model.TotalAmount</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                        <!-- /.row -->
+                                        <!-- this row will not appear when printing -->
+                                        <div class="row no-print">
+                                            <div class="col-xs-12" style="text-align:center">
+                                                @if (Model.Type == "Sale")
+                                                { <h3>@Html.Raw(Model.InvoiceFooterText)</h3>}
+                                                else
+                                                {<h3>Thanks</h3> }
+
+                                            </div>
+                                        </div>
+                                    </section>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div style="height:10px; margin-bottom:20px;">
+
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div class="clearfix"></div>
+
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="col-xs-5" style="padding-left:60px;"> @DateTime.Now.ToString("dd/MMM/yyyy hh:mm:tt")</div>
+                        <div class="col-xs-4" style="margin-left:25%;padding-left:80px;">Printed by: @Env.GetUserInfo("name") </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <a class="btn btn-app" id="btnPrint">
+            <i class="fa fa-print"></i>
+            Print This
+        </a>
+    </div>
+</section>
+

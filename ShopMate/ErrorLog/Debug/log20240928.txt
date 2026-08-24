@@ -1,0 +1,160 @@
+2024-09-28 10:14:09.373 +02:00 [DBG] [
+  {
+    "change": 0.0,
+    "currency": "USD",
+    "customer": "",
+    "date": "28/09/2024",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 70041558,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "THT11581",
+        "id": 0,
+        "image": "",
+        "name": "Cable Cutter",
+        "price": 5.2,
+        "priceRTGS": 0.0,
+        "prodId": 4754,
+        "quantity": 1.0,
+        "tax": 15.0
+      }
+    ],
+    "rate": 1.0,
+    "subtotal": "5.2",
+    "tax": 0.78,
+    "time": "09:37:00",
+    "userId": "23170"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2024-09-28 10:14:34.488 +02:00 [DBG] [
+  {
+    "change": 0.0,
+    "currency": "USD",
+    "customer": "",
+    "date": "28/09/2024",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 70041558,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "THT11581",
+        "id": 0,
+        "image": "",
+        "name": "Cable Cutter",
+        "price": 5.2,
+        "priceRTGS": 0.0,
+        "prodId": 4754,
+        "quantity": 1.0,
+        "tax": 15.0
+      }
+    ],
+    "rate": 1.0,
+    "subtotal": "5.2",
+    "tax": 0.78,
+    "time": "09:37:00",
+    "userId": "23170"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2024-09-28 10:17:44.625 +02:00 [DBG] [
+  {
+    "change": 0.0,
+    "currency": "USD",
+    "customer": "",
+    "date": "28/09/2024",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 70041558,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "THT11581",
+        "id": 0,
+        "image": "",
+        "name": "Cable Cutter",
+        "price": 5.2,
+        "priceRTGS": 0.0,
+        "prodId": 4754,
+        "quantity": 1.0,
+        "tax": 15.0
+      }
+    ],
+    "rate": 1.0,
+    "subtotal": "5.2",
+    "tax": 0.78,
+    "time": "09:37:00",
+    "userId": "23170"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2024-09-28 10:21:49.652 +02:00 [DBG] [
+  {
+    "change": 0.0,
+    "currency": "USD",
+    "customer": "",
+    "date": "28/09/2024",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 70041558,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "THT11581",
+        "id": 0,
+        "image": "",
+        "name": "Cable Cutter",
+        "price": 5.2,
+        "priceRTGS": 0.0,
+        "prodId": 4232,
+        "quantity": 1.0,
+        "tax": 15.0
+      }
+    ],
+    "rate": 1.0,
+    "subtotal": "5.2",
+    "tax": 0.78,
+    "time": "09:37:00",
+    "userId": "23170"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2024-09-28 10:22:52.147 +02:00 [DBG] [
+  {
+    "change": 0.0,
+    "currency": "USD",
+    "customer": "",
+    "date": "28/09/2024",
+    "discount": "0",
+    "id": 0,
+    "invoiceId": 80041558,
+    "online": 0,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "THT11581",
+        "id": 0,
+        "image": "",
+        "name": "Cable Cutter",
+        "price": 5.2,
+        "priceRTGS": 0.0,
+        "prodId": 4232,
+        "quantity": 1.0,
+        "tax": 15.0
+      }
+    ],
+    "rate": 1.0,
+    "subtotal": "5.2",
+    "tax": 0.78,
+    "time": "09:37:00",
+    "userId": "23170"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.

@@ -1,0 +1,70 @@
+﻿@model ShopMate.Models.Order
+
+@{
+    /**/
+
+    ViewBag.Title = "Details";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+        <small>Details</small>
+    </h1>
+</section>
+<section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-xs-12">
+
+            <div class="box box-solid box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Detail of Order</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive">
+
+                    <div class="widget-sec">
+                        <div class="streaming-table">
+                            <table class="table table-striped table-bordered">
+
+                                <tr>
+                                    <td>Order Id</td>
+                                    <td>@Html.DisplayFor(model => model.Id)</td>
+                                </tr>
+                                <tr>
+                                    <td>Order Number</td>
+                                    <td>@Html.DisplayFor(model => model.orderNumber)</td>
+                                </tr>
+                                <tr>
+                                    <td>Goods</td>
+                                    <td>@Html.DisplayFor(model => model.goods)</td>
+                                </tr>
+                                <tr>
+                                    <td>Supplier</td>
+                                    <td>@Html.DisplayFor(model => model.supplier)</td>
+                                </tr>
+                                <tr>
+                                    <td>Date Purchased</td>
+                                    <td>@Html.DisplayFor(model => model.purchasedate)</td>
+                                </tr>
+
+
+                            </table>
+                            <div class="box-footer">
+                                @Ajax.ModalDialogActionLink("Edit", "Edit/" + Model.Id, "Edit", "btn btn-primary")
+
+                                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

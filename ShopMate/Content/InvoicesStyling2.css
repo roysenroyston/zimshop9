@@ -1,0 +1,121 @@
+﻿/*.print {
+    display: block;
+}*/
+.main-footer {
+    display: none;
+}
+
+.no-print {
+    display: none;
+}
+
+#KediLogo {
+	width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 20%);
+}
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+.Addresses {
+    position: relative;
+    background: teal;
+    padding: 5px;
+}
+
+.CustomerAddress {
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 49%;
+    min-height: 100%; 
+    max-height: 100%;
+    margin-left: -25px;
+    background: yellowgreen;
+}
+
+.KediAddress {
+    position: absolute;
+    left: 95%;
+    display: inline-block;
+    min-width: 45%;
+    min-height: 100%;
+    max-height: 100%;
+    background: orange;
+    text-align: right;
+    /*margin-right:5%;*/
+}
+.invoice-body {
+    position: relative;
+    top: 50px;
+    font-size: 2.3vmin;
+}
+
+.Fiscal-Heading {
+    text-align: left;
+    font-size: 2vmin;
+    font-weight: bold;
+    margin-left: -25px;
+}
+
+.Table-Area {
+    margin-left: -20px;
+    min-width: 730px;
+    max-width: 730px;
+}
+
+.heading-print{
+    font-size: 2vmin;
+}
+.data-print{
+    font-size: 1.1vmin;
+    font-weight: 200;
+}
+.heading-total {
+    font-size: 1.4vmin;
+    font-weight: 200;
+}
+.data-total {
+    font-size: 1.4vmin;
+    font-weight: 200;
+}
+
+.Banking-Details {
+    position: absolute;
+    top: 480px; left: -20px !important;
+    /*width: 800px;*/
+}
+.bank-title {
+    font-size: 2vmin;
+    font-weight: bold;
+}
+
+.Second-Account {
+    position: absolute;
+    top: 520px !important;
+}
+.Signature-Area {
+    position: absolute;
+    top: 635px; left: -22px !important;
+    display: block;
+    width: 700px;
+    border: 1px dotted black;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.Signature-Area div{
+    margin-left: -100px;
+}
+
+.Signature-Area div h5 {
+    padding-right: 112px;
+    font-weight: bolder;
+    
+}
+#actual-table {
+    height: 5px;
+}
+
+/*thead{
+    border: 5px solid black;
+}*/

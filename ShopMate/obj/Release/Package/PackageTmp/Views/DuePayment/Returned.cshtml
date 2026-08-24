@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+
+    $(document).ready(function () {
+        $('#RefreshPage').click(function () {
+
+            //$.sticky('<br/> created ', { stickyClass: 'success' });
+
+            setTimeout(
+                function () {
+                    window.location.reload(true);
+                }, 800)
+
+
+        });
+    });
+</script>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Returned</title>
+</head>
+<body>
+    <div>
+        <h2>SUCCESSFUL</h2>
+        <input type="submit" id="RefreshPage" value="Continue" class="btn btn-primary">
+
+
+
+    </div>
+
+
+</body>
+</html>

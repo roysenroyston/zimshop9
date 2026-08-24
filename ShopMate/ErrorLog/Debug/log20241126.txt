@@ -1,0 +1,4 @@
+2024-11-26 08:36:55.677 +02:00 [DBG] []
+System.Exception: Exception of type 'System.Exception' was thrown.
+2024-11-26 08:44:37.003 +02:00 [DBG] []
+System.Exception: Exception of type 'System.Exception' was thrown.

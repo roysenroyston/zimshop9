@@ -1,0 +1,267 @@
+﻿@model ShopMate.ModelDto.InvoiceDto
+@{
+    ViewBag.Title = "INVOICE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery1.8.3.print.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+@*<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>*@
+@*<script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>*@
+@*<script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>*@
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>*@
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+<script src=" https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
+
+@{
+    string css1 = Url.Content("~/Content/theme/bootstrap/css/bootstrap.min.css");
+}
+
+<script type="text/javascript">
+
+    $("#btnPrint").live("click", function () {
+
+        var divContents = $("#dvContainer").html();
+        var printWindow = window.open('', '', 'height=700,width=900');
+        printWindow.document.write('<html><head>');
+        printWindow.document.write('<link href="../../Content/theme/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
+
+        printWindow.document.write('</head><body >');
+        printWindow.document.write(divContents);
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+        printWindow.print();
+    });
+
+    function getMoney() {
+
+    }
+    let data = ''
+
+    window.onload = function () {
+        window.document.body.addEventListener('keydown', function (event) {
+            if (event.keyCode == 13 || event.keyCode == 16 || event.keyCode == 17) {
+                event.preventDefault();
+                return;
+            }
+
+            if (event.ctrlKey) {
+                event.preventDefault();
+                return;
+            }
+
+            data += event.key
+            console.log(data)
+        });
+    }
+</script>
+
+
+<style>
+    select {
+        width: 150px;
+    }
+    <!-- https://www.transparenttextures.com/wood-pattern.html -->
+</style>
+
+<section class="content" style="background-color: #996600; background-image: url(@Url.Content("~/Content/bg/brick-wall-dark.png"));">
+    <!-- Small boxes (Stat box)  -->
+    <div class="row">
+
+        <div class="no-print">
+            <a class="btn btn-app" id="btnPrint" onclick="window.print()">
+                <i class="fa fa-print"></i>
+                Print Invoice
+            </a>
+        </div>
+
+        <div class="col-xs-9">
+
+            <div id="dvContainer" class="content invoice" style="padding: inherit; min-height: 12mm;width:100%">
+
+                @*<div style="margin-bottom:50px;">
+
+                    </div>*@
+                <div class="row" style="text-align:center;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+
+                    <div style="font-size:18px;text-align:center;">Fiscal Tax Receipt</div>
+
+
+                    <div style="text-align:left;margin-left:40px;">
+
+                        @*<div style="height:10px; margin-bottom:10px; ">
+
+                            </div>*@
+
+
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div style="width:96%;">
+
+                                    <section class="invoice">
+                                        <!-- title row -->
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <h2 class="page-header">
+                                                    <i class="fa fa-globe"></i>Receipt #@Model.InvoiceId<br />
+
+                                                    <small class="pull-right">Date:@DateTime.Now.ToString("MMM/dd/yyyy") </small>
+                                                </h2>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                        <!-- info row -->
+                                        <div class="row invoice-info">
+
+                                            <div class="col-sm-4 invoice-col">
+                                                @if (Model.Type == "Purchase")
+                                                {<span>To</span>}
+                                                else
+                                                {@*<span>From</span>*@}
+                                                <address>
+                                                    <strong style="font-size:18px;">@Model.CompanyName</strong><br>
+                                                    Vat No: @Model.vatNo<br />
+                                                    Tin No: @Model.tinNo<br />
+
+                                                    @Html.Raw(Model.CompanyAddress)<br>
+                                                    @Html.Raw(Model.CompanyContact)
+                                                </address>
+                                            </div>
+                                            <!-- /.col -->
+                                            <div class="col-sm-4 invoice-col; pull-right">
+
+
+
+                                                <img src="https://api.qrserver.com/v1/create-qr-code/?data=@Model.qrCode&amp;size=100x100" alt="" title="HELLO" /><br />
+
+                                                Verification Code :     @Model.myVerificationCode
+                                                @Model.Zimraemail<br />
+                                                Fiscal Day No : @Model.fiscalDayNumber<br />
+                                                Fiscal Invoice No : @Model.receiptId<br />
+                                                <div class="pull-left">Date:@Model.InvoiceDate</div><br />
+                                                <br />
+                                                @Model.verificationCode
+
+                                            </div>
+
+                                        </div>
+                                        <!-- /.row -->
+                                        <!-- Table row -->
+                                        <div class="row">
+                                            <div>
+                                                @*class="col-xs-12 table-responsive" stye="min-width:5mm;"*@
+                                                <table class="table">
+                                                    <thead style="background-color:#e5e2e2;">
+                                                        <tr>
+                                                            <th>Product</th>
+                                                            <th>Price</th>
+                                                            <th>Qty</th>
+                                                            <th>Tax</th>
+                                                            @*<th>Tax Info</th>*@
+                                                            <th>Subtotal</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @if (Model.invoiceItem != null)
+                                                        {
+                                                            if (Model.invoiceItem.Count > 0)
+                                                            {
+                                                                foreach (var item in Model.invoiceItem)
+                                                                {
+                                                                    <tr>
+                                                                        <td>@item.ProcuctName</td>
+                                                                        <td>@item.Price</td>
+                                                                        <td>@item.Quantity</td>
+                                                                        <td> @item.Tax</td>
+                                                                        @*<td>@item.TaxInfo</td>*@
+                                                                        <td> @item.SubTotal</td>
+                                                                    </tr>
+                                                                }
+                                                            }
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                        <!-- /.row -->
+                                        <div class="row">
+
+                                            <div class="col-xs-6">
+
+                                            </div>
+                                            @*/.col*@
+                                            <div>
+
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th style="width:50%">Total:</th>
+                                                            <td>@Model.CurrencySymbol @Model.SubTotal</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Vat</th>
+                                                            <td>@Model.CurrencySymbol @Model.Tax</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Total:</th>
+                                                            <td>@Model.CurrencySymbol @Model.TotalAmount</td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Change:</th>
+                                                            <td> @Model.Change</td>
+
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                        <!-- /.row -->
+                                        <!-- this row will not appear when printing -->
+                                        <div class="row no-print">
+                                            <div class="col-xs-12" style="text-align:center">
+                                                @if (Model.Type == "Sale")
+                                                {<h3>@Html.Raw(Model.InvoiceFooterText)</h3>}
+                                            else
+                                            {<h3>Thanks</h3>}
+
+                                            </div>
+                                        </div>
+                                    </section>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                @DateTime.Now.ToString("dd/MMM/yyyy hh:mm:tt") &nbsp;  Printed by: @Env.GetUserInfo("name")
+
+            </div>
+        </div>
+    </div>
+    <div class="no-print">
+        <a class="btn btn-app" id="btnPrint" onclick="window.print()">
+            <i class="fa fa-print"></i>
+            Print Invoice
+        </a>
+    </div>
+
+</section>
+
+
+

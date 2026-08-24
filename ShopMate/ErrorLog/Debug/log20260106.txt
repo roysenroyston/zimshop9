@@ -1,0 +1,75 @@
+2026-01-06 10:15:21.865 +02:00 [DBG] [
+  {
+    "change": 3.7935,
+    "currency": "USD",
+    "customer": "RAVEWORLD INVESTMENTS",
+    "date": "12/31/2025",
+    "discount": "0.0",
+    "id": 1767208802956,
+    "invoiceId": 3205022,
+    "online": 1,
+    "paymentMethod": "USD",
+    "products": [
+      {
+        "barcode": "0",
+        "id": 7279,
+        "image": "",
+        "name": "Maq W-Pwdr Satchet 1kg",
+        "price": 1.91,
+        "priceRTGS": 0.0,
+        "prodId": 7279,
+        "quantity": 1.0,
+        "tax": 0.2865
+      },
+      {
+        "barcode": "0",
+        "id": 7683,
+        "image": "",
+        "name": "Nivea Cream Max Hydrat 400ml",
+        "price": 4.01,
+        "priceRTGS": 0.0,
+        "prodId": 7683,
+        "quantity": 1.0,
+        "tax": 0.0
+      }
+    ],
+    "rate": 1.0,
+    "subtotal": "6.2065",
+    "tax": 0.2865,
+    "time": "21:20:02",
+    "userId": "23205",
+    "qrString": "https://fdms.zimra.co.zw/00000198943112202500000015436B5550F73FF1D8B6",
+    "qrUrl": "https://fdms.zimra.co.zw",
+    "verificationCode": "6b5550f73ff1d8b644aff8cf156d4c5c",
+    "receiptID": "254745882",
+    "fiscalDayNumber": "46",
+    "deviceSerialNo": "H10S755247J1623",
+    "deviceID": "19894"
+  }
+]
+System.Exception: Exception of type 'System.Exception' was thrown.
+2026-01-06 10:17:26.579 +02:00 [DBG] Error processing the sale data.
+System.Reflection.TargetException: Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.CheckConsistency(Object target)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, Object[] index)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryGetFieldOrPropertyValue(MemberExpression me, Object instance, Object& memberValue)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryEvaluatePath(Expression expression, ConstantExpression& constantExpression)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.EvaluateParameter(Object[] arguments)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at ShopMate.Controllers.AppController.<Dsell>d__14.MoveNext() in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\AppController.cs:line 1224

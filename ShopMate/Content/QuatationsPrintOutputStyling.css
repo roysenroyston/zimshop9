@@ -1,0 +1,180 @@
+﻿
+
+/*@page {
+    size: A3;
+    margin-left: 100pt;
+}*/
+#whole-section {
+    /*background: gray;*/
+    /*background-color: #996600;
+    background-image: url(~/Content/bg/brick-wall-dark.png);*/
+}
+
+.TodayDate {
+    top: 2px;
+    margin-right: 2px;
+    margin-top: 2px;
+}
+
+.main-footer {
+    display: none;
+    /*float: right;
+    padding-top: 20px;
+    margin-left: 600px;*/
+}
+/*#bottom-footer .copyright {
+    float: right;
+    padding-top: 20px;
+    margin-left: 600px;
+}*/
+#print-paper {
+    background: lightgray;
+}
+
+#print-content {
+    padding: inherit;
+    /*min-height: 312mm;*/
+    width: 100%;
+}
+
+#BillToAddress {
+    position: absolute;
+    left: 300px;
+    top: 0px;
+}
+/*#address1 {
+    top: 500px
+}*/
+/*#BillToAddress {
+    position: absolute;
+    left: 300px;
+    top: 10px;
+}*/
+#InvoiceLogo {
+    /*margin-right: 10%;*/
+    width: 100%;
+    height: auto;
+    margin: 5%;
+    /*transform: translate(-50%, 20%);*/
+}
+
+.Addresses {
+    /*background: teal;*/
+    padding: 5px;
+    width: 60%;
+    margin-top: 8%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.CustomerAddress {
+    display: inline-block;
+    width: 49%;
+    min-height: 100%;
+    max-height: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    /*left: 350px;*/
+    top: 170px;
+    margin-top: 5%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.KediAddress {
+    /*display: inline-block;
+    min-width: 25%;
+    min-height: 100%;
+    max-height: 100%;*/
+    /*background: orange;*/
+    /*position: relative;
+    margin-top: 5%;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    top: 200px;*/
+    /*left: 800px;*/
+    /*margin-right: 0%;*/
+    text-align: left;
+    position: relative;
+    margin-top: 5%;
+    font-size: 12px;
+    font-weight: bold;
+    top: 10px;
+    left: 530px;
+}
+
+.Quotation-Heading {
+    text-align: center;
+    font-size: 2vmin;
+    font-weight: bold;
+    color: black;
+    margin-left: 3px;
+    top: 950px;
+}
+
+.invoice-body {
+    position: relative;
+    /*top: 40px;*/
+    /*background: turquoise;*/
+    width: 100%;
+    height: 700px;
+    margin-top: 2%;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Table-Area {
+    margin-left: 6px;
+    min-width: 730px;
+    max-width: 730px;
+}
+
+#actual-table {
+    min-width: 700px;
+    max-width: 700px;
+}
+
+.heading-print {
+    font-size: 2vmin;
+}
+
+.data-print {
+    font-size: 1vmin;
+    font-weight: 200;
+}
+
+.heading-total {
+    font-size: 2vmin;
+    font-weight: 200;
+}
+
+.data-total {
+    font-size: 2vmin;
+    font-weight: 200;
+}
+
+/*.Banking-Details {
+    position: absolute;*/
+/*bottom: 5px;*/
+/*left: 30px;*/
+/*background: gold;*/
+/*width: 400px;
+    top: 800px;
+}*/
+.Banking-Details {
+    position: absolute;
+    top: 650px;
+    left: 30px;
+    /*background: gold;*/
+    width: 400px;
+}
+
+.Second-Account {
+    position: absolute;
+    left: 370px;
+    top: 692px;
+    /*background: purple;*/
+    width: 200px;
+    height: 120px;
+}

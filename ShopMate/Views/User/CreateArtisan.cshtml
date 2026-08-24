@@ -1,0 +1,122 @@
+﻿@model ShopMate.Models.User
+
+@{
+    ViewBag.Title = "Create";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmUser", "tbUser", true, "Action Successfully Executed")
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+<script type="text/javascript">
+        $(function () {
+            $('select').searchableOptionList({
+                maxHeight: '250px'
+            });
+        });
+</script>
+@using (Html.BeginForm("CreateArtisan", "User", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmUser" }))
+{
+    @Html.AntiForgeryToken()
+          <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Fill Artisan Form</h3>
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+                    <div role="form">
+                        <div class="box-body">
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.UserName, new { @class = "" })
+                                @Html.EditorFor(model => model.UserName)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Password, new { @class = "" })
+                                @Html.EditorFor(model => model.Password, new { @Value = 1234 })
+
+
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.FullName, new { @class = "" })
+                                @Html.EditorFor(model => model.FullName)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Mobile, new { @class = "" })
+                                @Html.EditorFor(model => model.Mobile)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Address, new { @class = "" })
+                                @Html.EditorFor(model => model.Address)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.About, new { @class = "" })
+                                @Html.TextAreaFor(model => model.About, new { @class = "" })
+                            </div>
+                            <div class="form-group" hidden>
+                                @Html.LabelFor(model => model.RoleId, new { @class = "" })
+                                @*@Html.DropDownList("RoleId", " -Select- ")*@
+                                <input class="text-box single-line" data-val="true" data-val-number="The field Role must be a number." data-val-required="The Role field is required." id="RoleId" name="RoleId" type="number" value="6">
+
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.JoinDate, new { @class = "" })
+
+                                @Html.EditorFor(model => model.JoinDate, new { htmlAttributes = new { @class = "" } })
+                                <script> $(function () { $("#JoinDate").datepicker(); }); </script>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.IsActive, new { @class = "" })
+                                @Html.EditorFor(model => model.IsActive)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CanLogin, new { @class = "" })
+                                @Html.EditorFor(model => model.CanLogin)
+                            </div>
+                            <div class="form-group" hidden>
+                                @Html.LabelFor(model => model.vatNumber, new { @class = "" })
+                                @Html.EditorFor(model => model.vatNumber)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.WarehouseId, new { @class = "" })
+                                @Env.WareHouseUC()
+                            </div>
+
+
+
+                        </div>
+                        <div class="box-footer">
+                            @Html.StarkInputButtion("Create New", "submit", "btn btn-primary", "")
+                            @Html.ActionLink("Back to List", "Artisan", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+
+
+
+

@@ -1,0 +1,201 @@
+@model ShopMate.Models.Transaction
+@{
+    ViewBag.Title = "Advance Manager";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Content/DataTable/new/jquery.dataTables.min.js"></script>
+<link href="~/Content/DataTable/new/jquery.dataTables.min.css" rel="stylesheet" />
+
+@section ScriptsOrCss
+{
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/tabs/Jquery-ui.js"></script>
+    <link href="~/Content/tabs/JqueryUi.css" rel="stylesheet" />
+    <script>
+        $(function () {
+
+            $("#tabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+            $("#tabs li").removeClass("ui-corner-top").addClass("ui-corner-left");
+
+            $("#dialog").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+            $("#opener").click(function () {
+                $("#dialog").dialog("open");
+            });
+
+        });
+    </script>
+
+    <style>
+        table {
+            width: 100% !important;
+        }
+
+        .ui-tabs-vertical {
+            width: 100%;
+        }
+
+            .ui-tabs-vertical .ui-tabs-nav {
+                padding: .2em .1em .2em .2em;
+                float: left;
+                width: 19%;
+            }
+
+                .ui-tabs-vertical .ui-tabs-nav li {
+                    clear: left;
+                    width: 100%;
+                    border-bottom-width: 1px !important;
+                    border-right-width: 0 !important;
+                    margin: 0 -1px .2em 0;
+                }
+
+                    .ui-tabs-vertical .ui-tabs-nav li a {
+                        display: block;
+                    }
+
+                    .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+                        padding-bottom: 0;
+                        padding-right: .1em;
+                        border-right-width: 1px;
+                    }
+
+            .ui-tabs-vertical .ui-tabs-panel {
+                padding: 1em;
+                float: right;
+                width: 80%;
+            }
+    </style>
+}
+
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+    </h1>
+</section>
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+</script>
+
+@Html.StarkAjaxFormSubmiter("frmTransaction", "tbTransaction", true, "Action Successfully Executed")
+<section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-solid box-primary">
+
+
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#EditThis">Edit</a></li>
+
+                    </ul>
+                    <div id="EditThis" style="height:700px;overflow:auto;">
+                        @using (Html.BeginForm("MultiViewIndex", "Transaction", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmTransaction" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            if (ViewBag.IsWorking > 0)
+                            {
+                                <section class="content">
+                                    <!-- Small boxes (Stat box) -->
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="box box-solid box-primary">
+                                                <div class="box-header">
+                                                    <h3 class="box-title">Edit Transaction Info</h3>
+                                                </div><!-- /.box-header -->
+                                                <!-- form start -->
+                                                <div role="form">
+                                                    <div class="box-body">
+                                                        <div class="alert alert-success alert-dismissable" id="dvMsg" style="display:@(TempData["Display"]==null ? "none" : "")">
+                                                            <i class="fa fa-apple"></i>
+                                                            <b> Update Successfully. </b>
+                                                        </div>
+
+
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.DebitLedgerAccountId, new { @class = "" })
+                                                            @Html.DropDownList("DebitLedgerAccountId", " -Select- ")
+                                                            @Html.StarkDropDownAjaxLink("/LedgerAccount/Create", "AddMore", "")
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.DebitAmount, new { @class = "" })
+                                                            @Html.EditorFor(model => model.DebitAmount)
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.CreditLedgerAccountId, new { @class = "" })
+                                                            @Html.DropDownList("CreditLedgerAccountId", " -Select- ")
+                                                            @Html.StarkDropDownAjaxLink("/LedgerAccount/Create", "AddMore", "")
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.CreditAmount, new { @class = "" })
+                                                            @Html.EditorFor(model => model.CreditAmount)
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.Hidden("AddedBy", Env.GetUserInfo("userid"))
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.Hidden("DateAdded", DateTime.Now)
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.Other, new { @class = "" })
+                                                            @Html.EditorFor(model => model.Other)
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.PurchaseOrSale, new { @class = "" })
+                                                            @Html.EditorFor(model => model.PurchaseOrSale)
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.PurchaseIdOrSaleId, new { @class = "" })
+                                                            @Html.EditorFor(model => model.PurchaseIdOrSaleId)
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.Remarks, new { @class = "" })
+                                                            @Html.EditorFor(model => model.Remarks)
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.WarehouseId, new { @class = "" })
+                                                            @Env.WareHouseUC(Model.WarehouseId)
+                                                        </div>
+
+
+
+                                                    </div><!-- /.box-body -->
+                                                    <div class="box-footer">
+                                                        @Html.StarkInputButtion("Save", "submit", "btn btn-primary", "")
+                                                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            }
+                        }
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+

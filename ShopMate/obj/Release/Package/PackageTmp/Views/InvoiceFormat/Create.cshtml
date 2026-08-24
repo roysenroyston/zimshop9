@@ -1,0 +1,123 @@
+@model ShopMate.Models.InvoiceFormat
+
+@{
+    ViewBag.Title = "Create";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+ 
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmInvoiceFormat", "tbInvoiceFormat", true, "Action Successfully Executed")
+ 
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+<script type="text/javascript">
+        $(function () { 
+            $('select').searchableOptionList({
+                maxHeight: '250px'
+            });
+    });
+
+
+    $(document).ready(function () {
+        $('#RefreshPage').click(function () {
+
+            setTimeout(
+                function () {
+                    window.location.reload(true);
+                }, 800);
+        });
+    });
+
+</script>
+@using (Html.BeginForm("Create", "InvoiceFormat", FormMethod.Post, new { enctype = "multipart/form-data",id = "frmInvoiceFormat"  }))
+{
+    @Html.AntiForgeryToken()
+          <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Fill InvoiceFormat Form</h3>
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+                    <div role="form">
+                        <div class="box-body">
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CompanyName, new { @class = "" })
+                                @Html.EditorFor(model => model.CompanyName)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Logo, new { @class = "" })
+                                <input id="Logo" name="Logo" type="file" />
+
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.AddressInfo, new { @class = "" })
+                                @Html.EditorFor(model => model.AddressInfo)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.OtherInfo, new { @class = "" })
+                                @Html.EditorFor(model => model.OtherInfo)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.FooterInfo, new { @class = "" })
+                                @Html.EditorFor(model => model.FooterInfo)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.WarehouseId, new { @class = "" })
+                                @Env.WareHouseUC()
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.VatNumber, new { @class = "" })
+                                @Html.EditorFor(model => model.VatNumber)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.taxPayerTIN, new { @class = "" })
+                                @Html.EditorFor(model => model.taxPayerTIN)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.DeviceId, new { @class = "" })
+                                @Html.EditorFor(model => model.DeviceId)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.AllowNegative1, new { @class = "" })
+                                @Html.EditorFor(model => model.AllowNegative1)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ShowQuantity, new { @class = "" })
+                                @Html.EditorFor(model => model.ShowQuantity)
+                            </div>
+
+                        </div>
+                        <div class="box-footer">
+                            <input type="submit" id="RefreshPage" value="Create New" class="btn btn-primary">
+                            @*@Html.StarkInputButtion("Create New", "submit", "btn btn-primary", "")*@
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+
+

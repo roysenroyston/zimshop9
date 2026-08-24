@@ -1,0 +1,286 @@
+@model ShopMate.Models.ProductStock
+
+@{
+    ViewBag.Title = "Create";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+
+@Html.StarkAjaxFormSubmiter("frmProductStock", "tbProductStock", true, "Action Successfully Executed")
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+                <small>@ViewBag.Title</small>
+            </h1>
+        </section>
+    }
+}
+<script type="text/javascript">
+    $(function () {
+        $('select').searchableOptionList({
+            maxHeight: '250px'
+        });
+    });
+</script>
+@using (Html.BeginForm("Create", "ProductStock", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmProductStock" }))
+{
+    @Html.AntiForgeryToken()
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Fill ProductStock  Form</h3>
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+                    <div role="form">
+                        <div class="box-body">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.InventoryTypeId, new { @class = "" })
+                                    @Html.DropDownList("InventoryTypeId", null, "-Select-Inventory-", new { @Id = "invenoryId" })
+                                    @* @Html.StarkDropDownAjaxLink("/User/CreateVendor", "AddMore", "")*@
+                                </div>
+                            </div>
+                            @*<div class="col-xs-3">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.WarehouseId, new { @class = "" })
+                                    @Html.DropDownList("WarehouseId", null, "-Select-Warehouse-", new { @Id = "warehouseFrom" })
+                                </div>
+                            </div>*@
+
+
+
+                            <div class="col-md-12">
+                                <table class="table table-bordered table-hover" id="tab_logic">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:25%">Product</th>
+                                            <th style="width:25%">Quantity</th>
+                                            @* <th style="width:25%">Purchase Price</th>*@
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                            <td>
+                                                @Html.DropDownList("ProductId", null, "-Select Product", new { @Id = "products" })
+
+                                            </td>
+                                            <td>
+                                                <input type="number" id="quantity" name="quantity" placeholder="Quantity" class="form-control" />
+                                            </td>
+                                            <td style="display:none">
+                                                <input type="text" id="Name" name="name" placeholder="Name" class="form-control" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="col-md-12">
+                                    <a id="addToList" class="btn btn-primary">Add To List</a>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <table id="detailsTable" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+
+
+                                            <th style="width:15%">Product Id</th>
+                                            <th style="width:30%">Product Name</th>
+                                            <th style="width:20%">Quantity</th>
+                                            @* <th style="width:20%">Purchase Price</th>*@
+                                            @* <th style="width:20%">Total</th>*@
+                                            <th style="width:10%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Note</label>
+                                <br />
+                                <textarea id="Description" name="Description"></textarea>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.Hidden("AddedBy", Env.GetUserInfo("userid"))
+                            </div>
+                            <div class="form-group">
+                                @Html.Hidden("DateAdded", DateTime.Now)
+                            </div>
+                            <div class="form-group">
+                                @Html.Hidden("ModifiedBy", Env.GetUserInfo("userid"))
+                            </div>
+                            <div class="form-group">
+                                @Html.Hidden("DateModied", DateTime.Now)
+                            </div>
+
+
+
+
+
+                        </div>
+                        <div class="box-footer">
+                            @*@Html.StarkInputButtion("Create New", "submit", "btn btn-primary", "")*@
+                            <button id="saveOrder" type="submit" class="btn btn-primary">Update Stock</button>
+
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+
+<script type="text/javascript">
+    //$(document).ready(function () {
+    //    totapuchase();
+    //});
+    //function totapuchase() {
+    //    $("#PurchasePrice").keyup(function () {
+    //        debugger
+    //        var totalpurchase = $("#TotalPurchaseAmount").text();
+    //        var purcha = $("#PurchasePrice").val();
+    //        var quantity = $("#Quantity").text();
+    //        var total = parseFloat(totalpurchase) + (parseFloat(purcha) * parseFloat(quantity));
+    //        $("#TotalPurchaseAmount").val(total);
+    //    });
+
+    //}
+
+
+    $(document).ready(function () {
+
+        $("#products").on("change", function () {
+            //var selectedProductId = $(this).children("option:selected").val();
+            var value = $('#dropDownId:selected').val();
+            var selectedWarehouse = $("#warehouseFrom").val();
+            console.log(value);
+            $.ajax(
+                {
+                    url: '/Product/GetDetail?id=' + $(this).children("option:selected").val() /*+ `&warehouseFrom=${selectedWarehouse}`*/,
+                    type: 'GET',
+                    data: "",
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+
+                        $("#Name").val(data.Name);
+                        $("#unitPrice").val(data.price.toFixed(2));
+
+                        $("#quantity").attr({ "min": 1, "max": 0, placeholder: `Quantity (${data.remainingquantity})` });
+                    },
+                    error: function () {
+                        alert("error");
+                    }
+                });
+        });
+    });
+
+    //Add Multiple Materails.
+    $("#addToList").click(function (e) {
+        e.preventDefault();
+
+        if ($.trim($("#products").val()) == "" || $.trim($("#quantity").val()) == "") return;
+
+        console.log('adding');
+        var description = $("#products").val(),
+            name = $("#Name").val(),
+            quantity = $("#quantity").val(),
+            // unitPrice = $("#unitPrice").val(),
+            detailsTableBody = $("#detailsTable tbody");
+
+        var productItem = '<tr><td>' + description + '</td><td>' + name + '</td><td>' + quantity + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
+        detailsTableBody.append(productItem);
+        clearItem();
+    });
+
+    //After Add A New description In The List, Clear Clean The Form For Add More description.
+    function clearItem() {
+        $("#description").val('');
+        $("#Name").val('');
+        $("#unitPrice").val('');
+        $("#quantity").val('');
+    }
+
+
+    // After Add A New Order In The List, If You Want, You Can Remove It.
+    $(document).on('click', 'a.deleteItem', function (e) {
+        e.preventDefault();
+        var $self = $(this);
+        if ($(this).attr('data-itemId') == "0") {
+            $(this).parents('tr').css("background-color", "#ff6347").fadeOut(800, function () {
+                $(this).remove();
+            });
+        }
+    });
+
+    //Collect Multiple Quotation List For Pass To Controller
+    $("#saveOrder").click(function (e) {
+        e.preventDefault();
+        debugger
+        var QuotationItemArr = [];
+
+        QuotationItemArr.length = 0;
+
+        $.each($("#detailsTable tbody tr"), function () {
+            QuotationItemArr.push({
+                ProductId: $(this).find('td:eq(0)').html(),
+                ProductName: $(this).find('td:eq(1)').html(),
+                Quantity: $(this).find('td:eq(2)').html(),
+                //  SalePrice: $(this).find('td:eq(3)').html(),
+                // TotalPrice: $(this).find('td:eq(3)').html()
+            });
+        });
+
+        var data = JSON.stringify({
+            InvenoryId: $("#invenoryId").val(),
+            WarehouseId: $("#warehouseFrom").val(),
+            Description: $("#Description").val(),
+            productss: QuotationItemArr,
+
+        });
+
+        $.when(saveOrder(data)).then(function (response) {
+            console.log(response);
+        }).fail(function (err) {
+            console.log(err);
+        });
+    });
+
+    //After Click Save Button Pass All Data View To Controller For Save Database
+    function saveOrder(data) {
+        return $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: "/ProductStock/Create",
+            data: data,
+            success: function (result) {
+                alert(result);
+                location.reload();
+            },
+            error: function (req, textStatus, errorThrown) {
+                //this is going to happen when you send something different from a 200 OK HTTP
+                alert('Ooops, something happened: ' + textStatus + ' ' + errorThrown);
+            }
+        });
+    }
+
+</script>

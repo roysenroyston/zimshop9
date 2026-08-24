@@ -1,0 +1,19 @@
+2026-02-27 10:52:41.400 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.BaseController.OnActionExecuting(ActionExecutingContext context) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\BaseController.cs:line 48
+2026-02-27 10:52:41.727 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.HomeController.Index(String Date) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\HomeController.cs:line 402
+2026-02-27 10:58:11.018 +02:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ShopMate.Controllers.AccountController.login(FormCollection frmCollection) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\AccountController.cs:line 40

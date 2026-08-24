@@ -1,0 +1,72 @@
+2025-11-19 13:29:14.976 +02:00 [DBG] {
+  "change": 0.78000000000000025,
+  "currency": "USD",
+  "customer": "RAVEWORLD INVESTMENTS",
+  "date": "11/19/2025",
+  "discount": "0.0",
+  "id": 1763550154698,
+  "invoiceId": 3192003,
+  "online": 1,
+  "paymentMethod": "USD",
+  "products": [
+    {
+      "barcode": "0",
+      "id": 5504,
+      "image": "",
+      "name": "Ace Porridge Original 1kg",
+      "price": 1.5,
+      "priceRTGS": 0.0,
+      "prodId": 5504,
+      "quantity": 1.0,
+      "tax": 0.0
+    },
+    {
+      "barcode": "0",
+      "id": 5551,
+      "image": "",
+      "name": "All Gold Tomato Sauce 700g",
+      "price": 2.81,
+      "priceRTGS": 0.0,
+      "prodId": 5551,
+      "quantity": 1.0,
+      "tax": 0.0
+    },
+    {
+      "barcode": "0",
+      "id": 5690,
+      "image": "",
+      "name": "Axe Musk Spray 90ml",
+      "price": 1.0,
+      "priceRTGS": 0.0,
+      "prodId": 5690,
+      "quantity": 1.0,
+      "tax": 0.0
+    },
+    {
+      "barcode": "0",
+      "id": 5687,
+      "image": "",
+      "name": "Axe Ice Chill 150ml",
+      "price": 1.91,
+      "priceRTGS": 0.0,
+      "prodId": 5687,
+      "quantity": 1.0,
+      "tax": 0.0
+    }
+  ],
+  "rate": 1.0,
+  "subtotal": "7.22",
+  "tax": 0.0,
+  "time": "13:02:34",
+  "userId": "23192",
+  "qrString": "https://fdms.zimra.co.zw/00000198941911202500000010366EEDC24E40EE5240",
+  "qrUrl": "https://fdms.zimra.co.zw",
+  "verificationCode": "6eedc24e40ee5240c6b1358c2b8ef622",
+  "receiptID": "223348351",
+  "fiscalDayNumber": "38",
+  "deviceSerialNo": "H10S755247J1623",
+  "deviceID": "19894"
+}
+System.Exception: Exception of type 'System.Exception' was thrown.
+2025-11-19 13:30:10.696 +02:00 [DBG] Processing sale for Invoice ID: 3192003
+System.Exception: Exception of type 'System.Exception' was thrown.

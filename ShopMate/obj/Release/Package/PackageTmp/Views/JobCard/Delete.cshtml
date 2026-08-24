@@ -1,0 +1,155 @@
+﻿@model ShopMate.Models.JobCard
+
+@{
+    /**/
+
+    ViewBag.Title = "Are you sure you want to delete";
+    if (Ajax.IsThisAjaxRequest())
+    {
+        Layout = null;
+    }
+}
+
+
+@Html.StarkAjaxFormSubmiter("frmJobCard", "tbJobCard", true, "Action Successfully Executed")
+
+@{
+    if (!Ajax.IsThisAjaxRequest())
+    {
+        <section class="content-header">
+            <h1>
+                @ViewBag.Title
+            </h1>
+        </section>
+    }
+}
+
+<section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-xs-12">
+
+            <div class="box box-solid box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Detail of Job Card</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive">
+
+                    <div class="box-body table-responsive">
+                        <div class="col-xs-2">
+
+                            <div class="clearfix"></div>
+
+                            <br /><br /><br />
+
+                        </div>
+
+                        <div class="col-xs-9" style="margin-left:10px;">
+
+                            <div id="dvContainer" class="content invoice" style=" padding inherit; min-height 150mm; width:100%; ">
+
+                                <div style="margin-bottom:50px;">
+
+                                </div>
+                                <div class="row" style="font-size:12px;text-align:center;font-weight:bold;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+
+
+                                    <div style="text-align:center;font-size:30px;font-weight:bold;"> Job Card Details</div>
+
+
+                                    <div style="text-align:left;margin-left:40px;">
+
+                                        <div style="height:10px; margin-bottom:10px; ">
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-5" style="padding-left:60px;">Date: @Model.purchasedate</div>
+                                                <div class="col-xs-4" style="margin-left:25%;padding-left:80px;">Job No: @Model.JobNo </div>
+                                                <div class="clearfix"></div>
+
+                                                <br />
+                                                <div class="col-xs-5" style="padding-left:60px;">Customer: @Model.customername</div>
+                                                <div class="col-xs-4" style="margin-left:25%;padding-left:80px;">OrderNumber: @Model.OrderNumber </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+
+                                            <div class="col-xs-12">
+                                                <table class="table table-striped">
+                                                    <thead style="background-color:#e5e2e2;">
+                                                        <tr>
+                                                            <th>Address</th>
+                                                            <th>Description</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>@Model.address</td>
+                                                            <td>@Model.Description</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <hr />
+                                            <div class="col-md-6 col-md-offset-7">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.sandries, new { @class = "" })<br />
+                                                    @Html.DisplayFor(model => model.sandries)
+                                                </div>
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.totalbfvat, new { @class = "" })<br />
+                                                    @Html.DisplayFor(model => model.totalbfvat)
+                                                </div>
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.VAT, new { @class = "" })<br />
+                                                    @Html.DisplayFor(model => model.VAT)
+                                                </div>
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.TotalAmountWithTax, new { @class = "" })<br />
+                                                    @Html.DisplayFor(model => model.TotalAmountWithTax)
+                                                </div>
+                                                <div class="form-group">
+                                                    @Html.Hidden("purchasedate", DateTime.Now)
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="col-xs-5" style="padding-left:60px;">Date of Issue: @DateTime.Today.Day/@DateTime.Today.Month/@DateTime.Today.Year </div>
+                                                    <div class="col-xs-7">
+                                                        <div class="col-xs-2" style="margin-left:25%;padding-left:80px;">Completed: @Model.completed </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="widget-sec">
+                                                <div class="streaming-table">
+                                                    <div class="box-footer">
+
+                                                        @using (Html.BeginForm("Delete", "JobCard", FormMethod.Post, new { id = "frmJobCard" }))
+                                                        {
+                                                            @Html.AntiForgeryToken()
+
+                                                            @Html.StarkInputButtion("Delete", "submit", "btn btn-danger", "")
+                                                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

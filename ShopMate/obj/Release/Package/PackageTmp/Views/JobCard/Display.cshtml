@@ -1,0 +1,231 @@
+﻿@model ShopMate.ModelDto.JobCardDto
+@{
+    ViewBag.Title = "INVOICE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery1.8.3.print.js"></script>
+
+@{
+    string css1 = Url.Content("~/Content/theme/bootstrap/css/bootstrap.min.css");
+}
+
+
+<script type="text/javascript">
+    $("#btnPrint").live("click", function () {
+        var divContents = $("#dvContainer").html();
+        var printWindow = window.open('', '', 'height=700,width=900');
+        printWindow.document.write('<html><head>');
+        printWindow.document.write('<link href="../../Content/theme/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
+
+        printWindow.document.write('</head><body >');
+        printWindow.document.write(divContents);
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+        printWindow.print();
+
+    });
+
+
+</script>
+
+
+<style>
+    select {
+        width: 150px;
+    }
+    <!-- https://www.transparenttextures.com/wood-pattern.html -->
+</style>
+
+
+
+
+<section class="content" style="background-color: #996600; background-image: url(@Url.Content("~/Content/bg/brick-wall-dark.png"));">
+    <!-- Small boxes (Stat box)  -->
+    <div class="row">
+        <div class="col-xs-2">
+
+
+            <section class="content">
+                <!-- Small boxes (Stat box) -->
+
+                <div class="col-xs-12">
+
+                    <div class="clearfix"></div>
+                    <br />
+
+
+                    <div class="clearfix"></div>
+
+                    <br /><br /><br />
+
+
+                    <a class="btn btn-app" id="btnPrint">
+                        <i class="fa fa-print"></i>
+                        Print This
+                    </a>
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+        <div class="col-xs-9">
+
+            <div id="dvContainer" class="content invoice" style="padding: inherit; min-height: 312mm;  width:100%; ">
+
+                <div style="margin-bottom:50px;">
+
+                </div>
+                <div class="row" style="font-size:12px;text-align:center;font-weight:bold;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+
+
+                    <div style="text-align:center;font-size:30px;font-weight:bold;"> FISCAL TAX INVOICE</div>
+
+
+                    <div style="text-align:left;margin-left:40px;">
+
+                        <div style="height:10px; margin-bottom:10px; ">
+
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div style="width:96%;">
+
+                                    <section class="invoice">
+                                        <!-- title row -->
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <h2 class="page-header">
+                                                    @*<i class="fa fa-globe"></i> Invoice #@Model.InvoiceId*@
+                                                    <small class="pull-right">Date:@DateTime.Now.ToString("MMM/dd/yyyy") </small>
+                                                </h2>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                        <!-- info row -->
+                                        <!-- /.row -->
+                                        <!-- Table row -->
+                                        @*<div class="row">
+                                            <div class="col-xs-12 table-responsive">
+                                                <table class="table">
+                                                    <thead style="background-color:#e5e2e2;">
+                                                        <tr>
+                                                            <th>Product</th>
+                                                            <th>Price</th>
+                                                            <th>Qty</th>
+                                                            <th>Tax</th>
+                                                            <th>Tax Info</th>
+                                                            <th>Subtotal</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @if (Model.invoiceItem != null)
+                                                        {
+                                                            if (Model.invoiceItem.Count > 0)
+                                                            {
+                                                                foreach (var item in Model.invoiceItem)
+                                                                {
+                                                                    <tr>
+                                                                        <td>@item.ProcuctName</td>
+                                                                        <td>@item.Price</td>
+                                                                        <td>@item.Quantity</td>
+                                                                        <td>@Model.CurrencySymbol @item.Tax</td>
+                                                                        <td>@item.TaxInfo</td>
+                                                                        <td>@Model.CurrencySymbol @item.SubTotal</td>
+                                                                    </tr>
+                                                                }
+                                                            }
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>*@
+                                        <div class="row">
+                                            <div class="col-xs-12 table-responsive">
+                                                <table class="table">
+                                                    <thead style="background-color:#e5e2e2;">
+                                                        <tr>
+                                                            <th>Description</th>
+                                                            <th>Hours</th>
+                                                            <th>Rate</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @if (Model.services != null)
+                                                        {
+                                                            if (Model.services.Count > 0)
+                                                            {
+                                                                foreach (var item in Model.services)
+                                                                {
+                                                                    <tr>
+                                                                        <td>@item.artisan</td>
+                                                                        <td>@item.hours</td>
+                                                                        <td>@item.rate</td>
+
+                                                                    </tr>
+                                                                }
+                                                            }
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!-- /.col -->
+                                </div>
+                                <!-- /.row -->
+                                <div class="row">
+                                    <!-- accepted payments column -->
+                                    <div class="col-xs-6">
+
+                                    </div>
+                                    <!-- /.col -->
+                                    <!-- /.row -->
+                                    <!-- this row will not appear when printing -->
+                                </div>
+</section>
+
+
+
+
+
+
+<div style="height:10px; margin-bottom:20px;">
+
+</div>
+
+
+
+
+
+
+<div class="clearfix"></div>
+
+
+
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="col-xs-5" style="padding-left:60px;"> @DateTime.Now.ToString("dd/MMM/yyyy hh:mm:tt")</div>
+        <div class="col-xs-4" style="margin-left:25%;padding-left:80px;">Printed by: @Env.GetUserInfo("name") </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+
+<div>
+    <a class="btn btn-app" id="btnPrint">
+        <i class="fa fa-print"></i>
+        Print This
+    </a>
+</div>
+</section>
+

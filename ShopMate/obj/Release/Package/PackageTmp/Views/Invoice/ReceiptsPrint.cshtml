@@ -1,0 +1,246 @@
+﻿@model ShopMate.ModelDto.InvoiceDto
+@{
+    ViewBag.Title = "INVOICE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery1.8.3.print.js"></script>
+@*<link href="~/Content/InvoicesStyling.css" rel="stylesheet" />*@
+@*<link href="~/Content/InvoicesStyling.css" media="print" rel="stylesheet" />*@
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+@*<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>*@
+@*<script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>*@
+@*<script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>*@
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>*@
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+<script src=" https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
+
+
+<script type="text/javascript">
+    $("#btnPrint").live("click", function () {
+        //var divContents = $("#print-content").html()
+        //var printWindow = window.open('', '', 'height=700,width=900');
+        //printWindow.document.write('<html><head>');
+        //printWindow.document.write('<link href="../../Content/theme/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
+        //printWindow.document.write('<link href="~/Content/InvoicesStyling.css" rel="stylesheet" type="text/css" />');
+        //printWindow.document.write('</head><body >');
+        //printWindow.document.write(divContents);
+        //printWindow.document.write('</body></html>');
+        //printWindow.document.close();
+        //printWindow.print();
+        window.print();
+
+    });
+
+
+</script>
+
+<section id="whole-section" class="content" style="background-image: url(@Url.Content("~/Content/bg/mining.jpg"))">
+    <div class="row">
+        @*<div class="col-xs-2 no-print">
+                <section class="content">
+                    <div class="col-xs-12">
+                        <a class="btn btn-app" id="btnPrint"onclick="window.print()">
+                            <i class="fa fa-print"></i>
+                            Print Invoice
+                        </a>
+                    </div>
+                </section>
+            </div>*@
+
+        <div class="col-xs-12 print">
+            <div id="print-content" class="content invoice">
+                <span class="Fiscal-Heading" style="text-align:center;margin-left:0%; font-weight: bold;"><h3> <strong> FISCAL INVOICE : @Model.InvoiceId  </strong></h3></span>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <figure class="pull-left">
+                            @* <img id="KediLogo" img src="~/Content/bg/AccessAfricalogo.png" style="width:200px; height:100px;margin-top:1%;" /><br />*@
+                            @*  <img src="@Url.Action("ShowImage", "Image", new { id = Model.ImageData })" alt="Image" />*@
+                            <img src="@Url.Content("~/Uploads/" + Model.Logo)" style="width: 200px; height: 100px; margin-top: 1%;" alt="Logo" />
+
+                            <div id="KediAddress">
+                                <kediAddress>
+                                    <strong>@Model.CompanyName</strong><br>
+                                    @Html.Raw(Model.CompanyAddress)<br>
+                                    TIN:@Model.tinNo<br />
+                                    VAT No: @Model.CompanyvatNo<br />
+                                    Email:  @Model.email<br>
+                                    Mobile:  @Model.CompanyContact <br><br>
+
+
+                                </kediAddress>
+                            </div>
+                        </figure>
+
+                    </div>
+                </div>
+                @*<div class="row" style="font-size:12px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">*@
+                <div class="pull-right" style="text-align: left; margin-left: 2%; margin-top: 1%; margin-right: 2%; font-size: 11px; width: 30%;">
+
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?data=@Model.qrCode&amp;size=100x100" alt="" title="HELLO" /><br />
+
+                    Verification Code :     @Model.myVerificationCode
+                    @Model.Zimraemail<br />
+                    Fiscal Day No : @Model.fiscalDayNumber<br />
+                    Fiscal Invoice No : @Model.receiptId<br />
+                    <div class="pull-left">Date:@Model.InvoiceDate</div><br />
+                    <br />
+                    <span><strong>Bill To:</strong></span>
+                    <address>
+                        @Model.ToName<br />
+
+                        @Html.Raw(Model.ToInfo) <br />
+                         @Model.Cstomer<br />
+                        @*Customer Tin No: @Model.custinNo<br />*@
+
+
+                    </address>
+
+
+                </div>
+
+                <br />
+                <br />
+                <br />
+                <p>&nbsp;&nbsp;</p>
+                <p>&nbsp;&nbsp;</p>
+                <p>&nbsp;&nbsp;</p>
+                <p>&nbsp;&nbsp;</p>
+                <p>&nbsp;&nbsp;</p>
+                <p>&nbsp;&nbsp;</p>
+
+                <div class="invoice-body">
+
+
+                    <div class="Table-Area-Container">
+                        <div style="width:100%;">
+                            <section>
+                                <div class="Table-Area">
+                                    <table class="table" style="font-size: 12px; width: 98%;height: auto;font-weight: 200; position: relative;">
+                                        <thead style="background-color:#e5e2e2;">
+                                            <tr>
+                                                @*<th class="heading-print">CODE</th>*@
+                                                <th class="heading-print">PRODUCT</th>
+                                                <th class="heading-print">QUANTITY</th>
+                                                <th class="heading-print">UNIT PRICE</th>
+                                                <th class="heading-print">TAX</th>
+                                                <th class="heading-print">SUBTOTAL</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (Model.invoiceItem != null)
+                                            {
+                                                if (Model.invoiceItem.Count > 0)
+                                                {
+                                                    foreach (var item in Model.invoiceItem)
+                                                    {
+
+                                                        <tr>
+                                                            @*<td class="data-print">@item.ProcuctName</td>*@
+                                                            <td class="data-print">@item.ProcuctName</td>
+                                                            <td class="data-print">@item.Quantity</td>
+                                                            <td class="data-print">@item.Price</td>
+                                                            <td class="data-print">@item.Tax</td>
+                                                            <td class="data-print">@item.SubTotal</td>
+                                                        </tr>
+
+
+
+                                                    }
+                                                }
+                                            }
+
+
+                                        </tbody>
+                                    </table>
+                                    <br />
+
+
+
+                                    <div id="footer " style="display: block; width: 98%;  height: 280px; position: relative; page-break-inside: avoid; ">
+                                        <div style="float: none; position: static; overflow: visible;  page-break-inside: avoid;">
+                                            <div class="pull-right" style="text-align: left; margin-left: 2%; font-weight: bold; margin-right: 1%; margin-top: 1%; page-break-inside: avoid; font-size: 11px; width: 24%;">
+                                                Total(Excl):&nbsp;@Model.CurrencySymbol @Model.SubTotal
+                                                <p>&nbsp;&nbsp;</p>
+                                                Tax:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Model.CurrencySymbol @Model.Tax
+                                                <p>&nbsp;&nbsp;</p>
+                                                @*Discount:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Model.CurrencySymbol @Model.discount
+                                                    <p>&nbsp;&nbsp;</p>*@
+                                                Total(Incl):&nbsp;&nbsp;@Model.CurrencySymbol @Model.TotalAmount
+                                            </div>
+                                            <br />
+                                            <br />
+                                            <br />
+                                            <br />
+                                            <br />
+                                            <div class="Banking-Details pull-left" style="float: left; font-size: 12px; font-weight: bold; left: 10px; width: 30%; margin-left: 0%; page-break-inside: avoid;">Remarks : </div>
+                                            <br />
+
+
+                                            <div class="Banking-Details pull-left" style="float:left; font-size:10px; left: 10px;width:30%;margin-left: 0%;  page-break-inside: avoid;" hidden>
+
+                                                <div id="first-bank" style="font-size: 10px; ">
+
+                                                    <h5>
+                                                        <strong>TERMS &Aacute; CONDITIONS</strong><br>
+                                                    </h5>
+                                                    <p>(i)No Return No Refund </p>
+                                                    <p>(ii)Collection on full payment </p>
+                                                    <p>(iii)Please check your order before you leave </p>
+
+                                                </div>
+
+
+
+
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                                <div>
+                                </div>
+
+
+
+
+
+
+                                @*<div class="clearfix no-print"></div>
+                                    <div class="clearfix no-print"></div>*@
+                                @*<div class="row no-print" id="Footer-Area">
+                                        <div class="col-xs-12" style="text-align:left">
+                                            <p style="font-weight:700; font-style:italic;"></p>
+                                            <h4 style="font-weight:700; font-style:italic;align-self:center;">@Html.Raw(Model.InvoiceFooterText)</h4>
+                                        </div>
+                                    </div>*@
+                        </div>
+
+                    </div>
+                </div>
+                @*<div class="clearfix no-print"></div>*@
+
+            </div>
+            @*</div>*@
+            @*<div class="row no-print">
+                    <div class="col-xs-12">
+                        <div class="col-xs-5" style="padding-left:60px;"> @DateTime.Now.ToString("dd/MMM/yyyy hh:mm:tt")</div>
+                        <div class="col-xs-4" style="margin-left:25%;padding-left:80px;">Printed by: @Env.GetUserInfo("name") </div>
+                    </div>
+                </div>*@
+            @*</div>*@
+            <div class="no-print">
+                <a class="btn btn-app" id="btnPrint" onclick="window.print()">
+                    <i class="fa fa-print"></i>
+                    Print Invoice
+                </a>
+            </div>
+</section>

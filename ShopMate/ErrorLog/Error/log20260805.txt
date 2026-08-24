@@ -1,0 +1,144 @@
+2026-08-05 08:46:42.590 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.BaseController.OnActionExecuting(ActionExecutingContext context) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\BaseController.cs:line 48
+2026-08-05 08:46:42.769 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.HomeController.Index(String Date) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\HomeController.cs:line 402
+2026-08-05 09:32:24.549 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.BaseController.OnActionExecuting(ActionExecutingContext context) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\BaseController.cs:line 48
+2026-08-05 09:32:24.727 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.HomeController.Index(String Date) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\HomeController.cs:line 402
+2026-08-05 09:54:08.932 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.BaseController.OnActionExecuting(ActionExecutingContext context) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\BaseController.cs:line 48
+2026-08-05 09:54:09.102 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.HomeController.Index(String Date) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\HomeController.cs:line 402
+2026-08-05 10:16:11.217 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.BaseController.OnActionExecuting(ActionExecutingContext context) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\BaseController.cs:line 48
+2026-08-05 10:16:11.699 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.HomeController.Index(String Date) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\HomeController.cs:line 402
+2026-08-05 10:19:40.305 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.BaseController.OnActionExecuting(ActionExecutingContext context) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\BaseController.cs:line 48
+2026-08-05 10:19:40.671 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.HomeController.Index(String Date) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\HomeController.cs:line 402
+2026-08-05 10:25:10.334 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.BaseController.OnActionExecuting(ActionExecutingContext context) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\BaseController.cs:line 48
+2026-08-05 10:25:10.637 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.HomeController.Index(String Date) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\HomeController.cs:line 402
+2026-08-05 10:28:57.413 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.BaseController.OnActionExecuting(ActionExecutingContext context) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\BaseController.cs:line 48
+2026-08-05 10:28:57.758 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.HomeController.Index(String Date) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\HomeController.cs:line 402
+2026-08-05 10:33:15.719 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.BaseController.OnActionExecuting(ActionExecutingContext context) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\BaseController.cs:line 48
+2026-08-05 10:33:16.086 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.HomeController.Index(String Date) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\HomeController.cs:line 402
+2026-08-05 10:38:37.129 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.BaseController.OnActionExecuting(ActionExecutingContext context) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\BaseController.cs:line 48
+2026-08-05 10:38:37.505 +02:00 [ERR] Value cannot be null.
+Parameter name: String
+System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ShopMate.Controllers.HomeController.Index(String Date) in C:\Users\HP\Documents\ROYSEN\multiwarehousefiscal\multiwarehousefiscal\ShopMate\Controllers\HomeController.cs:line 402
