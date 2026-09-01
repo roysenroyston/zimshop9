@@ -809,6 +809,7 @@
     <Compile Include="Models\ZimraResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utility\AccountExpiry.cs" />
     <Compile Include="Utility\Env.cs" />
     <Compile Include="Utility\ModalDialogExtensions.cs" />
   </ItemGroup>

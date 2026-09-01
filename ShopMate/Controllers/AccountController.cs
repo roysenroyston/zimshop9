@@ -19,6 +19,10 @@ namespace ShopMate.Controllers
         // GET: /Account/
         public ActionResult login()
         {
+            if (Request["expired"] == "1")
+            {
+                ViewBag.Msg = AccountExpiry.WebMessage;
+            }
 
             if (Env.GetUserInfo("name").Length > 0)
                 return Redirect("~/Home/Index");
@@ -37,15 +41,22 @@ namespace ShopMate.Controllers
 
                 User login = db.Users.FirstOrDefault(i => i.UserName == email && i.CanLogin == true);
 
-                login = BCrypt.Net.BCrypt.Verify(password, login.Password) ? login : null;
+                if (login == null || !BCrypt.Net.BCrypt.Verify(password, login.Password))
+                {
+                    ViewBag.Msg = "!Invalid UserName and Password";
+                    return View();
+                }
 
                 try
                 {
-                 
-          
-
-                        if (login != null)
+                        if (AccountExpiry.IsExpired(login))
                         {
+                            AccountExpiry.SignOutWeb(HttpContext);
+                            ModelState.AddModelError(string.Empty, "You are not allowed to log in as one year has passed since your date of joining.");
+                            ViewBag.Msg = AccountExpiry.WebMessage;
+                            return View();
+                        }
+
                             var claims = new List<Claim>();
                             claims.Add(new Claim(ClaimTypes.Name, login.UserName.ToString())); // store username of user
                             claims.Add(new Claim(ClaimTypes.Role, login.RoleId.Value.ToString()));
@@ -61,20 +72,6 @@ namespace ShopMate.Controllers
                             var claimsPrincipal = new ClaimsPrincipal(identity);
                             Thread.CurrentPrincipal = claimsPrincipal;
 
-
-                        DateTime dateOfJoining = (DateTime)login.JoinDate; // Example
-
-                        // Calculate time difference
-                        TimeSpan timeDifference = DateTime.Now - dateOfJoining;
-
-                        // Check if one year has passed
-                        if (timeDifference.TotalDays >= 365)
-                        {
-                            ModelState.AddModelError(string.Empty, "You are not allowed to log in as one year has passed since your date of joining.");
-                            ViewBag.Msg = "Your Account Expired, Contact Support for Assistance";
-                        }
-                        else
-                        {
                             if (login.RoleId == 1 || login.RoleId == 6 || login.RoleId == 12)
                             {
                                 return Redirect("~/Home/Index");
@@ -95,19 +92,6 @@ namespace ShopMate.Controllers
                             {
                                 return Redirect("~/pos/Index");
                             }
-                        }
-                        //catch (Exception ex)
-                        //{
-                        //    Helper.WriteError(ex, ex.Message);
-                        //    return View("System encountered an unknown error.");
-                        //}
-
-                      
-                        }
-                        else
-                        {
-                            ViewBag.Msg = "!Invalid UserName and Password";
-                        }
                     
                 }
                 catch (InvalidOperationException ex)

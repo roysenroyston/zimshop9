@@ -18,6 +18,7 @@ using static ShopMate.Models.Zimra;
 
 namespace ShopMate.Controllers
 {
+    [AccountExpiryApi]
     public class AppController : ApiController
     {
         private SIContext db = new SIContext();
@@ -96,25 +97,19 @@ namespace ShopMate.Controllers
                 string password = value["password"].ToString();
 
                 User login = db.Users.FirstOrDefault(i => i.UserName == email && i.CanLogin == true);
-                //  login.JoinDate
-                DateTime dateOfJoining = (DateTime)login.JoinDate; // Example
-
-                // Calculate time difference
-                TimeSpan timeDifference = DateTime.Now - dateOfJoining;
-
-                // Check if one year has passed
-                if (timeDifference.TotalDays >= 365)
+                if (login == null)
                 {
-                    ModelState.AddModelError(string.Empty, "You are not allowed to log in as one year has passed since your date of joining.");
-                    //    ViewBag.Msg = "Your Account Expired, Contact 0783 284 440";
-                    return Request.CreateResponse(HttpStatusCode.Forbidden, "Your Account Expired, Contact 0783 284 440");
+                    return Request.CreateResponse(HttpStatusCode.NotAcceptable, "Invalid details please try again");
                 }
-
 
                 try
                 {
                     if (BCrypt.Net.BCrypt.Verify(password, login.Password))
                     {
+                        if (AccountExpiry.IsExpired(login))
+                        {
+                            return Request.CreateResponse(HttpStatusCode.Forbidden, AccountExpiry.AppMessage);
+                        }
                         if (login.RoleId == 2 || login.RoleId == 7)
                         {
                             var shopdetails = db.Warehouses.FirstOrDefault(i => i.Id == login.WarehouseId);
@@ -735,6 +730,10 @@ namespace ShopMate.Controllers
                 if (!test)
                 {
                     User seller_user = db.Users.FirstOrDefault(i => i.Id == mySell.userId);
+                    if (AccountExpiry.IsExpired(seller_user))
+                    {
+                        return Request.CreateResponse(HttpStatusCode.Forbidden, AccountExpiry.AppMessage);
+                    }
                     DateTime nowDate = DateTime.ParseExact(mySell.date + " " + mySell.time, "dd/MM/yyyy HH:mm:ss", null);
                     var findinvoice = db.InformalInvoices.Where(j => j.InvoiceNo == mySell.invoiceId).Count();
                     //  var customer = db.Customers.Where(j => j.BuyerRegisterName == mySell.customer).FirstOrDefault();
@@ -992,6 +991,10 @@ namespace ShopMate.Controllers
                 {
                     return Request.CreateResponse(HttpStatusCode.BadRequest, "User not found");
                 }
+                if (AccountExpiry.IsExpired(sellerUser))
+                {
+                    return Request.CreateResponse(HttpStatusCode.Forbidden, AccountExpiry.AppMessage);
+                }
 
                 DateTime orderDateTime;
                 var dateTimeString = (request.orderDate ?? DateTime.Now.ToString("dd/MM/yyyy")) + " " + (request.orderTime ?? DateTime.Now.ToString("HH:mm:ss"));
@@ -1153,6 +1156,10 @@ namespace ShopMate.Controllers
                                 {
                                     Helper.WriteDebug(new Exception(), $"User not found with ID: {myUserId}");
                                     return Request.CreateErrorResponse(HttpStatusCode.NotFound, $"User with ID {myUserId} not found.");
+                                }
+                                if (AccountExpiry.IsExpired(seller_user))
+                                {
+                                    return Request.CreateResponse(HttpStatusCode.Forbidden, AccountExpiry.AppMessage);
                                 }
 
                                 var myreCount1 = dbContext.InformalInvoices.Where(j => j.WarehouseId == seller_user.WarehouseId).Count();
