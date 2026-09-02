@@ -48,3 +48,8 @@ Thumbs.db
 *.mov
 *.wmv
 
+# .NET / ASP.NET build output and logs
+ShopMate/bin/
+**/obj/
+ShopMate/ErrorLog/
+

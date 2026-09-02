@@ -1,4 +1,0 @@
-2024-11-25 14:21:27.093 +02:00 [DBG] []
-System.Exception: Exception of type 'System.Exception' was thrown.
-2024-11-25 14:25:45.191 +02:00 [DBG] []
-System.Exception: Exception of type 'System.Exception' was thrown.
