@@ -25,6 +25,7 @@ namespace ShopMate
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/shopmate-saas.css",
                       "~/Content/site.css"));
         }
     }

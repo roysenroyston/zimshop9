@@ -51,6 +51,15 @@
                     <div class="margin">
 
                         <div class="streaming-table">
+                            <div class="mb-2">
+                                <label class="me-2">Show records from</label>
+                                <select id="saleDaysFilter" class="form-select form-select-sm d-inline-block w-auto">
+                                    <option value="7">Last 7 days</option>
+                                    <option value="30" selected>Last 30 days</option>
+                                    <option value="90">Last 90 days</option>
+                                    <option value="0">All records</option>
+                                </select>
+                            </div>
                             <span class="label label-success">Sold</span>
                             <span class="label label-danger">Returned</span>
                             <br />
@@ -104,12 +113,16 @@
     $(document).ready(function () {
         var oTableSale = "";
         var ControlerNameSale = "@Url.Content("~/Sale")";
-        // debugger;
-        oTableSale = $("#tbSale").dataTable({
+
+        function initSaleTable(days) {
+            if (oTableSale) {
+                $("#tbSale").dataTable().fnDestroy();
+            }
+            oTableSale = $("#tbSale").dataTable({
             "bRetrieve": true,
             "bProcessing": true,
             "dom": 'lBfrtip',
-            "sAjaxSource": "@Url.Content("~/Sale/GetGrid")",
+            "sAjaxSource": ControlerNameSale + "/GetGrid?days=" + days,
             "buttons": [
                  { extend: 'copyHtml5', exportOptions: { columns: ':visible' } }
                 , { extend: 'excelHtml5', exportOptions: { columns: ':visible' } }
@@ -162,7 +175,13 @@
             }
 
         });
+        }
 
+        initSaleTable(30);
+
+        $('#saleDaysFilter').on('change', function () {
+            initSaleTable($(this).val());
+        });
     });
 </script>
 

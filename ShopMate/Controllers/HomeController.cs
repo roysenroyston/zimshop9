@@ -374,6 +374,7 @@
 //}
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -493,43 +494,9 @@ namespace ShopMate.Controllers
                     {
                         home.todayvat1 = taxAmount1.Sum(i => i.TotalAmountWithTax);
                     }
-                    var SaleItemsQuantity = db.Sales.Where(i => i.InventoryTypeId == 2 && i.WarehouseId == warehouse).Select(i => new { i.Quantity }).ToArray();
-                    if (SaleItemsQuantity.Count() > 0)
-                    {
-                        home.SaleItemsQuantity = SaleItemsQuantity.Sum(i => i.Quantity);
-                    }
-                    var warestock = db.WarehouseStocks.Where(j => j.WarehouseId == warehouse).Select(i => new { i.RemainingQuantity }).ToArray();
-                    if (warestock.Count() > 0)
-                    {
-                        home.WarestockRemaining = warestock.Sum(i => i.RemainingQuantity);
-                    }
-                    var SaleItemsQuantity1 = db.Sales.Where(h => h.WarehouseId == warehouse).Select(i => new { i.Quantity }).ToArray();
-                    if (SaleItemsQuantity1.Count() > 0)
-                    {
-                        home.SaleItemsQuantity = SaleItemsQuantity1.Sum(i => i.Quantity);
-                    }
-
-                    var RawMaterialsItemsQuantity = db.RawMaterialStocks.Where(i => i.InventoryTypeId == 1 && i.WarehouseId == warehouse).Select(i => new { i.Quantity }).ToArray();
-                    if (SaleItemsQuantity.Count() > 0)
-                    {
-                        home.RawMaterialsItemsQuantity = RawMaterialsItemsQuantity.Sum(i => i.Quantity);
-                    }
-
-                    var stocksadjustedItemsQuantity = db.ProductStock.Where(i => i.InventoryTypeId == 6 && i.WarehouseId == warehouse).Select(i => new { i.Quantity }).ToArray();
-                    if (stocksadjustedItemsQuantity.Count() > 0)
-                    {
-                        home.stocksadjustedItemsQuantity = stocksadjustedItemsQuantity.Sum(i => i.Quantity);
-                    }
+                    // Heavy all-time stock totals are loaded via AJAX (GetStockMovement) so the page renders immediately.
 
                     var expense = db.Expenses.Where(i => (i.DateAdded.Value.Day == tDay && i.DateAdded.Value.Month == tMonth && i.DateAdded.Value.Year == tYear) && i.WarehouseId == warehouse).Select(i => new { i.Amount }).ToArray();
-
-                    // var PurchaseItemsQuantity1 = db.Purchases.Where(i => i.InventoryTypeId == 1 && i.WarehouseId == warehouse).OrderByDescending(o => o.DateAdded).First().Quantity;/*.Select(i => new { i.Quantity }).ToArray();*/
-
-                    var PurchaseItemsQuantity = db.Purchases.Where(i => i.InventoryTypeId == 1 && i.WarehouseId == warehouse).Select(i => new { i.Quantity }).ToArray();
-                    if (PurchaseItemsQuantity.Count() > 0)
-                    {
-                        home.PurchaseItemsQuantity = PurchaseItemsQuantity.Sum(i => i.Quantity);
-                    }
                     var due = db.DuePayments.Where(i => (i.DateAdded.Value.Day == tDay && i.DateAdded.Value.Month == tMonth && i.DateAdded.Value.Year == tYear) && i.WarehouseId == warehouse).Select(i => new { i.DueAmount, i.IsReturn }).ToArray();
 
                     home.Expense = expense.Sum(i => i.Amount);
@@ -555,47 +522,66 @@ namespace ShopMate.Controllers
 
         public JsonResult LineChart(int lastDay)
         {
-
-
             int warehouse = int.Parse(Env.GetUserInfo("WarehouseId"));
-            // forgot above all code if you bind this line chart form your database table
+            if (lastDay < 1) lastDay = 7;
+            if (lastDay > 365) lastDay = 365;
 
-            List<GraphData> dataList = new List<GraphData>();
+            var startDate = DateTime.Now.Date.AddDays(-lastDay + 1);
+            var dataList = new List<GraphData>();
 
-            var LastDays = DateTime.Now.Date.AddDays(-lastDay);
-            SIContext db = new SIContext();
-            ///listDateTable just add your table where have date field like db.User
-            var LastRegister = db.Sales.Where(i => i.DateAdded >= LastDays && i.WarehouseId == warehouse).ToArray();
-
-            for (int i = 0; i < lastDay; i++)
+            using (var db = new SIContext())
             {
-                var dateDynamic = DateTime.Now.Date.AddDays(-i);
-                int year = dateDynamic.Year;
-                int month = dateDynamic.Month;
-                int day = dateDynamic.Day;
+                var salesByDay = db.Sales
+                    .Where(i => i.DateAdded >= startDate && i.WarehouseId == warehouse)
+                    .GroupBy(i => DbFunctions.TruncateTime(i.DateAdded))
+                    .Select(g => new { Day = g.Key, Total = g.Sum(k => k.TotalAmount) })
+                    .ToList()
+                    .ToDictionary(x => x.Day.Value.Date, x => x.Total);
 
-                DateTime newDate = new DateTime(year, month, day);
-                var hav = LastRegister.Where(j => j.DateAdded.Value.Date == newDate.Date);
-                if (hav.Count() > 0)
+                for (int i = lastDay - 1; i >= 0; i--)
                 {
-                    GraphData gdata = new GraphData();
-                    gdata.label = newDate.ToString("yyyy-MM-dd");
-                    gdata.value = hav.Sum(k => k.Quantity);
-                    gdata.value = hav.Sum(k => k.TotalAmount);
-                    dataList.Add(gdata);
-                }
-                else
-                {
-                    GraphData gdata = new GraphData();
-                    gdata.label = newDate.ToString("yyyy-MM-dd");
-                    gdata.value = 0;
-                    gdata.price = 0;
-                    dataList.Add(gdata);
-                }
+                    var newDate = DateTime.Now.Date.AddDays(-i);
+                    salesByDay.TryGetValue(newDate, out var total);
 
+                    dataList.Add(new GraphData
+                    {
+                        label = newDate.ToString("yyyy-MM-dd"),
+                        value = total,
+                        price = 0
+                    });
+                }
             }
 
             return Json(dataList, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// All-time stock movement totals — loaded after the page renders so the dashboard opens quickly.
+        /// </summary>
+        public JsonResult GetStockMovement()
+        {
+            int warehouse = int.Parse(Env.GetUserInfo("WarehouseId"));
+            using (var db = new SIContext())
+            {
+                var purchaseQty = db.Purchases
+                    .Where(i => i.InventoryTypeId == 1 && i.WarehouseId == warehouse)
+                    .Select(i => (decimal?)i.Quantity).DefaultIfEmpty(0).Sum() ?? 0;
+
+                var saleQty = db.Sales
+                    .Where(i => i.InventoryTypeId == 2 && i.WarehouseId == warehouse)
+                    .Select(i => (decimal?)i.Quantity).DefaultIfEmpty(0).Sum() ?? 0;
+
+                var remaining = db.WarehouseStocks
+                    .Where(j => j.WarehouseId == warehouse)
+                    .Select(i => (decimal?)i.RemainingQuantity).DefaultIfEmpty(0).Sum() ?? 0;
+
+                return Json(new
+                {
+                    PurchaseItemsQuantity = purchaseQty,
+                    SaleItemsQuantity = saleQty,
+                    WarestockRemaining = remaining
+                }, JsonRequestBehavior.AllowGet);
+            }
         }
         private class GraphData
         {

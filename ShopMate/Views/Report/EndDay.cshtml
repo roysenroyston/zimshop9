@@ -9,7 +9,6 @@
 
 @{
     string css1 = Url.Content("~/Content/theme/bootstrap/css/bootstrap.min.css");
-}
 
 <link href="~/Content/datetimepicker-master/jquery.datetimepicker.css" rel="stylesheet" />
 <script src="~/Content/datetimepicker-master/jquery.datetimepicker.min.js"> </script>
@@ -19,24 +18,7 @@
 <script src="~/Content/theme/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-    $("#btnPrint").live("click", function () {
-        var divContents = $("#dvContainer").html();
-        var printWindow = window.open('', '', 'height=700,width=900');
-        printWindow.document.write('<html><head>');
-        printWindow.document.write('<link href="../../Content/theme/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
-
-        printWindow.document.write('</head><body >');
-        printWindow.document.write(divContents);
-        printWindow.document.write('</body></html>');
-        printWindow.document.close();
-        printWindow.print();
-
-
-    });
-
-
-
-    var isPosttime = "@ViewBag.timess";
+var isPosttime = "@ViewBag.timess";
 
 
     $(document).ready(function (e) {
@@ -70,7 +52,7 @@
 
 
 
-<section class="content" style="background-image: url(@Url.Content("~/Content/bg/black-scales.png"));">
+<section class="content report-page">
     <!-- Small boxes (Stat box)  -->
     <div class="row">
         <div class="col-xs-2">
@@ -124,9 +106,9 @@
 
         </div>
 
-        <div class="col-xs-9" style="margin-left:10px;">
+        <div class="col-xs-9">
 
-            <div id="dvContainer" class="content invoice" style=" padding:inherit; min-height: 312mm; width:100%; ">
+            <div id="dvContainer" class="report-document" style=" padding:inherit; min-height: 312mm; width:100%; ">
 
                 <div style="margin-bottom:50px;">
 

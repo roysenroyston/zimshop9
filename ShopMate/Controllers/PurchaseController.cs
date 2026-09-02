@@ -23,13 +23,21 @@ namespace ShopMate.Controllers
             return View();
         }
 
-        // GET Purchase/GetGrid
-        public ActionResult GetGrid()
+        // GET Purchase/GetGrid?days=30  (defaults to last 30 days — pass days=0 for all records)
+        public ActionResult GetGrid(int days = 30)
         {
             int warehouses = int.Parse(Env.GetUserInfo("WarehouseId"));
             var warehouse = db.Warehouses.ToArray();
             var user = db.Users.ToArray();
-            var tak = db.Purchases.Where(i => i.WarehouseId == warehouses).ToArray();
+
+            var purchaseQuery = db.Purchases.Where(i => i.WarehouseId == warehouses);
+            if (days > 0)
+            {
+                var cutoff = DateTime.Now.Date.AddDays(-days);
+                purchaseQuery = purchaseQuery.Where(i => i.DateAdded >= cutoff);
+            }
+
+            var tak = purchaseQuery.OrderByDescending(i => i.DateAdded).ToArray();
             var userwarehouse = db.Users.FirstOrDefault(n => n.UserName == userId).WarehouseId;
             if (userId == "Zimhope")
             {

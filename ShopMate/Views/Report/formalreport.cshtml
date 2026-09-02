@@ -19,22 +19,7 @@
 <script src="~/Content/theme/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-    $("#btnPrint").live("click", function () {
-        var divContents = $("#dvContainer").html();
-        var printWindow = window.open('', '', 'height=700,width=900');
-        printWindow.document.write('<html><head>');
-        printWindow.document.write('<link href="../../Content/theme/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
-        printWindow.document.write('</head><body >');
-        printWindow.document.write(divContents);
-        printWindow.document.write('</body></html>');
-        printWindow.document.close();
-        printWindow.print();
-
-    });
-
-
-
-    var isPosttime = "@ViewBag.timess";
+var isPosttime = "@ViewBag.timess";
 
 
     
@@ -73,7 +58,7 @@ alert(result);
     <!-- https://www.transparenttextures.com/wood-pattern.html -->
 </style>
 
-<section class="content" style="background-image: url(@Url.Content("~/Content/bg/black-scales.png"));">
+<section class="content report-page">
     <!-- Small boxes (Stat box)  -->
     <div class="row">
         <div class="col-xs-2">
@@ -91,7 +76,7 @@ alert(result);
                         <div class="col-xs-12">
                             <input type="text" name="FromDate" required style="width: 150px;" value="@ViewBag.FromDate" placeholder="Pick From Date" id="txtCal" />
                             From Time: <input name="stime" required id="stime" type="text" value="@ViewBag.stime" style="width:60px;">
-                            <script> $(function () { $("#txtCal").datepicker(); }); </script>
+                            @*<script> $(function () { $("#txtCal").datepicker(); }); </script>*@
 
                         </div>
                         <div class="clearfix"></div>
@@ -99,12 +84,12 @@ alert(result);
                         <div class="col-xs-12">
                             <input type="text" required name="ToDate" style="width:150px;" value="@ViewBag.ToDate" placeholder="Pick To Date" id="txtCalTo" />
                             To Time:  <input required name="etime" id="etime" type="text" value="@ViewBag.etime" style="width:60px;">
-                            <script> $(function () { $("#txtCalTo").datepicker(); }); </script>
+                            @*<script> $(function () { $("#txtCalTo").datepicker(); }); </script>*@
                         </div>
                         <div class="clearfix"></div>
                         <br />
                         <div class="col-xs-12">
-                            @Html.DropDownList("ProductId", " -Select- ")
+                            @Html.DropDownList("ProductId", "-Select Product-")
                         </div>
                         <div class="clearfix"></div>
                         <br />
@@ -138,9 +123,9 @@ alert(result);
 
         </div>
 
-        <div class="col-xs-9" style="margin-left:10px;">
+        <div class="col-xs-9">
 
-            <div id="dvContainer" class="content invoice" style="padding: inherit; min-height: 312mm;  width:100%; ">
+            <div id="dvContainer" class="report-document">
 
                 <div style="margin-bottom:50px;">
 

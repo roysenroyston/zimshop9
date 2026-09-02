@@ -402,6 +402,35 @@ namespace ShopMate
             return DateTime.ParseExact(Convert.ToDateTime(retrunDate).ToString("yyyy-MM-dd HH:mm:ss"), "yyyy-MM-dd HH:mm:ss", null);
         }
 
+        public static string GetUserExpiry()
+        {
+            try
+            {
+                var identity = (ClaimsPrincipal)Thread.CurrentPrincipal;
+                int userId = Convert.ToInt32(identity.Claims.Where(c => c.Type == ClaimTypes.Sid).Select(c => c.Value).SingleOrDefault());
+                var ngodza = db.Users.FirstOrDefault(k => k.Id == userId);
+                String Value = "";
+                if (ngodza != null)
+                {
+                    DateTime dateOfJoining = (DateTime)ngodza.JoinDate;
+                    TimeSpan timeDifference = DateTime.Now - dateOfJoining;
+                    DateTime newDate = dateOfJoining.AddDays(365);
+                    TimeSpan daysleft = newDate - DateTime.Now;
+                    int more = (int)daysleft.TotalDays;
+                    if (timeDifference.TotalDays >= 335)
+                    {
+                        Value = "Your account is about to expire you are left with " + more + " days";
+                    }
+                }
+                return Value;
+            }
+            catch (Exception)
+            {
+            }
+
+            return "";
+        }
+
 
         public static MvcHtmlString WareHouseUC(int? selected = null)
         {

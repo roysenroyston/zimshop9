@@ -1,527 +1,443 @@
-
-
-
 @model ShopMate.ModelDto.HomeDto
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Dashboard";
 }
 
-<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/highcharts-3d.js"></script>
-<script src="https://code.highcharts.com/highcharts-more.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<style>
-    h4 {
-        font-weight: bold !important;
-        font-size: 25px !important;
-    }
-</style>
+@section ScriptsOrCss
+{
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
+}
 
+@{
+    var inv = System.Globalization.CultureInfo.InvariantCulture;
+}
 
-<section class="content-header" style="background-color: #ffffff; background-image: url(@Url.Content("~/Content/bg/unicharm"));text-align:center;font-weight: bold;font-size: 50px;padding: 0;">
-    <span style="background-clip:text; -moz-background-clip: text; -webkit-background-clip: text; text-shadow: 0px 2px 3px rgba(255,255,255,0.5); color: transparent; background-color: #565656; ">@Model.companyname Dashboard</span>
-</section>
+<div class="dashboard-hero">
+    <h1>ZiPOS Dashboard</h1>
+    <p>Sales, purchases, inventory, and profit at a glance.</p>
+</div>
 
-<!-- Main content -->
-<section class="content" style="background-color: #ffffff; background-image: url(@Url.Content("~/Content/bg/unicharm"));">
-
-    <!-- Small boxes (Stat box) -->
-    <div class="row">
-        <div class="col-lg-6 col-xs-6">
-            <form action="" method="post" class="small-box bg-red">
-
-                <div class="form-group">
-                    <div class="input-group">
-
-                        <input id="" @*value="@ViewBag.dates"*@ placeholder="dd/MM/yyyy" name="Date" class="form-control" type="text">
-
-                        <div class="input-group-addon" style="margin:0px;padding:0px;">
-                            <input class="btn  bg-navy btn-sm" type="submit" value="Get Report" />
-                        </div>
-
-                    </div>
+<section class="content">
+    <div class="row mb-3">
+        <div class="col-lg-6 col-md-8">
+            <form action="" method="post" class="stat-card">
+                <label class="stat-card-label mb-2">Report date</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                    <input value="@ViewBag.dates" placeholder="dd/MM/yyyy" name="Date" class="form-control" type="text" />
+                    <button class="btn btn-primary" type="submit">Get Report</button>
                 </div>
             </form>
         </div>
-
     </div>
-    <div class="row">
 
-        <div class="col-lg-2 col-xs-3">
-            <!-- small box -->
-            <div class="small-box bg-green">
-                <div class="inner">
-                    <h4>  @Model.todayPurchaseCount</h4>
-                    <p>Today Purchased</p>
+    <div class="row g-3 mb-4">
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="stat-card emerald">
+                <div class="stat-card-label">Today Purchased</div>
+                <p class="stat-card-value">@Model.todayPurchaseCount</p>
+                <div class="stat-card-foot">
+                    <a href="~/Report/TodayPurchase">View report <i class="fa fa-arrow-right"></i></a>
                 </div>
-                <div class="icon">
-                    <i class="fa fa-shopping-cart"></i>
-                </div>
-                <a class="small-box-footer" href="~/Report/TodayPurchase">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div><!-- ./col -->
-        <div class="col-lg-2 col-xs-3">
-            <!-- small box -->
-            <div class="small-box bg-yellow">
-                <div class="inner">
-                    <h4>  @Model.todaySaleCostSum </h4>
-                    <p>Today Sale Value</p>
-                </div>
-                <div class="icon">
-                    <i class="fa fa-balance-scale"></i>
-                </div>
-                <a class="small-box-footer" href="~/Report/TodaySale">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
-        <div class="col-lg-2 col-xs-3">
-            <!-- small box -->
-            <div class="small-box bg-gray">
-                <div class="inner">
-                    <h4>  @Model.todaySaleCostSum1 </h4>
-                    <p>Today ZWG Value</p>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="stat-card amber">
+                <div class="stat-card-label">Today Sale Value</div>
+                <p class="stat-card-value">@Model.todaySaleCostSum</p>
+                <div class="stat-card-foot">
+                    <a href="~/Report/TodaySale">View report <i class="fa fa-arrow-right"></i></a>
                 </div>
-                <div class="icon">
-                    <i class="fa fa-balance-scale"></i>
-                </div>
-                <a class="small-box-footer" href="~/Report/TodaySale">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div><!-- ./col -->
-
-
-        <div class="col-lg-2 col-xs-3">
-            <!-- small box -->
-            <div class="small-box bg-fuchsia">
-                <div class="inner">
-                    <h4> @Model.todayvat</h4>
-                    <p>Today USD Tax</p>
-                </div>
-                <div class="icon">
-                    <i class="fa fa-money"></i>
-                </div>
-  
             </div>
         </div>
-
-        <!-- ./col -->
-        <div class="col-lg-2 col-xs-3">
-            <!-- small box -->
-            <div class="small-box bg-fuchsia-active">
-                <div class="inner">
-                    <h4>  @Model.todayvat1</h4>
-                    <p>Today ZWG TAX</p>
-                </div>
-                <div class="icon">
-                    <i class="fa fa-money"></i>
-                </div>
-
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="stat-card indigo">
+                <div class="stat-card-label">Today Profit</div>
+                <p class="stat-card-value">@Model.todayProfit</p>
             </div>
         </div>
-
-    </div><!-- /.row -->
-
-    <div class="row">
-        <div class="col-lg-2 col-xs-3">
-            <!-- small box -->
-            <div class="small-box bg-aqua">
-                <div class="inner">
-                    <h4> @Model.todayProfit</h4>
-                    <p>Today Profit</p>
+        <div class="col-lg-6 col-md-12">
+            <div class="stat-card sky">
+                <div class="stat-card-label">Overall Stock Movement</div>
+                <div class="row mt-2">
+                    <div class="col-sm-6 col-md-3 mb-2">
+                        <small class="text-muted d-block">Received</small>
+                        <strong id="stock-received" class="text-muted">…</strong>
+                    </div>
+                    <div class="col-sm-6 col-md-3 mb-2">
+                        <small class="text-muted d-block">Sold (total)</small>
+                        <strong id="stock-sold" class="text-muted">…</strong>
+                    </div>
+                    <div class="col-sm-6 col-md-3 mb-2">
+                        <small class="text-muted d-block">Remaining</small>
+                        <strong id="stock-remaining" class="text-muted">…</strong>
+                    </div>
+                    <div class="col-sm-6 col-md-3 mb-2">
+                        <small class="text-muted d-block">Sold today</small>
+                        <strong>@Model.todaySaleCount</strong>
+                    </div>
                 </div>
-                <div class="icon">
-                    <i class="fa fa-money"></i>
-                </div>
-                @*<a class="small-box-footer" href="~//">More info <i class="fa fa-arrow-circle-right"></i></a>*@
             </div>
-        </div><!-- ./col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        </div>
+    </div>
+
+
+
+    <div class="row g-3 mb-4">
+        <div class="col-md-4 col-sm-6">
             <div class="info-box bg-green">
                 <span class="info-box-icon"><i class="fa fa-user-plus"></i></span>
                 <div class="info-box-content">
-                    <span class="info-box-text"> Total Customers </span>
-                    <span class="info-box-number">@Model.Customer </span>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 100%"></div>
-                    </div>
-                </div><!-- /.info-box-content -->
-            </div><!-- /.info-box -->
-        </div><!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
+                    <span class="info-box-text">Total Customers</span>
+                    <span class="info-box-number">@Model.Customer</span>
+                    <div class="progress"><div class="progress-bar" style="width: 100%"></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
             <div class="info-box bg-yellow">
                 <span class="info-box-icon"><i class="fa fa-user-secret"></i></span>
                 <div class="info-box-content">
-                    <span class="info-box-text"> Total Suppliers </span>
-                    <span class="info-box-number"> @Model.Vendor </span>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 100%"></div>
-                    </div>
-                </div><!-- /.info-box-content -->
-            </div><!-- /.info-box -->
-        </div><!-- /.col -->
-        <div class="col-xs-4">
-            <div class="small-box bg-red">
-                <div class="inner">
-                    <h4>Overal Stock Movement</h4>
-                    <p>
-                        Accumulative Purchases:<b> @Model.PurchaseItemsQuantity</b> <br />
-                        Accumulative Sold Stocks:<b> @Model.SaleItemsQuantity</b> <br />
-                        Remaining Stocks:<b> @Model.WarestockRemaining</b> <br />
-                        Today Sold items: <b> @Model.todaySaleCount</b>
-                    </p>
+                    <span class="info-box-text">Total Suppliers</span>
+                    <span class="info-box-number">@Model.Vendor</span>
+                    <div class="progress"><div class="progress-bar" style="width: 100%"></div></div>
                 </div>
-                <div class="icon">
-                    <i class="fa fa-warning"></i>
-                </div>
-                @*<a class="small-box-footer" href="~/Report/WareHouseStock">More info <i class="fa fa-arrow-circle-right"></i></a>*@
             </div>
         </div>
-        @*<div class="col-lg-2 col-xs-3">
-                <div class="small-box bg-gray">
-                    <div class="inner">
-                        <h4> </h4>
-                        <p> </p>
-                    </div>
-                    <div class="icon">
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <a class="small-box-footer" href="~//"> <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>*@
-    </div><!-- /.row -->
-
-    <div class="row" hidden>
-
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="col-md-4 col-sm-6">
             <div class="info-box bg-red">
                 <span class="info-box-icon"><i class="fa fa-eye"></i></span>
                 <div class="info-box-content">
-                    <span class="info-box-text"> Total Role </span>
-                    <span class="info-box-number">@Model.Role </span>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 100%"></div>
-                    </div>
-                </div><!-- /.info-box-content -->
-            </div><!-- /.info-box -->
-        </div><!-- /.col -->
-    </div><!-- /.row -->
-
-
-
-
-
-    <div class="row">
-
-
-        @*<div class="col-md-5">
-                <div class="box box-primary direct-chat direct-chat-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Due and Expense</h3>
-                        <div class="box-tools pull-right">
-                            <button data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button>
-                            <button data-widget="remove" class="btn btn-box-tool"><i class="fa fa-times"></i></button>
-                        </div>
-                    </div>
-                    <div class="box-body chart-responsive">
-                        <div id="bindPieChart"></div>
-                    </div>
+                    <span class="info-box-text">Total Roles</span>
+                    <span class="info-box-number">@Model.Role</span>
+                    <div class="progress"><div class="progress-bar" style="width: 100%"></div></div>
                 </div>
-            </div>*@
-
-
-        @*<div class="col-md-7">
-                <div class="box box-primary direct-chat direct-chat-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Over all details</h3>
-                        <div class="box-tools pull-right">
-                            <button data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button>
-                            <button data-widget="remove" class="btn btn-box-tool"><i class="fa fa-times"></i></button>
-                        </div>
-                    </div>
-                    <div class="box-body chart-responsive">
-                        <button class="btn btn-primary btn-xs" id="plain">Plain</button>
-                        <button class="btn btn-info btn-xs" id="inverted">Inverted</button>
-                        <button class="btn btn-success btn-xs" id="polar">Polar</button>
-                        <div class="chart" id="otherInfo"></div>
-                    </div>
-                </div>
-            </div>*@
-
+            </div>
+        </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-8">
-            <div class="box box-primary direct-chat direct-chat-primary">
+    <div class="row g-3 dashboard-chart-row">
+        <div class="col-md-5">
+            <div class="box box-primary chart-panel">
                 <div class="box-header with-border">
-                    <h3 style="float:left;margin:0px;">Last 7 Days Sale </h3>
-                    <select id="selectLastDays" style="float:left;width:130px;margin-left:20px;">
-                        <option value="7">Last 7 Day</option>
-                        <option value="30">Last 30 Day</option>
-                        <option value="60">Last 60 Day</option>
-                        <option value="90">Last 90 Day</option>
-                        <option value="120">Last 120 Day</option>
+                    <h3 class="box-title">Due &amp; Expense</h3>
+                    <div class="box-tools pull-right">
+                        <button data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="box-body chart-responsive">
+                    <div id="bindPieChart" class="zm-chart-host"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div class="box box-primary chart-panel">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Today's overview</h3>
+                    <div class="box-tools pull-right">
+                        <button data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="box-body chart-responsive">
+                    <div id="otherInfo" class="zm-chart-host"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-3 mt-1 dashboard-chart-row">
+        <div class="col-md-8">
+            <div class="box box-primary chart-panel">
+                <div class="box-header with-border">
+                    <h3 class="box-title mb-0">Sales trend</h3>
+                    <select id="selectLastDays" class="form-select form-select-sm ms-md-3">
+                        <option value="7">Last 7 days</option>
+                        <option value="30">Last 30 days</option>
+                        <option value="60">Last 60 days</option>
+                        <option value="90">Last 90 days</option>
+                        <option value="120">Last 120 days</option>
                     </select>
-
                     <div class="box-tools pull-right">
                         <button data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button>
-                        <button data-widget="remove" class="btn btn-box-tool"><i class="fa fa-times"></i></button>
                     </div>
                 </div>
                 <div class="box-body chart-responsive">
-                    <div class="chart" id="line-chart"></div>
+                    <div id="line-chart" class="zm-chart-host"></div>
                 </div>
             </div>
         </div>
-        @*<div class="container">
-                <canvas id="myBarChart"></canvas>
-            </div>*@
+
         <div class="col-md-4">
-            <div class="box box-primary direct-chat direct-chat-primary">
+            <div class="box box-primary chart-panel">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Sale ,Purchase, Returns</h3>
+                    <h3 class="box-title">Sales, purchases &amp; returns</h3>
                     <div class="box-tools pull-right">
                         <button data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button>
-                        <button data-widget="remove" class="btn btn-box-tool"><i class="fa fa-times"></i></button>
                     </div>
                 </div>
                 <div class="box-body chart-responsive">
-                    <div class="chart" id="work-chart"></div>
+                    <div id="work-chart" class="zm-chart-host"></div>
                 </div>
             </div>
         </div>
-
-
-
-
     </div>
 
-
-    <div class="row">
-        <div class="col-md-8">
-            <div class="box box-primary direct-chat direct-chat-primary">
+    <div class="row g-3 mt-1">
+        <div class="col-lg-8">
+            <div class="box box-primary chart-panel">
                 <div class="box-header with-border">
-                    <h3 style="float:left;margin:0px;">Fast Moving Products</h3>
-
-                    <div style="float:left;width:130px;margin-left:20px; font-size:20px  " hidden>
-                        <select id="selectLastDays1" style="float:left;width:130px;margin-left:20px;">
-                            <option value="7">Last 7 Day</option>
-                            <option value="30">Last 30 Day</option>
-                            <option value="60">Last 60 Day</option>
-                            <option value="90">Last 90 Day</option>
-                            <option value="120">Last 120 Day</option>
-                        </select>
-                    </div>
+                    <h3 class="box-title">Fast moving products</h3>
                     <div class="box-tools pull-right">
                         <button data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button>
-                        <button data-widget="remove" class="btn btn-box-tool"><i class="fa fa-times"></i></button>
                     </div>
                 </div>
                 <div class="box-body chart-responsive">
-                    <div class="chart" id="Kyle"></div>
+                    <div id="Kyle" class="zm-chart-host"></div>
                 </div>
-                @*<a class="small-box-footer" href="~/Report/FastSale">More info <i class="fa fa-arrow-circle-right"></i></a>*@
+                <a class="small-box-footer" href="~/Report/FastSale">View full report <i class="fa fa-arrow-right"></i></a>
             </div>
         </div>
-
     </div>
+
+
+
 
 </section>
 
 <script type="text/javascript">
-    $(function () {
-        "use strict";
-        //DONUT CHART
-        var donut = new Morris.Donut({
-            element: 'work-chart',
-            resize: true,
-            colors: ["#004453", "#00e765", "#f75980", "#e51212"],
-            data: [
-                {
-                    label: "Purchase Items", value: "@Model.todayPurchaseCount"
+    (function () {
+        var colors = ['#6366f1', '#10b981', '#f59e0b', '#f43f5e', '#0ea5e9', '#8b5cf6', '#14b8a6'];
+
+        Highcharts.setOptions({
+            colors: colors,
+            chart: {
+                backgroundColor: '#ffffff',
+                style: { fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" },
+                spacing: [12, 12, 16, 12]
+            },
+            title: {
+                style: { color: '#0f172a', fontSize: '14px', fontWeight: '600' }
+            },
+            credits: { enabled: false },
+            legend: {
+                itemStyle: { color: '#64748b', fontWeight: '500' }
+            },
+            lang: {
+                noData: 'No data available for this period'
+            },
+            noData: {
+                style: { color: '#64748b', fontSize: '13px', fontWeight: '500' }
+            }
+        });
+
+        function baseChartOptions() {
+            return {
+                chart: { height: 300 },
+                xAxis: {
+                    labels: { style: { color: '#64748b' } },
+                    lineColor: '#e2e8f0',
+                    tickColor: '#e2e8f0'
                 },
-                {
-                    label: "Sale Items", value: "@Model.todaySaleCount"
+                yAxis: {
+                    title: { text: null },
+                    gridLineColor: '#eef2f7',
+                    labels: { style: { color: '#64748b' } }
                 },
-                {
-                    label: "Purchase Return Items", value: "@Model.todayPurchaseReturnCount"
-                } ,
-                {
-                    label: "Sale Return Items", value: "@Model.todaySaleReturnCount"
+                tooltip: {
+                    backgroundColor: '#ffffff',
+                    borderColor: '#e2e8f0',
+                    borderRadius: 10,
+                    shadow: false,
+                    style: { color: '#0f172a' }
                 }
-            ],
-            hideHover: 'auto'
-        });
-
-        $('#reservation').datepicker();
-
-        //there i pass day of last
-        BindLastRegister(7);
-
-        $("#selectLastDays").on("change", function () {
-            var svalue = $("#selectLastDays").val();
-            BindLastRegister(svalue);
-        });
-
-        BindLastRegister1(1);
-
-    });
-
-
-    var chart = Highcharts.chart('otherInfo', {
-
-        title: {
-            text: 'Today Purchase, Sale, Profit, Profit with Tax In Amount'
-        },
-
-        xAxis: {
-            categories: ['Purchase', 'Sale', 'Profit', 'Profit With Tax','Expense','Due Given','Due Return']
-        },
-
-        series: [{
-            name: 'Total Count',
-            type: 'column',
-            colorByPoint: true,
-            data: [@Model.todayPurchaseCostSum,@Model.todaySaleCostSum,@Model.todayProfit,@Model.todayProfitWithTax,@Model.Expense,@Model.DueGiven,@Model.DueReturn],
-            showInLegend: false
-        }], chart: {
-            inverted: true,
-            polar: false
+            };
         }
 
-    });
-
-
-    $('#plain').click(function () {
-        chart.update({
-            chart: { inverted: false, polar: false },
-            subtitle: { text: 'Plain' }
-        });
-    });
-
-    $('#inverted').click(function () {
-        chart.update({
-            chart: { inverted: true, polar: false },
-            subtitle: { text: 'Inverted' }
-        });
-    });
-
-    $('#polar').click(function () {
-        chart.update({
-            chart: { inverted: false, polar: true },
-            subtitle: { text: 'Polar' }
-        });
-    });
-
-    Highcharts.chart('bindPieChart', {
-        chart: {
-            type: 'pie',
-            options3d: {
-                enabled: true,
-                alpha: 33
-            }
-        },
-        title: {
-            text: 'Expense,Due Given,Due Return'
-        },
-        //subtitle: {
-        //    text: 'g'
-        //},
-        plotOptions: {
-            pie: {
-                innerSize: 100,
-                depth: 45
-            }
-        },
-        series: [{
-            name: 'Total Count',
-            data: [
-                ['Expense', @Model.Expense],
-                ['Due Given', @Model.DueGiven],
-                ['Due Return', @Model.DueReturn],
-            ]
-        }]
-    });
-
-    function BindLastRegister(days) {
-        $("#line-chart").html("");
-        $.ajax({
-            url: "@Url.Content("~/Home/LineChart")",
-            type: "Post",
-            data: { 'lastDay': days },
-            dataType: 'json',//json
-            success: function (data) {
-                Morris.Line({
-                    element: 'line-chart',
-                    resize: true,
-                    data: data,
-                    xkey: 'label',
-                    ykeys: ['value'],
-                    labels: ['Count'],
-                    lineColors: ['#00a65a'],
-                    hideHover: 'auto'
-                });
-            }
-        });
-    }
-
-
-    @*document.addEventListener("DOMContentLoaded", function () {
-            var ctx = document.getElementById('myBarChart').getContext('2d');
-            var chartData = {
-                labels: @Html.Raw(Json.Serialize(Model.Select(x => x.label))),
-                datasets: [{
-                    label: 'Quantity',
-                    data: @Html.Raw(Json.Serialize(Model.Select(x => x.value))),
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1,
-                    barThickness: 50
-                }, {
-                    label: 'Price',
-                    data: @Html.Raw(Json.Serialize(Model.Select(x => x.price))),
-                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                    borderColor: 'rgba(153, 102, 255, 1)',
-                    borderWidth: 1,
-                    barThickness: 50
-                }]
-            };
-
-            var myBarChart = new Chart(ctx, {
-                type: 'bar',
-                data: chartData,
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
+        Highcharts.chart('bindPieChart', Highcharts.merge(baseChartOptions(), {
+            chart: { type: 'pie', height: 300 },
+            title: { text: 'Expense, due given & due return' },
+            plotOptions: {
+                pie: {
+                    innerSize: '55%',
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b><br>{point.y:,.0f}',
+                        style: { color: '#475569', fontWeight: '500', textOutline: 'none' }
                     }
                 }
-            });
-        });*@
+            },
+            series: [{
+                name: 'Amount',
+                colorByPoint: true,
+                data: [
+                    { name: 'Expense', y: @Model.Expense.ToString(inv) },
+                    { name: 'Due Given', y: @Model.DueGiven.ToString(inv) },
+                    { name: 'Due Return', y: @Model.DueReturn.ToString(inv) }
+                ]
+            }]
+        }));
 
-     function BindLastRegister1(days) {
-        $("#Kyle").html("");
-        $.ajax({
-            url: "@Url.Content("~/Home/mypieChart")",
-            type: "Post",
-           // data: { 'lastDay': days },
-            dataType: 'json',//json
-            success: function (data) {
-                console.log(data)
-                Morris.Bar({
-                    element: 'Kyle',
-                    resize: true,
-                    data: data,
-                    ykeys: ['value'],
-                   xkey: ['label'],
+        Highcharts.chart('otherInfo', Highcharts.merge(baseChartOptions(), {
+            chart: { type: 'column', height: 300 },
+            title: { text: "Today's purchase, sale, profit & dues" },
+            xAxis: {
+                categories: ['Purchase', 'Sale', 'Profit', 'Profit w/ Tax', 'Expense', 'Due Given', 'Due Return']
+            },
+            plotOptions: {
+                column: {
+                    borderRadius: 6,
+                    borderWidth: 0,
+                    colorByPoint: true
+                }
+            },
+            series: [{
+                name: 'Amount',
+                data: [
+                    @Model.todayPurchaseCostSum.ToString(inv),
+                    @Model.todaySaleCostSum.ToString(inv),
+                    @Model.todayProfit.ToString(inv),
+                    @Model.todayProfitWithTax.ToString(inv),
+                    @Model.Expense.ToString(inv),
+                    @Model.DueGiven.ToString(inv),
+                    @Model.DueReturn.ToString(inv)
+                ],
+                showInLegend: false
+            }]
+        }));
 
-                    labels: 'Count',
-                    lineColors: ['#00a65a'],
-                    hideHover: 'auto'
-                });
+        Highcharts.chart('work-chart', Highcharts.merge(baseChartOptions(), {
+            chart: { type: 'pie', height: 300 },
+            title: { text: 'Sales, purchases & returns' },
+            plotOptions: {
+                pie: {
+                    innerSize: '50%',
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b><br>{point.y:,.0f}',
+                        style: { color: '#475569', fontWeight: '500', textOutline: 'none' }
+                    }
+                }
+            },
+            series: [{
+                name: 'Items',
+                colorByPoint: true,
+                data: [
+                    { name: 'Purchases', y: @Model.todayPurchaseCount },
+                    { name: 'Sales', y: @Model.todaySaleCount },
+                    { name: 'Purchase returns', y: @Model.todayPurchaseReturnCount },
+                    { name: 'Sale returns', y: @Model.todaySaleReturnCount }
+                ]
+            }]
+        }));
+
+        function renderLineChart(data) {
+            var categories = [];
+            var values = [];
+            if (data && data.length) {
+                for (var i = 0; i < data.length; i++) {
+                    categories.push(data[i].label);
+                    values.push(parseFloat(data[i].value) || 0);
+                }
             }
+
+            Highcharts.chart('line-chart', Highcharts.merge(baseChartOptions(), {
+                chart: { type: 'areaspline', height: 300 },
+                title: { text: 'Sales trend' },
+                xAxis: { categories: categories },
+                plotOptions: {
+                    areaspline: {
+                        fillOpacity: 0.15,
+                        lineWidth: 3,
+                        marker: { radius: 4, fillColor: '#ffffff', lineWidth: 2, lineColor: '#6366f1' }
+                    }
+                },
+                series: [{
+                    name: 'Units sold',
+                    color: '#6366f1',
+                    data: values,
+                    showInLegend: false
+                }]
+            }));
+        }
+
+        function renderProductChart(data) {
+            var categories = [];
+            var values = [];
+            if (data && data.length) {
+                for (var i = 0; i < data.length; i++) {
+                    categories.push(data[i].label);
+                    values.push(parseFloat(data[i].value) || 0);
+                }
+            }
+
+            Highcharts.chart('Kyle', Highcharts.merge(baseChartOptions(), {
+                chart: { type: 'bar', height: 300 },
+                title: { text: 'Fast moving products' },
+                xAxis: { categories: categories },
+                plotOptions: {
+                    bar: {
+                        borderRadius: 6,
+                        borderWidth: 0,
+                        colorByPoint: true
+                    }
+                },
+                series: [{
+                    name: 'Units sold',
+                    data: values,
+                    showInLegend: false
+                }]
+            }));
+        }
+
+        function bindLastRegister(days) {
+            $.ajax({
+                url: '@Url.Content("~/Home/LineChart")',
+                type: 'POST',
+                data: { lastDay: days },
+                dataType: 'json',
+                success: renderLineChart,
+                error: function () { renderLineChart([]); }
+            });
+        }
+
+        function bindFastProducts() {
+            $.ajax({
+                url: '@Url.Content("~/Home/mypieChart")',
+                type: 'POST',
+                dataType: 'json',
+                success: renderProductChart,
+                error: function () { renderProductChart([]); }
+            });
+        }
+
+        function bindStockMovement() {
+            $.ajax({
+                url: '@Url.Content("~/Home/GetStockMovement")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $('#stock-received').text(data.PurchaseItemsQuantity).removeClass('text-muted');
+                    $('#stock-sold').text(data.SaleItemsQuantity).removeClass('text-muted');
+                    $('#stock-remaining').text(data.WarestockRemaining).removeClass('text-muted');
+                },
+                error: function () {
+                    $('#stock-received, #stock-sold, #stock-remaining').text('—');
+                }
+            });
+        }
+
+        $(function () {
+            bindLastRegister(7);
+            bindFastProducts();
+            bindStockMovement();
+
+            $('#selectLastDays').on('change', function () {
+                bindLastRegister($(this).val());
+            });
         });
-    }
-
+    })();
 </script>
-

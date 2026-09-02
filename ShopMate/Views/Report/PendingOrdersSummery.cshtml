@@ -1,11 +1,9 @@
-﻿@model IEnumerable<ShopMate.ModelDto.ShrinkageDto>
+﻿@model IEnumerable<ShopMate.ModelDto.StockAlertDto>
 @{
-    ViewBag.Title = "Shrinkage";
+    ViewBag.Title = "Pending Orders Summery";
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.MenuOpen = "Reports";
 }
-
-<h2>Shrinkage</h2>
 
 <script src="~/Scripts/jquery1.8.3.print.js"></script>
 
@@ -50,29 +48,8 @@ var isPosttime = "@ViewBag.timess";
             $('#stime').val("00:01");
             $('#etime').val("23:59");
         }
-        let data = ''
-
-        window.onload = function () {
-            window.document.body.addEventListener('keydown', function (event) {
-                //if (event.keyCode == 13 || event.keyCode == 16 || event.keyCode == 17) {
-                //    event.preventDefault();
-                //    return;
-                //}
-
-                if (event.ctrlKey) {
-                    event.preventDefault();
-                    return;
-                }
-
-                data += event.key
-                console.log(data)
-            });
-        }
-
     });
-    function cleartext() {
-        $('#clearid').val('');
-    }
+
 </script>
 
 
@@ -84,6 +61,7 @@ var isPosttime = "@ViewBag.timess";
 </style>
 
 
+
 <section class="content report-page">
     <!-- Small boxes (Stat box)  -->
     <div class="row">
@@ -92,41 +70,31 @@ var isPosttime = "@ViewBag.timess";
 
             <section class="content">
                 <!-- Small boxes (Stat box) -->
-                @using (Html.BeginForm("TodaySale", "Report", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmreport" }))
+                @using (Html.BeginForm("PendingOrdersSummery", "Report", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmreport" }))
                 {
                     <div class="col-xs-12">
 
                         <div class="clearfix"></div>
                         <br />
 
-                        <div class="col-xs-12">
-                            <input type="text" name="FromDate" required style="width: 150px;" value="@ViewBag.FromDate" placeholder="Pick From Date" id="txtCal" />
-                            From Time: <input name="stime" required id="stime" type="text" value="@ViewBag.stime" style="width:60px;">
-                            @*<script> $(function () { $("#txtCal").datepicker(); }); </script>*@
+                        @*<div class="col-xs-12">
+                                <input type="text" name="FromDate" required style="width: 150px;" value="@ViewBag.FromDate" placeholder="Pick From Date" id="txtCal" />
+                                From Time: <input name="stime" required id="stime" type="text" value="@ViewBag.stime" style="width:60px;">
+                                <script> $(function () { $("#txtCal").datepicker(); }); </script>
 
-                        </div>
-                        <div class="clearfix"></div>
-                        <br />
-                        <div class="col-xs-12">
-                            <input type="text" required name="ToDate" style="width:150px;" value="@ViewBag.ToDate" placeholder="Pick To Date" id="txtCalTo" />
-                            To Time:  <input required name="etime" id="etime" type="text" value="@ViewBag.etime" style="width:60px;">
-                            @*<script> $(function () { $("#txtCalTo").datepicker(); }); </script>*@
-                        </div>
-                        <div class="clearfix"></div>
-                        <br />
-                        <div class="col-xs-12">
-                            @Html.DropDownList("ProductId", "-Select Product-")
-                        </div>
-                        <div class="clearfix"></div>
-                        <br />
-                        <div class="col-xs-12">
-                            @Html.DropDownList("WarehouseId", "-Select Warehouse-")
-                        </div>
-                        <div class="clearfix"></div>
-                        <br />
-                        <div class="col-xs-12">
-                            <input class="btn btn-default" value="Search" type="submit">
-                        </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <br />
+                            <div class="col-xs-12">
+                                <input type="text" required name="ToDate" style="width:150px;" value="@ViewBag.ToDate" placeholder="Pick To Date" id="txtCalTo" />
+                                To Time:  <input required name="etime" id="etime" type="text" value="@ViewBag.etime" style="width:60px;">
+                                <script> $(function () { $("#txtCalTo").datepicker(); }); </script>
+                            </div>
+                            <div class="clearfix"></div>
+                            <br />
+                            <div class="col-xs-12">
+                                <input class="btn btn-default" value="Get" type="submit">
+                            </div>*@
 
                         <div class="clearfix"></div>
 
@@ -155,9 +123,8 @@ var isPosttime = "@ViewBag.timess";
                 </div>
                 <div class="row" style="font-size:12px;font-weight:bold;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
 
-                    <div style="text-align:center;font-size:30px;font-weight:bold;">@ViewBag.company</div>
-                    <div style="text-align:center;font-size:20px;font-weight:bold;"> Shrinkage Report</div>
-                    <div style="text-align:center;font-size:14px;font-weight:bold;"> @ViewBag.start to @ViewBag.end  </div>
+                    <div style="text-align:center;font-size:30px;font-weight:bold;margin-left:10%;">@ViewBag.company</div>
+                    <div style="text-align:center;font-size:20px;font-weight:bold;margin-left:10%"> Pending Orders Summery Report</div>
 
 
                     <div style="text-align:left;margin-left:40px;">
@@ -177,12 +144,9 @@ var isPosttime = "@ViewBag.timess";
                                         <thead style="background-color:#e5e2e2;">
                                             <tr>
                                                 <th>S.No</th>
-                                                <th> Product Name </th>
-                                                <th> Quantity </th>
-                                                <th> Effect </th>
-                                                @*<th> Quantity After</th>*@
-                                                <th> Description </th>
-                                                <th> Date </th>
+                                                <th>Product Name </th>
+                                                @*<th>Stock Alert Value </th>*@
+                                                <th>Quantity </th>
 
                                             </tr>
                                         </thead>
@@ -190,34 +154,29 @@ var isPosttime = "@ViewBag.timess";
                                             @if (Model != null)
                                             {
                                                 int i = 1;
+                                                string cls = "";
                                                 foreach (var item in Model)
                                                 {
-                                                    <tr>
+                                                    //if (item.StockAlert >= item.Quantity)
+                                                    //{ cls = "background-color:#ff9393";
+
+
+
+                                                    <tr style="@cls">
                                                         <td>@i</td>
                                                         <td> @item.ProductName </td>
+                                                        @*<td> @item.StockAlert </td>*@
                                                         <td> @item.Quantity </td>
-                                                        <td> @item.effect</td>
-                                                        @*<td> @item.SalePrice </td>*@
-                                                        <td> @item.Description </td>
-                                                        <td> @item.Dated </td>
-
                                                     </tr>
                                                     i++;
+                                                    //}
                                                 }
 
                                             }
 
                                         </tbody>
                                         <tfoot style="background-color:#e5e2e2;">
-                                            <tr>
-                                                <th></th>
-                                                <th style="text-align:right">Total:</th>
-                                                <th>@Model.Sum(i => i.Quantity)</th>
-                                                <th></th>
-                                                <th>@Model.Sum(i => i.Amount)</th>
-                                                <th>@Model.Sum(i => i.WithTaxAmount)</th>
-                                                <th></th>
-                                            </tr>
+
                                         </tfoot>
                                     </table>
 

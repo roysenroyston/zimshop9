@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShopMate</RootNamespace>
     <AssemblyName>ShopMate</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -279,9 +279,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -1248,6 +1245,8 @@
     <Content Include="Content\notifire\starkloading.gif" />
     <Content Include="Content\QuatationsPrintOutputStyling.css" />
     <Content Include="Content\QuotationsStyling.css" />
+    <Content Include="Content\shopmate-saas.css" />
+    <Content Include="Content\shopmate-site.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\splitter\splitter.css" />
     <Content Include="Content\splitter\Splitter.js" />
@@ -2858,6 +2857,7 @@
     <Content Include="Views\Setting\MultiViewIndex.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_ReportAssets.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Tax\Create.cshtml" />
     <Content Include="Views\Tax\Delete.cshtml" />

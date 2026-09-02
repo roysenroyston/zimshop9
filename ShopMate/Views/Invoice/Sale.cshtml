@@ -54,6 +54,15 @@
                     <div class="margin">
 
                         <div class="streaming-table">
+                            <div class="mb-2">
+                                <label class="me-2">Show records from</label>
+                                <select id="invoiceDaysFilter" class="form-select form-select-sm d-inline-block w-auto">
+                                    <option value="7">Last 7 days</option>
+                                    <option value="30" selected>Last 30 days</option>
+                                    <option value="90">Last 90 days</option>
+                                    <option value="0">All records</option>
+                                </select>
+                            </div>
                             <span id="found" class="label label-info"></span>
 
 
@@ -113,12 +122,16 @@
         $(document).ready(function () {
             var oTableInvoice = "";
             var ControlerNameInvoice = "@Url.Content("~/Invoice")";
-            // debugger;
-            oTableInvoice = $("#tbInvoice").dataTable({
+
+            function initInvoiceTable(days) {
+                if (oTableInvoice) {
+                    $("#tbInvoice").dataTable().fnDestroy();
+                }
+                oTableInvoice = $("#tbInvoice").dataTable({
             "bRetrieve": true,
             "bProcessing": true,
             "dom": 'lBfrtip',
-            "sAjaxSource": "@Url.Content("~/Invoice/GetGridSale")",
+            "sAjaxSource": ControlerNameInvoice + "/GetGridSale?days=" + days,
             "buttons": [
                  { extend: 'copyHtml5', exportOptions: { columns: ':visible' } }
                 ,{ extend: 'excelHtml5', exportOptions: { columns: ':visible' } }
@@ -159,7 +172,13 @@
         ]
 
         });
+            }
 
+            initInvoiceTable(30);
+
+            $('#invoiceDaysFilter').on('change', function () {
+                initInvoiceTable($(this).val());
+            });
         });
 </script>
 

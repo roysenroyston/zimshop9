@@ -12,31 +12,24 @@
 }
 
 <link href="~/Content/datetimepicker-master/jquery.datetimepicker.css" rel="stylesheet" />
-<script src="~/Content/datetimepicker-master/jquery.datetimepicker.min.js"> </script>
+<script src="~/Content/datetimepicker-master/jquery.datetimepicker.min.js"></script>
 <script src="~/Content/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
 <script src="~/Content/datetimepicker-master/build/jquery.datetimepicker.full.js"></script>
 <link href="~/Content/theme/plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
 <script src="~/Content/theme/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
 
+
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+<script src=" https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
+
 <script type="text/javascript">
-    $("#btnPrint").live("click", function () {
-        var divContents = $("#dvContainer").html();
-        var printWindow = window.open('', '', 'height=700,width=900');
-        printWindow.document.write('<html><head>');
-        printWindow.document.write('<link href="../../Content/theme/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
-
-        printWindow.document.write('</head><body >');
-        printWindow.document.write(divContents);
-        printWindow.document.write('</body></html>');
-        printWindow.document.close();
-        printWindow.print();
-
-
-    });
-
-
-
-    var isPosttime = "@ViewBag.timess";
+var isPosttime = "@ViewBag.timess";
 
 
     $(document).ready(function (e) {
@@ -63,11 +56,11 @@
         document.getElementById("txtCal").value = dateOk;
         document.getElementById("txtCalTo").value = dateOk;
         if (dateOk) {
-            
+
         } else {
             alert("Date Format Not Supported! please us this formar: dd/mm/yyyy.");
         }
-        
+
     }
 
     function validatedate(inputText) {
@@ -77,14 +70,14 @@
             document.form1.text1.focus();
             //Test which seperator is used '/' or '-'
             var opera1 = inputText.value.split('/');
-            
+
             lopera1 = opera1.length;
-           
+
             // Extract the string into month, date and year
             if (lopera1 > 1) {
                 var pdate = inputText.value.split('/');
             }
-           
+
             var dd = parseInt(pdate[0]);
             var mm = parseInt(pdate[1]);
             var yy = parseInt(pdate[2]);
@@ -129,7 +122,7 @@
 
 
 
-<section class="content" style="background-image: url(@Url.Content("~/Content/bg/black-scales.png"));">
+<section class="content report-page">
     <!-- Small boxes (Stat box)  -->
     <div class="row">
         <div class="col-xs-2">
@@ -147,7 +140,7 @@
                     <div class="col-xs-12">
                         <input type="text" name="FromDate" required style="width: 150px;" value="@ViewBag.FromDate" placeholder="Pick From Date" id="txtCal" />
                         From Time: <input name="stime" required id="stime" type="text" value="@ViewBag.stime" style="width:60px;">
-                        <script> $(function () { $("#txtCal").datepicker(); }); </script>
+                        @*<script> $(function () { $("#txtCal").datepicker(); }); </script>*@
 
                     </div>
                     <div class="clearfix"></div>
@@ -155,14 +148,17 @@
                     <div class="col-xs-12">
                         <input type="text" required name="ToDate" style="width:150px;" value="@ViewBag.ToDate" placeholder="Pick To Date" id="txtCalTo" />
                         To Time:  <input required name="etime" id="etime" type="text" value="@ViewBag.etime" style="width:60px;">
-                        <script> $(function () { $("#txtCalTo").datepicker(); }); </script>
+                        @*<script> $(function () { $("#txtCalTo").datepicker(); }); </script>*@
                     </div>
                     <div class="clearfix"></div>
                     <br />
                     <div class="col-xs-12">
                         @Html.DropDownList("WarehouseId", "-Select Warehouse-")
                     </div>
-                    <br />
+                    <br />          
+                    @*<div class="col-xs-12">
+                        @Html.DropDownList("UserId", "-Select User-")
+                    </div>*@
                     <div class="col-xs-12">
                         <input class="btn btn-default" value="Search" type="submit">
                     </div>
@@ -170,8 +166,6 @@
                     <div class="clearfix"></div>
 
                     <br /><br /><br />
-
-
                     <a class="btn btn-app" id="btnPrint">
                         <i class="fa fa-print"></i>
                         Print This
@@ -185,16 +179,16 @@
 
         </div>
 
-        <div class="col-xs-9" style="margin-left:10px;">
+        <div class="col-xs-9">
 
-            <div id="dvContainer" class="content invoice" style="padding: inherit; min-height: 312mm;width:100%;">
+            <div id="dvContainer" class="report-document" style="padding: inherit; min-height: 312mm;width:100%;">
 
                 <div style="margin-bottom:50px;">
 
                 </div>
                 <div class="row" style="font-size:12px;font-weight:bold;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-                 
-                   
+
+                    <div style="text-align:center;font-size:30px;font-weight:bold;margin-left:10%;">@Model.companayname</div>
                     <div style="text-align:center;font-size:20px;font-weight:bold; margin-left:10%;"> Day End Report</div>
 
 
@@ -211,20 +205,20 @@
                             <div class="col-xs-12">
 
                                 <div style="width:96%;">
-                                    <table id="tbInvoiceItem" class="table table-striped table-bordered" hidden>
-                                        <thead style="background-color:#e5e2e2;">
+                                    <table id="tbInvoiceItem" class="table table-striped table-bordered">
+                                        @*<thead style="background-color:#e5e2e2;">
                                             <tr>
                                                 <th> </th>
                                                 <th>Particulars </th>
                                                 <th> Amount </th>
                                             </tr>
-                                        </thead>
+                                        </thead>*@
                                         <tbody>
 
                                             <tr>
                                                 <td>1</td>
                                                 <td>Sale   </td>
-                                               <td> @Model.Sale </td>
+                                                <td> @Model.Sale </td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
@@ -249,18 +243,18 @@
                                             <tr>
                                                 <td>2</td>
                                                 <td>Account Payables </td>
-                                               <td>$@Model.DueGiven </td>
+                                                <td>$@Model.DueGiven </td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
                                                 <td>Sale Return</td>
                                                 <td>$@Model.SaleReturn </td>
                                             </tr>
-                                            <tr>
+                                            @*<tr>
                                                 <td>4</td>
                                                 <td>Purchase  </td>
                                                 <td>$ @Model.Purchase</td>
-                                            </tr>
+                                            </tr>*@
                                             <tr style="background-color:#e5e2e2;">
                                                 <td></td>
                                                 <td>Total : </td>
@@ -295,10 +289,10 @@
                                                 <th>$@Model.Change </th>
                                             </tr>
                                             @*<tr style="background-color: #34c205">
-                                                <th></th>
-                                                <th> Profit With Tax (+) </th>
-                                                <th>@Model.ProfitWithTax </th>
-                                            </tr>*@
+                                                    <th></th>
+                                                    <th> Profit With Tax (+) </th>
+                                                    <th>@Model.ProfitWithTax </th>
+                                                </tr>*@
                                         </tfoot>
 
                                     </table>
@@ -322,37 +316,37 @@
                                                 <td>$@Model.outagecash</td>
                                             </tr>
                                             <tr style="background-color: #34c205">
-                                                <td>FBC Swipe</td>
-                                                <td>$@Model.Fbc</td>
-                                                <td>$@Model.Fbcdeclared</td>
-                                                <td>$@Model.outagefbc</td>
+                                                <td>Swipe Internal</td>
+                                                <td>$@Model.rtgs</td>
+                                                <td>$@Model.swipedeclared</td>
+                                                <td>$@Model.outageswipe</td>
 
                                             </tr>
                                             <tr style="background-color: #34c205">
-                                                <td>Ecocash</td>
+                                                <td>Swipe External</td>
                                                 <td>$@Model.ecocash</td>
                                                 <td>$@Model.ecocashdeclared</td>
                                                 <td>$@Model.outageecocash</td>
                                             </tr>
-                                            <tr style="background-color: #34c205">
-                                                <td>ACL </td>
-                                                <td>$@Model.Acl</td>
-                                                <td>$@Model.Acldeclared</td>
-                                                <td>$@Model.outageacl</td>
+                                            @*<tr style="background-color: #34c205">
+                                                <td>TeleCash </td>
+                                                <td>$@Model.telecash</td>
+                                                <td>$@Model.telecashdeclared</td>
+                                                <td>$@Model.outagetelecash</td>
 
-                                            </tr>
-                                            <tr style="background-color: #34c205">
-                                                <td>ZIPIT </td>
-                                                <td>$@Model.Zipit</td>
-                                                <td>$@Model.Zipitdeclared</td>
-                                                <td>$@Model.outagezipit</td>
+                                            </tr>*@
+                                            @*<tr style="background-color: #34c205">
+                                                <td>One Money</td>
+                                                <td>$@Model.onemoney</td>
+                                                <td>$@Model.onemoneydeclared</td>
+                                                <td>$@Model.outageonemoney</td>
 
-                                            </tr>
+                                            </tr>*@
 
 
                                         </tbody>
                                         <tr style="background-color: #969ba3">
-                                            <td>Total ZWL</td>
+                                            <td>Total</td>
                                             <td>$@Model.tSale</td>
                                             <td>$@Model.totaldeclared</td>
                                             <td>$@Model.outagetotal</td>
@@ -367,27 +361,27 @@
 
                                         </tr>
                                     </table>
-                                    <table id="Paymentsaccunts" class="table table-striped table-bordered" hidden>
+                                    <table id="Paymentsaccunts" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
                                                 <th>Account Payments</th>
                                                 <th>Account Sales</th>
 
-                                                
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr style="background-color: #34c205">
-                                                
+
                                                 <td>
-                                                   $ @Model.accountpayments
+                                                    $ @Model.accountpayments
                                                 </td>
-                                               
+
                                                 <td>$@Model.accountsales</td>
                                             </tr>
-                                            
+
                                         </tbody>
-                                       
+
                                     </table>
                                 </div>
 

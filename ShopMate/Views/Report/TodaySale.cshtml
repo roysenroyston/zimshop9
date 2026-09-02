@@ -19,7 +19,6 @@
 <script src="~/Content/theme/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>
@@ -30,23 +29,7 @@
 <script src=" https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
 
 <script type="text/javascript">
-    $("#btnPrint").live("click", function () {
-        var divContents = $("#dvContainer").html();
-        var printWindow = window.open('', '', 'height=700,width=900');
-        printWindow.document.write('<html><head>');
-        printWindow.document.write('<link href="../../Content/theme/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
-        printWindow.document.write('</head><body >');
-        printWindow.document.write(divContents);
-        printWindow.document.write('</body></html>');
-        printWindow.document.close();
-        printWindow.print();
-
-    });
-
-
-
-
-    var isPosttime = "@ViewBag.timess";
+var isPosttime = "@ViewBag.timess";
 
 
     $(document).ready(function (e) {
@@ -83,7 +66,7 @@
 
 
 
-<section class="content" style="background-image: url(@Url.Content("~/Content/bg/black-scales.png"));">
+<section class="content report-page">
     <!-- Small boxes (Stat box)  -->
     <div class="row">
         <div class="col-xs-2">
@@ -101,7 +84,7 @@
                     <div class="col-xs-12">
                         <input type="text" name="FromDate" required style="width: 150px;" value="@ViewBag.FromDate" placeholder="Pick From Date" id="txtCal" />
                         From Time: <input name="stime" required id="stime" type="text" value="@ViewBag.stime" style="width:60px;">
-                        @* <script> $(function () { $("#txtCal").datepicker(); }); </script>*@
+                        @*<script> $(function () { $("#txtCal").datepicker(); }); </script>*@
 
                     </div>
                     <div class="clearfix"></div>
@@ -109,7 +92,7 @@
                     <div class="col-xs-12">
                         <input type="text" required name="ToDate" style="width:150px;" value="@ViewBag.ToDate" placeholder="Pick To Date" id="txtCalTo" />
                         To Time:  <input required name="etime" id="etime" type="text" value="@ViewBag.etime" style="width:60px;">
-                        @*  <script> $(function () { $("#txtCalTo").datepicker(); }); </script>*@
+                        @*<script> $(function () { $("#txtCalTo").datepicker(); }); </script>*@
                     </div>
                     <div class="clearfix"></div>
                     <br />
@@ -119,17 +102,17 @@
                     <div class="clearfix"></div>
                     <br />
                     <div class="col-xs-12">
-                        @Html.DropDownList("UserId", "-Select User-")
+                        @Html.DropDownList("WarehouseId", "-Select Warehouse-")
                     </div>
                     <div class="clearfix"></div>
                     <br />
                     <div class="col-xs-12">
-                        <select name="IsFormalId" id="IsFormalId">
-                            <option value="all">ALL</option>
-                            <option value="USD">USD </option>
-                            <option value="ZWG">ZWG </option>IsFormalId
-                        </select>
-
+                        @*<select name="productType" id="productType">
+                            <option value="ALL">ALL</option>
+                            <option value="SINGLE">SINGLE </option>
+                            <option value="CASE">CASE </option>productType
+                        </select>*@
+                        @Html.DropDownList("productType", ViewBag.productType as SelectList, "All Product Types", new { @class = "form-select" })
                     </div>
                     <div class="col-xs-12">
                         <input class="btn btn-default" value="Search" type="submit">
@@ -153,9 +136,9 @@
 
         </div>
 
-        <div class="col-xs-9" style="margin-left:10px;">
+        <div class="col-xs-9">
 
-            <div id="dvContainer" class="content invoice" style="padding: inherit; min-height: 312mm;  width:100%; ">
+            <div id="dvContainer" class="report-document">
 
                 <div style="margin-bottom:50px;">
 
@@ -179,21 +162,22 @@
 
                             <div class="col-xs-12">
 
-                                <div style="width:96%;">
+                                <div style="width:96%; overflow-x:auto">
                                     <table id="tbInvoiceItem" class="table table-striped table-bordered">
                                         <thead style="background-color:#e5e2e2;">
-                                            <tr>
-                                                <th>S.No</th>
-                                                <th> Customer Name </th>
-                                                <th> Product Name </th>
-                                                <th> Quantity </th>
-                                                <th> Sale Usd Price </th>
-                                                @*<th>Sale Rtgs Price</th>*@
-                                                <th>Purchase Price</th>
-                                                <th>Tax Amount  </th>
-                                                <th> Reciept Number </th>
-                                                <th> Dated </th>
-                                            </tr>
+											<tr>
+												<th>S.No</th>
+												@*<th> Invoice Id </th>*@
+												<th>Customer Name</th>
+                                                <th>Payment</th>
+												<th> Product Name </th>
+												<th> Quantity </th>
+												<th> Sale Price </th>
+												<th> Amount</th>
+												@*<th> With Tax Amount </th>*@
+												<th>Receipt Number</th>
+												<th> Dated </th>
+											</tr>
                                         </thead>
                                         <tbody>
                                             @if (Model != null)
@@ -201,37 +185,114 @@
                                                 int i = 1;
                                                 foreach (var item in Model)
                                                 {
-                                            <tr>
-                                                <td>@i</td>
-                                                <td>@item.CustomerName </td>
-                                                <td>@item.ProductName </td>
-                                                <td>@item.Quantity </td>
-                                                <td>@item.Amount </td>                                   
-                                                <td>@item.UnitPrice</td>
-                                                <td>@item.WithTaxAmount</td>
-                                                <td>@item.RecieptNumber </td>
-                                                <td>@item.Dated </td>
-                                            </tr>
+											<tr>
+												<td>@i</td>
+												@*<td> @item.InvoiceId </td>*@
+												<td>@item.CustomerName</td>
+												<td>
+													@(item.PaymentType + "." +
+    (item.Currency != "USD" ? "ZiG" : "USD"))
+												</td>
+
+												<td> @item.ProductName </td>
+												@if (item.Singles > 0)
+												{
+													<td>
+														<label>@((long)item.Quantity) (C)</label><br />
+														<label>@item.Singles (S)</label>
+													</td>
+													<td>
+														<label>@item.SalePrice (C)</label><br />
+														<label>@item.UnitSalePrice (S)</label>
+													</td>
+												}
+												else
+												{
+													if ("CASE".Equals(item.ProductType))
+													{
+														if (item.Units > 1)
+														{
+															<td> @((long)item.Quantity) (C) </td>
+														}
+														else
+														{
+															<td> @((long)item.Quantity) </td>
+														}
+													}
+													else
+													{
+														<td> @item.Quantity </td>
+													}
+													<td> @item.SalePrice </td>
+
+												}
+
+
+												<td> @item.Amount</td>
+												@*<td> @item.WithTaxAmount </td>*@
+												<td>@item.RecieptNo</td>
+												<td> @item.Dated </td>
+											</tr>
                                                     i++;
                                                 }
 
                                             }
 
                                         </tbody>
-                                        <tfoot style="background-color:#e5e2e2;">
-                                            <tr>
-                                                <th></th>
-                                                <th></th>
-                                                <th style="text-align:right">Total:</th>
-                                                <th>@Model.Sum(i => i.Quantity)</th>
-                                                <th>@Model.Sum(i => i.Amount)</th>
-                                       
-                                                <th>@Model.Sum(i => i.AmountDiscounted)</th>
-                                                <th>@Model.Sum(n => n.AmountPaid)</th>
-                                                <th></th>
-                                                <th></th>
-                                            </tr>
-                                        </tfoot>
+										<tfoot style="background-color:#e5e2e2;">
+											<tr>
+												<th></th>
+												@*<th></th>*@
+												<th colspan="3" style="text-align:right">Total USD:</th>
+												@*<th>@Model.Where(q => q.Currency == "USD").Sum(i => i.Quantity)</th>*@
+												<th></th>
+												<th></th>
+												<th>@Model.Where(q => q.Currency == "USD").Sum(i => i.Amount)</th>
+												@*<th>@Model.Where(q => q.Currency == "USD").Sum(i => i.WithTaxAmount)</th>*@
+												<th></th>
+												<th></th>
+											</tr>
+
+											<tr>
+												<th></th>
+												@*<th></th>*@
+												<th colspan="3" style="text-align:right">Total ZiG:</th>
+												@*<th>@Model.Where(q => q.Currency != "USD").Sum(i => i.Quantity)</th>*@
+												<th></th>
+												<th></th>
+												<th>@Model.Where(q => q.Currency != "USD").Sum(i => i.Amount)</th>
+												@*<th>@Model.Where(q => q.Currency != "USD").Sum(i => i.WithTaxAmount)</th>*@
+												<th></th>
+												<th></th>
+											</tr>
+
+											<tr>
+												<th></th>
+												@*<th></th>*@
+												<th colspan="3" style="text-align:right">Cases:</th>
+												@*<th>@Model.Where(q => q.Currency == "USD").Sum(i => i.Quantity)</th>*@
+												<th></th>
+												<th></th>
+												<th>@Model.Where(q => "CASE".Equals(q.ProductType) && q.Units > 1).Sum(i => i.Quantity)</th>
+												@*<th>@Model.Where(q => q.Currency == "USD").Sum(i => i.WithTaxAmount)</th>*@
+												<th></th>
+												<th></th>
+											</tr>
+
+											<tr>
+												<th></th>
+												@*<th></th>*@
+												<th colspan="3" style="text-align:right">Units:</th>
+												@*<th>@Model.Where(q => q.Currency != "USD").Sum(i => i.Quantity)</th>*@
+												<th></th>
+												<th></th>
+												<th>@Model.Where(q => ("CASE".Equals(q.ProductType) && q.Units == 1) || !"CASE".Equals(q.ProductType) ).Sum(i => i.Quantity)</th>
+												@*<th>@Model.Where(q => q.Currency != "USD").Sum(i => i.WithTaxAmount)</th>*@
+												<th></th>
+												<th></th>
+											</tr>
+
+										</tfoot>
                                     </table>
 
 
@@ -280,7 +341,26 @@
         $('#tbInvoiceItem').DataTable({
             dom: 'Bfrtip',
             buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
+                {
+                    extend: 'copy',
+                    footer: true
+                },
+                {
+                    extend: 'csv',
+                    footer: true
+                },
+                {
+                    extend: 'excel',
+                    footer: true
+                },
+                {
+                    extend: 'pdf',
+                    footer: true
+                },
+                {
+                    extend: 'print',
+                    footer: true
+                }
             ]
         });
     });

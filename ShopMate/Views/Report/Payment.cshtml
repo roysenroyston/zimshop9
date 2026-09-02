@@ -1,11 +1,10 @@
-﻿@model IEnumerable<ShopMate.ModelDto.ShrinkageDto>
+﻿
+@model IEnumerable<ShopMate.ModelDto.PaymentDto>
 @{
-    ViewBag.Title = "Shrinkage";
+    ViewBag.Title = "Payment";
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.MenuOpen = "Reports";
 }
-
-<h2>Shrinkage</h2>
 
 <script src="~/Scripts/jquery1.8.3.print.js"></script>
 
@@ -84,6 +83,7 @@ var isPosttime = "@ViewBag.timess";
 </style>
 
 
+
 <section class="content report-page">
     <!-- Small boxes (Stat box)  -->
     <div class="row">
@@ -92,7 +92,7 @@ var isPosttime = "@ViewBag.timess";
 
             <section class="content">
                 <!-- Small boxes (Stat box) -->
-                @using (Html.BeginForm("TodaySale", "Report", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmreport" }))
+                @using (Html.BeginForm("Payment", "Report", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmreport" }))
                 {
                     <div class="col-xs-12">
 
@@ -114,15 +114,7 @@ var isPosttime = "@ViewBag.timess";
                         </div>
                         <div class="clearfix"></div>
                         <br />
-                        <div class="col-xs-12">
-                            @Html.DropDownList("ProductId", "-Select Product-")
-                        </div>
-                        <div class="clearfix"></div>
-                        <br />
-                        <div class="col-xs-12">
-                            @Html.DropDownList("WarehouseId", "-Select Warehouse-")
-                        </div>
-                        <div class="clearfix"></div>
+
                         <br />
                         <div class="col-xs-12">
                             <input class="btn btn-default" value="Search" type="submit">
@@ -155,9 +147,10 @@ var isPosttime = "@ViewBag.timess";
                 </div>
                 <div class="row" style="font-size:12px;font-weight:bold;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
 
-                    <div style="text-align:center;font-size:30px;font-weight:bold;">@ViewBag.company</div>
-                    <div style="text-align:center;font-size:20px;font-weight:bold;"> Shrinkage Report</div>
-                    <div style="text-align:center;font-size:14px;font-weight:bold;"> @ViewBag.start to @ViewBag.end  </div>
+                    <div style="text-align:center;font-size:30px;font-weight:bold;margin-left:10%;">@ViewBag.company</div>
+                    <div style="text-align:center;font-size:20px;font-weight:bold;margin-left:10%;"> Payment Report</div>
+
+                    <div style="text-align:center;font-size:15px;font-weight:lighter;">@ViewBag.ToDate </div>
 
 
                     <div style="text-align:left;margin-left:40px;">
@@ -166,7 +159,7 @@ var isPosttime = "@ViewBag.timess";
 
                         </div>
 
-
+                        <input id="clearid" type="text" />
 
                         <div class="row">
 
@@ -177,12 +170,14 @@ var isPosttime = "@ViewBag.timess";
                                         <thead style="background-color:#e5e2e2;">
                                             <tr>
                                                 <th>S.No</th>
-                                                <th> Product Name </th>
-                                                <th> Quantity </th>
-                                                <th> Effect </th>
-                                                @*<th> Quantity After</th>*@
-                                                <th> Description </th>
-                                                <th> Date </th>
+
+                                                <th>Customer Name </th>
+
+                                                <th> Payment Ref </th>
+                                                <th>Amount </th>
+                                                <th>Payment Date</th>
+                                                <th> Date Added</th>
+                                             
 
                                             </tr>
                                         </thead>
@@ -194,13 +189,12 @@ var isPosttime = "@ViewBag.timess";
                                                 {
                                                     <tr>
                                                         <td>@i</td>
-                                                        <td> @item.ProductName </td>
-                                                        <td> @item.Quantity </td>
-                                                        <td> @item.effect</td>
-                                                        @*<td> @item.SalePrice </td>*@
-                                                        <td> @item.Description </td>
-                                                        <td> @item.Dated </td>
-
+                                                        <td> @item.CustomerName </td>
+                                                        <td> @item.PaymentReference </td>
+                                                        <td> @item.Amount </td>
+                                                        <td> @item.PaymentDate </td>    
+                                                        <td>@item.dateAdded</td>
+                                                      
                                                     </tr>
                                                     i++;
                                                 }
@@ -208,17 +202,19 @@ var isPosttime = "@ViewBag.timess";
                                             }
 
                                         </tbody>
-                                        <tfoot style="background-color:#e5e2e2;">
+                                        @*<tfoot style="background-color:#e5e2e2;">
                                             <tr>
                                                 <th></th>
-                                                <th style="text-align:right">Total:</th>
-                                                <th>@Model.Sum(i => i.Quantity)</th>
+
                                                 <th></th>
-                                                <th>@Model.Sum(i => i.Amount)</th>
-                                                <th>@Model.Sum(i => i.WithTaxAmount)</th>
+                                                <th>  </th>
+                                                <th>  </th>
+                                                <th> Opening Amount:</th>
+                                                <th>@Model.Sum(i => i.cost)</th>
+                                                <th> @Model.Sum(i => i.Amount) </th>
                                                 <th></th>
                                             </tr>
-                                        </tfoot>
+                                        </tfoot>*@
                                     </table>
 
 

@@ -428,18 +428,19 @@ namespace ShopMate.Controllers
         {
             return View();
         }
-        public ActionResult GetGridSale()
+        // GET Invoice/GetGridSale?days=30  (defaults to last 30 days — pass days=0 for all records)
+        public ActionResult GetGridSale(int days = 30)
         {
+            var query = db.InformalInvoices.Where(i => i.IsPurchaseOrSale == "Sale" && i.WarehouseId == warehouseId);
 
-            DateTime today = DateTime.Now;
-            // var duein =  DateTime.Subtract(today, 90);
-            TimeSpan ts = new TimeSpan(70, 0, 0, 0);
-            DateTime answer = today.Subtract(ts);
-            var tak = db.InformalInvoices.Where(i => i.IsPurchaseOrSale == "Sale"  &&i.WarehouseId == warehouseId && i.DateAdded > answer).ToArray();
-            //var tak2 = db.InformalInvoices.Where(i => i.IsPurchaseOrSale == "Sale").ToArray();
+            if (days > 0)
+            {
+                var cutoff = DateTime.Now.Date.AddDays(-days);
+                query = query.Where(i => i.DateAdded >= cutoff);
+            }
+
+            var tak = query.OrderByDescending(i => i.DateAdded).ToArray();
             var result = from c in tak
-                         orderby c.DateAdded
-                         descending
                          select new string[] { c.Id.ToString(), Convert.ToString(c.Id),
             //Convert.ToString(db.Customers.FirstOrDefault(i => i.Id == (c.CustomerId)).UserName),
               Convert.ToString(c.IsBilled),

@@ -19,22 +19,21 @@ namespace ShopMate.Controllers
             return View();
         }
 
-        // GET Sale/GetGrid
-        public ActionResult GetGrid()
+        // GET Sale/GetGrid?days=30  (defaults to last 30 days — pass days=0 for all records)
+        public ActionResult GetGrid(int days = 30)
         {
-            DateTime today = DateTime.Now;
-            // var duein =  DateTime.Subtract(today, 90);
-            TimeSpan ts = new TimeSpan(90, 0, 0, 0);
-            DateTime answer = today.Subtract(ts);
-            //   TimeSpan mytme = today.Subtract(duein);
-            var tak = db.Sales.ToArray();
-
-
-
             var userwarehouse = db.Users.FirstOrDefault(n => n.UserName == userId).WarehouseId;
+            var query = db.Sales.Where(n => n.WarehouseId == userwarehouse);
 
+            if (days > 0)
+            {
+                var cutoff = DateTime.Now.Date.AddDays(-days);
+                query = query.Where(n => n.DateAdded >= cutoff);
+            }
 
-            var result = from c in tak.Where(n => n.WarehouseId == userwarehouse && n.DateAdded > answer)
+            var tak = query.OrderByDescending(n => n.DateAdded).ToArray();
+
+            var result = from c in tak
                          select new string[] { c.Id.ToString(), Convert.ToString(c.Id),
                          Convert.ToString(c.recieptNumber),
                       Convert.ToString(c.Product_ProductId.Name),
